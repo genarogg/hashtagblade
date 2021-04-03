@@ -1,13 +1,22 @@
-import { register, login, getMyUser } from "./user.resolvers";
+import {
+  register,
+  login,
+  getMyUser,
+  passwordRequest,
+  updatePassword,
+  updateProfile,
+} from "./user.resolvers";
 
 const resolvers = {
   Query: {
-    hello: () => "Hello World",
     getMyUser,
+    passwordRequest,
   },
   Mutation: {
     register,
     login,
+    updatePassword,
+    updateProfile,
   },
 };
 

@@ -16,23 +16,15 @@ const userModel = new mongoose.Schema(
 
     //twitter
     twitterId: { type: String },
-    twitterName: { type: String },
 
     //github
     githubId: { type: String },
-    githubName: { type: String },
 
     //facebook
     facebookId: { type: String },
-    facebookName: { type: String },
 
     //google
     googleId: { type: String },
-    googleName: { type: String },
-
-    //linkedin
-    linkedinId: { type: String },
-    linkedinName: { type: String },
   },
   {
     timestamps: true,

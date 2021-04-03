@@ -1,5 +1,7 @@
 import jwt from "jsonwebtoken";
 import userModel from "../../models/user.model";
+import sendMail from "../../functions/sendMail";
+import encryptNewPassword from "../../functions/encryptNewPassword";
 
 //Register User
 const register = async (_root, { input }) => {
@@ -120,4 +122,131 @@ const getMyUser = async (_root, { token }) => {
   }
 };
 
-export { register, login, getMyUser };
+//Password Request
+const passwordRequest = async (_root, { input }, ctx) => {
+  const { email, uri } = input;
+  //Check if email body exist
+  if (email === "" || !email.includes("@") || !email.includes("mail.com")) {
+    throw new Error("Type a correct email");
+  }
+
+  //Check if email exist
+  const emailExist = await userModel.findOne({ email });
+  if (!emailExist) {
+    throw new Error("Email Doesn't Exist");
+  }
+
+  //Create token whit 1h of expiration
+  const token = await jwt.sign(
+    {
+      action_type: "reset password",
+      _id: emailExist._id,
+    },
+    process.env.TOKENKEY,
+    { expiresIn: "1h" }
+  );
+
+  //Send Mail
+  const send = await sendMail(
+    "Reset Password",
+    `
+          <h2>Ahora vas a reestablecer tu contraseña</h2>
+          <br/>
+          <p>dale click al link expira en una hora</p>
+          <br/>
+          <a href="${uri}/nueva-contrasena?token=${token}">Link</a>
+      `,
+    email
+  );
+
+  //Check if mail is send
+  if (send) {
+    return "Mail send";
+  } else {
+    return "Mail not send";
+  }
+};
+
+//Update Password
+const updatePassword = async (_root, { input }) => {
+  const { token, password } = input;
+
+  if (password === "" || password.length < 8) {
+    throw new Error("Type a better password");
+  }
+  //Token
+  let tokenContent;
+
+  try {
+    //Verify token
+    tokenContent = await jwt.verify(token, process.env.TOKENKEY);
+  } catch (error) {
+    throw new Error("Invalid token");
+  }
+
+  //Verify action type
+  if (tokenContent.action_type != "reset password") {
+    throw new Error("Invalid action_type");
+  }
+
+  //Check if email exist
+  const userExist = await userModel.findById(tokenContent._id);
+  if (!userExist) {
+    throw new Error("Email Doesn't Exist");
+  }
+
+  //hash the password
+  const hashPassword = await encryptNewPassword(password);
+
+  //Update password
+  const updatePassword = await userModel.findByIdAndUpdate(tokenContent._id, {
+    password: hashPassword,
+  });
+
+  return "Done!";
+};
+
+//Update Profile
+const updateProfile = async (_root, { input }) => {
+  const { token } = input;
+
+  let myToken;
+  try {
+    myToken = await jwt.verify(token, process.env.TOKENKEY);
+  } catch {
+    throw new Error("Invalid token");
+  }
+
+  const user = await userModel.findById(myToken._id);
+  if (!user) {
+    throw new Error("User doesn't exist");
+  }
+
+  let querys = {};
+
+  for (let i in input) {
+    if (input[i] && input[i] != "" && i == "password") {
+      if (input[i].length < 8) {
+        throw new Error("Type a better password");
+      }
+      querys[i] = await encryptNewPassword(input[i]);
+    } else if (input[i] && input[i] != "") {
+      querys[i] = input[i];
+    }
+  }
+
+  const update = await userModel.findByIdAndUpdate(myToken._id, querys, {
+    new: true,
+  });
+
+  return update;
+};
+
+export {
+  register,
+  login,
+  getMyUser,
+  passwordRequest,
+  updatePassword,
+  updateProfile,
+};
