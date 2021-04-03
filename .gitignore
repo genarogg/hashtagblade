@@ -34,6 +34,5 @@ yarn-error.log*
 # vercel
 .vercel
 
-/pages/test.js
-
 /pages/testing.js
+/pages/social.js

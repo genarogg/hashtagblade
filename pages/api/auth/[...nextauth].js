@@ -24,12 +24,11 @@ const config = {
   callbacks: {
     async signIn(user, account, profile) {
       /* console.log({ user, account, profile }); */
-      console.log(profile.entities.description);
       const token = await jwt.sign(
         { ...user, type: account.provider },
-        process.env.KEY
+        process.env.TOKENKEY
       );
-      return "/register-social?token=" + token;
+      return "/social?token=" + token;
     },
   },
 };
