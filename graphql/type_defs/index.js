@@ -5,6 +5,7 @@ const typeDefs = gql`
     getMyUser(token: String!): User!
     passwordRequest(input: inputPasswordRequest!): String!
     verifySocial(token: String!): String!
+    create_subscription(token: String!, type: String!): String!
   }
 
   type Mutation {
