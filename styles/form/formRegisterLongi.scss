@@ -1,0 +1,509 @@
+@import "../variables.scss";
+
+.formGroupSesion {
+  align-items: center;
+  background-color: $formBackground;
+  border-radius: 10px;
+  display: flex;
+  font-family: $fontTitle;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  max-height: 503px;
+  max-width: 415px;
+  min-height: 503px;
+  min-width: 415px;
+
+  padding: 40px;
+  overflow: hidden;
+
+  p {
+    text-align: left;
+    color: #333333 !important;
+    text-shadow: 0px 0px 5px #ffffff;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    transition: $transicion600ms;
+
+    a {
+      text-decoration: none;
+      color: $azul;
+    }
+
+    &.submit:focus {
+      outline: none;
+    }
+
+    &.submit:hover {
+      cursor: pointer;
+      background-color: rgba(#fff, 0.3) !important;
+      transition: $transicion600ms;
+    }
+  }
+
+  hr {
+    border: 1px solid transparent !important;
+
+    &.titleHr {
+      background-color: $azul;
+      border: none !important;
+      border-left: 9px solid #fff !important;
+      border-right: 9px solid #fff !important;
+
+      border-radius: 4px;
+      height: 4px;
+      margin: 0px auto 30px;
+
+      width: 48px;
+    }
+  }
+
+  .buttonSesion {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+
+  form {
+    width: 100%;
+
+    .containerInput {
+      align-items: center;
+      background-color: rgba(#fff, 0.3) !important;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      height: 39px;
+
+      margin-bottom: 30px;
+      justify-content: center;
+      padding: 0 10px 0 8px;
+      transition: $transicion600ms;
+      overflow: hidden;
+
+      &.error {
+        border: 1px solid #f22;
+      }
+
+      &:hover {
+        border: 1px solid $azul;
+        transition: $transicion600ms;
+        outline: none;
+      }
+
+      .icoBackground {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding-left: 8px;
+      }
+    }
+  }
+
+  input {
+    background-color: transparent !important;
+    border: 3px solid transparent;
+    border-radius: 4px;
+    color: #333333 !important;
+    text-shadow: 0px 0px 5px #ffffff;
+
+    font-weight: 300;
+    height: 100%;
+    padding: 10px 0px 10px 10px;
+
+    &:focus {
+      background-color: $azul;
+      outline: none;
+    }
+    &::-webkit-input-placeholder {
+      color: #333333 !important;
+      text-shadow: 0px 0px 5px #ffffff;
+    }
+
+    &::-moz-placeholder {
+      color: #333333 !important;
+      text-shadow: 0px 0px 5px #ffffff;
+    }
+
+    &::-ms-input-placeholder {
+      color: #333333 !important;
+      text-shadow: 0px 0px 5px #ffffff;
+    }
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    button.login {
+      border: 1px solid #fff;
+      border-radius: 5px;
+      color: white;
+      height: 40px;
+
+      outline: none;
+      padding: 5px 20px;
+      width: 50%;
+    }
+  }
+
+  .containerRegister {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 100%;
+
+    button {
+      width: 50%;
+      border: 1px solid #fff;
+      height: 40px;
+      border-radius: 5px;
+
+      color: $azul;
+      text-shadow: 0px 0px 5px #ffffff;
+    }
+  }
+
+  .legal {
+    text-align: left;
+    p {
+      font-size: 12px;
+    }
+
+    a {
+      color: $azul;
+      text-shadow: 0px 0px 5px #ffffff;
+      text-decoration: none;
+    }
+  }
+
+  .forgotPasswordContainer {
+    display: flex;
+    justify-content: center;
+
+    button {
+      outline: none;
+      a {
+        /* color: #333333 !important;
+      text-shadow: 0px 0px 5px #ffffff; */
+        text-decoration: none;
+        outline: none;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .title {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    p {
+      align-items: center;
+      display: flex;
+      font-size: 18px;
+      height: 34px;
+      justify-content: center;
+    }
+  }
+
+  .submitEmail {
+    align-items: center;
+    background-color: $azul !important;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover{
+      cursor: pointer;
+    }
+
+    .ico {
+      color: #fff;
+    }
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
+
+.containerForm {
+  color: #fff;
+  cursor: default;
+  max-width: 550px;
+  max-height: 530px;
+  min-height: 530px;
+
+  position: relative;
+  transition: $transicion600ms;
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+  z-index: 2;
+
+  .front,
+  .newPassword {
+    backface-visibility: hidden;
+    border: 1px solid transparent;
+    max-height: 420px;
+    min-height: 420px;
+    position: relative;
+    transition: $transicion600ms;
+    z-index: 1;
+    box-shadow: 0px 0px 5px transparent;
+  }
+
+  .newPassword {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    max-height: 280px;
+    min-height: 280px;
+  }
+
+  .backRight,
+  .backLeft {
+    backface-visibility: hidden;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 5px transparent;
+  }
+
+  .backRight {
+    max-height: 373px;
+    min-height: 373px;
+    transition: $transicion600ms;
+    transform: rotateY(180deg);
+    z-index: 15;
+  }
+
+  .backLeft {
+    transform: rotateY(-180deg);
+    z-index: 10;
+
+    max-height: 300px;
+    min-height: 300px;
+
+    .containerInput {
+      padding-right: 0;
+    }
+
+    .buttonBack {
+      position: relative;
+
+      justify-content: flex-start;
+      margin: 0;
+
+      a {
+        align-items: center;
+        background-color: transparent;
+        border-radius: 100%;
+        display: flex;
+        height: 30px;
+        justify-content: center;
+        position: absolute;
+        width: 30px;
+
+        &.animationCircle.active:before {
+          transform: none;
+        }
+      }
+    }
+  }
+
+  &.activeRight {
+    transform: rotateY(180deg);
+    .backRight {
+      max-height: 530px;
+      min-height: 530px;
+      transition: $transicion600ms;
+    }
+    .backLeft {
+      display: none;
+    }
+
+    & > .front {
+      margin-bottom: 113px;
+      transition: $transicion600ms;
+    }
+  }
+
+  &.activeLeft {
+    transform: rotateY(-180deg);
+    display: block;
+
+    .backRight {
+      display: none !important;
+    }
+
+    & > .front {
+      max-height: 300px;
+      min-height: 300px;
+      margin-bottom: 0;
+      transition: $transicion600ms;
+    }
+  }
+}
+
+.containerSesion {
+  margin: 15vh 0vh 5vh 0vh;
+  min-height: calc(70vh + 22px);
+  width: 85%;
+}
+.checkBoxContainer {
+  .icon-check-circle {
+    margin-right: 7px;
+    margin-left: 10px;
+
+    color: #333333;
+    text-shadow: 0px 0px 5px #ffffff;
+
+    &.active {
+      color: #4353ff;
+    }
+  }
+}
+.animationCircle {
+  .ico {
+    color: #fff;
+    text-shadow: none;
+  }
+
+  &.active:before {
+    animation: circle 0.6s 0.6s forwards;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    content: "";
+    height: 24px;
+
+    transform: translate(-50%, -50%);
+    width: 24px;
+    position: absolute;
+  }
+}
+
+.activeFocus {
+  border: 1px solid $azul !important;
+  transition: $transicion600ms !important;
+}
+
+.tarjetaFocus {
+  animation: tarjetaFocus 2s;
+}
+
+@media screen and (max-width: 1024px) {
+  .containerSesion {
+    min-height: 430px;
+    width: 90%;
+
+    .containerForm {
+      order: 10;
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .containerSesion {
+    align-items: center;
+  }
+  .formGroupSesion {
+    max-height: 455px;
+    max-width: 95vw;
+    min-height: 455px;
+    min-width: 95vw;
+    padding: 20px;
+
+    .containerRegister {
+      margin-bottom: 12px;
+    }
+
+    .legal {
+      margin-top: 10px;
+
+      p {
+        font-size: 11px;
+      }
+    }
+  }
+
+  .containerForm {
+    .front {
+      max-height: 415px;
+      min-height: 415px;
+    }
+    .backLeft {
+      max-height: 260px;
+      min-height: 260px;
+
+      p {
+        font-size: 14px;
+      }
+
+      .title {
+        p {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+
+  .mainForLogin {
+    margin-top: 25px;
+  }
+}
+
+@keyframes circle {
+  0% {
+    border-color: transparent;
+    transform: rotate(0deg);
+  }
+
+  25% {
+    border-color: transparent $azul transparent transparent;
+  }
+
+  50% {
+    border-color: transparent $azul $azul transparent;
+  }
+
+  75% {
+    border-color: transparent $azul $azul $azul;
+  }
+  100% {
+    border-color: $azul;
+    transform: rotate(-700deg);
+  }
+}
+
+@keyframes tarjetaFocus {
+  1% {
+    color: #333333 !important;
+    box-shadow: 0px 0px 5px #333;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+
+.formGroupSesion button a,
+.formGroupSesion .forgotPasswordContainer a,
+.formGroupSesion .containerRegister button {
+  color: #4353ff;
+  text-shadow: 0px 0px 5px #ffffff;
+}
