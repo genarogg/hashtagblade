@@ -20,7 +20,7 @@ const auth = {
   pass: process.env.PAYPALSECRET,
 };
 
-const create_subscription = async (_root, { token, type }) => {
+const createSubscription = async (_root, { token, type }) => {
   if (type === "" || token === "") {
     throw new Error("Incorrect values");
   }
@@ -95,4 +95,4 @@ const create_subscription = async (_root, { token, type }) => {
   }
 };
 
-export { create_subscription };
+export { createSubscription };

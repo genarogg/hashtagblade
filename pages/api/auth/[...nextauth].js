@@ -4,10 +4,6 @@ import jwt from "jsonwebtoken";
 
 const config = {
   providers: [
-    Providers.GitHub({
-      clientId: process.env.GITHUBID,
-      clientSecret: process.env.GITHUBSECRET,
-    }),
     Providers.Twitter({
       clientId: process.env.TWITTERKEY,
       clientSecret: process.env.TWITTERSECRET,
@@ -19,6 +15,10 @@ const config = {
     Providers.Google({
       clientId: process.env.GOOGLEID,
       clientSecret: process.env.GOOGLESECRET,
+    }),
+    Providers.GitHub({
+      clientId: process.env.GITHUBID,
+      clientSecret: process.env.GITHUBSECRET,
     }),
   ],
   callbacks: {

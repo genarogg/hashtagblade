@@ -276,6 +276,27 @@ const registerWithSocial = async (_root, { input }) => {
       return googleToken;
       break;
 
+    case "github":
+      const existGithub = await userModel.findOne({ githubId: decode.id });
+
+      if (existGithub) {
+        throw new Error("Github Exist");
+      }
+
+      let newGithubUser = await new userModel({
+        ...input,
+        githubId: decode.id,
+        image: decode.image,
+        email: decode.email,
+      }).save();
+
+      const githubToken = await jwt.sign(
+        { _id: newGithubUser._id },
+        process.env.TOKENKEY
+      );
+
+      return githubToken;
+      break;
     default:
       throw new Error("Invalid Type");
       break;

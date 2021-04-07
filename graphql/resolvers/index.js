@@ -9,14 +9,14 @@ import {
 
 import { verifySocial, registerWithSocial } from "./social.resolvers";
 
-import { create_subscription } from "./payments.resolvers";
+import { createSubscription } from "./payments.resolvers";
 
 const resolvers = {
   Query: {
     getMyUser,
     passwordRequest,
     verifySocial,
-    create_subscription,
+    createSubscription,
   },
   Mutation: {
     register,

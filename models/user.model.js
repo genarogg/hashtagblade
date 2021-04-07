@@ -27,6 +27,9 @@ const userModel = new mongoose.Schema(
 
     //google
     googleId: { type: String },
+
+    //github
+    githubId: { type: String },
   },
   {
     timestamps: true,
