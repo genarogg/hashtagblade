@@ -1,0 +1,106 @@
+footer {
+  align-self: flex-end;
+  align-items: center;
+
+  justify-content: center;
+  width: 100%;
+  z-index: 0;
+
+  .derechos {
+    align-items: center;
+    display: flex;
+
+    p {
+     
+
+      align-items: center;
+    color: #333;
+    display: inline-flex;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 22px;
+    
+    text-decoration: none;
+    text-transform: uppercase;
+    }
+  }
+
+  .containerFooter {
+    align-items: center;
+    /* border-top: $borderHeaderFooter; */
+    box-shadow: 0px -1px 10px 0px rgba(#000, .1);
+    display: flex;
+    flex-wrap: wrap;
+    height: 50px;
+    justify-content: space-between;
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  footer {
+    .col-md-5 {
+      flex-basis: 48%;
+      max-width: 48%;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  footer {
+    .containerFooter {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) and (min-width: 1024px) {
+  footer {
+    .containerFooter {
+      width: 95%;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  footer {
+    .col-sm-6 {
+      flex-basis: 46%;
+      max-width: 46%;
+    }
+
+    .derechos p {
+      position: absolute;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    .derechos {
+      background: #000;
+      height: 30px;
+      justify-content: center;
+      order: 1;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  footer {
+    p {
+      font-size: 13px;
+    }
+
+    .redesSociales {
+      ul {
+        margin: 0 auto;
+      }
+    }
+  }
+}
