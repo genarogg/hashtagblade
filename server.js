@@ -1,7 +1,9 @@
 const express = require("express");
 const next = require("next");
 const path = require("path");
-const cors = require("cors");
+const paypal = require("paypal-rest-sdk");
+
+require("dotenv").config();
 
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });

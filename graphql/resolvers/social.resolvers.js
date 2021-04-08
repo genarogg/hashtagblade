@@ -217,12 +217,18 @@ const registerWithSocial = async (_root, { input }) => {
         throw new Error("Twitter Exist");
       }
 
-      const newTwitterUser = await new userModel({
-        ...input,
-        twitterId: decode.id,
-        image: decode.image,
-        email: decode.email,
-      }).save();
+      const newTwitterUser = decode.image
+        ? await new userModel({
+            ...input,
+            twitterId: decode.id,
+            image: decode.image,
+            email: decode.email,
+          }).save()
+        : await new userModel({
+            ...input,
+            twitterId: decode.id,
+            email: decode.email,
+          }).save();
 
       const twitterToken = await jwt.sign(
         { _id: newTwitterUser._id },
@@ -239,12 +245,18 @@ const registerWithSocial = async (_root, { input }) => {
         throw new Error("Facebook Exist");
       }
 
-      const newFacebookUser = await new userModel({
-        facebookId: decode.id,
-        ...input,
-        image: decode.image,
-        email: decode.email,
-      }).save();
+      const newFacebookUser = decode.image
+        ? await new userModel({
+            ...input,
+            facebookId: decode.id,
+            image: decode.image,
+            email: decode.email,
+          }).save()
+        : await new userModel({
+            ...input,
+            facebookId: decode.id,
+            email: decode.email,
+          }).save();
 
       const facebookToken = await jwt.sign(
         { _id: newFacebookUser._id },
@@ -261,12 +273,18 @@ const registerWithSocial = async (_root, { input }) => {
         throw new Error("Google Exist");
       }
 
-      const newGoogleUser = await new userModel({
-        ...input,
-        googleId: decode.id,
-        image: decode.image,
-        email: decode.email,
-      }).save();
+      const newGoogleUser = decode.image
+        ? await new userModel({
+            ...input,
+            googleId: decode.id,
+            image: decode.image,
+            email: decode.email,
+          }).save()
+        : await new userModel({
+            ...input,
+            googleId: decode.id,
+            email: decode.email,
+          }).save();
 
       const googleToken = await jwt.sign(
         { _id: newGoogleUser._id },
@@ -283,12 +301,18 @@ const registerWithSocial = async (_root, { input }) => {
         throw new Error("Github Exist");
       }
 
-      let newGithubUser = await new userModel({
-        ...input,
-        githubId: decode.id,
-        image: decode.image,
-        email: decode.email,
-      }).save();
+      let newGithubUser = decode.image
+        ? await new userModel({
+            ...input,
+            githubId: decode.id,
+            image: decode.image,
+            email: decode.email,
+          }).save()
+        : await new userModel({
+            ...input,
+            githubId: decode.id,
+            email: decode.email,
+          }).save();
 
       const githubToken = await jwt.sign(
         { _id: newGithubUser._id },

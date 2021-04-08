@@ -1,19 +1,10 @@
-import request from "request";
 import jwt from "jsonwebtoken";
 import userModel from "../../models/user.model";
-
-const getSubscription = (subscriptionId, auth) => {
-  return new Promise((resolve, reject) => {
-    request.get(
-      `${process.env.PAYPALAPI}/v1/billing/subscriptions/${subscriptionId}`,
-      { auth, json: true },
-      (err, response, body) => {
-        if (err) reject(err);
-        resolve(body);
-      }
-    );
-  });
-};
+import subsModel from "../../models/subsucription.model";
+import {
+  generateSubscription,
+  getSubscription,
+} from "../../functions/subscriptionfunctions";
 
 const auth = {
   user: process.env.PAYPALID,
@@ -37,11 +28,15 @@ const createSubscription = async (_root, { token, type }) => {
     throw new Error("User doesn't exist");
   }
 
-  if (myUser.subscriptionId) {
-    const plan = await getSubscription(myUser.subscriptionId, auth);
+  const mySub = await subsModel.findOne({ clientId: myUser._id });
+  console.log(mySub);
+
+  if (mySub) {
+    const plan = await getSubscription(mySub.paypalId, auth);
     if (plan.status == "ACTIVE") {
       throw new Error("subscription active use update plan");
     }
+    console.log(plan);
     if (
       plan.name != "RESOURCE_NOT_FOUND" &&
       ((plan.plan_id === process.env.PLANBASIC &&
@@ -54,6 +49,7 @@ const createSubscription = async (_root, { token, type }) => {
           type === "advanced" &&
           !myUser.plan))
     ) {
+      console.log("ok2");
       return plan.links.find((v) => v.rel === "approve").href;
     }
   }
@@ -61,36 +57,75 @@ const createSubscription = async (_root, { token, type }) => {
   //Choose plan type
   switch (type) {
     case "basic":
-      request.post(
-        `${process.env.PAYPALAPI}/v1/billing/subscriptions`,
-        {
-          auth,
-          body: {
-            plan_id: process.env.PLANBASIC,
-            quantity: 1,
-            subscriber: {
-              name: {
-                given_name: myUser.first_name,
-                surname: myUser.last_name,
-              },
-              email_address: myUser.email,
-            },
-            return_url:
-              "http://localhost:3000/api/payments/confirm_subscription",
-            cancel_url: "http://localhost:3000/",
-          },
-          json: true,
-        },
-        async (err, response) => {
-          if (err) {
-            throw new Error(err);
-          }
-          await userModel.findByIdAndUpdate(myUser._id, {
-            subscriptionId: response.body.id,
-          });
-          return response.body.links[0].href;
-        }
+      const plan = await generateSubscription(
+        myUser,
+        process.env.PLANBASIC,
+        auth
       );
+
+      if (!mySub) {
+        await new subsModel({
+          paypalId: plan.id,
+          clientId: myUser._id,
+          status: plan.status,
+          type: "basic",
+        }).save();
+      } else {
+        await subsModel.findByIdAndUpdate(mySub._id, {
+          paypalId: plan.id,
+          type: "basic",
+        });
+      }
+
+      console.log("ok");
+
+      return plan.links.find((v) => v.rel === "approve").href;
+      break;
+    case "medio":
+      const plan_medio = await generateSubscription(
+        myUser,
+        process.env.PLANMEDIO,
+        auth
+      );
+
+      if (!mySub) {
+        await new subsModel({
+          paypalId: plan_medio.id,
+          clientId: myUser._id,
+          status: plan_medio.status,
+          type: "medio",
+        }).save();
+      } else {
+        await subsModel.findByIdAndUpdate(mySub._id, {
+          paypalId: plan_medio.id,
+          type: "medio",
+        });
+      }
+
+      return plan_medio.links.find((v) => v.rel === "approve").href;
+      break;
+    case "advanced":
+      const plan_advanced = await generateSubscription(
+        myUser,
+        process.env.PLANADVANCED,
+        auth
+      );
+
+      if (!mySub) {
+        await new subsModel({
+          paypalId: plan_advanced.id,
+          clientId: myUser._id,
+          status: plan_advanced.status,
+          type: "advanced",
+        }).save();
+      } else {
+        await subsModel.findByIdAndUpdate(mySub._id, {
+          paypalId: plan_advanced.id,
+          type: "advanced",
+        });
+      }
+
+      return plan_advanced.links.find((v) => v.rel === "approve").href;
       break;
   }
 };
