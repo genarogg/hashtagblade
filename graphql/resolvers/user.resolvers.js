@@ -232,12 +232,12 @@ const updateProfile = async (_root, { input }) => {
   let querys = {};
 
   for (let i in input) {
-    if (input[i] && input[i] != "" && i == "password") {
+    if (input[i] && input[i] !== "" && i === "password") {
       if (input[i].length < 8) {
         throw new Error("Type a better password");
       }
       querys[i] = await encryptNewPassword(input[i]);
-    } else if (input[i] && input[i] != "") {
+    } else if (input[i] && input[i] !== "" && i !== "email") {
       querys[i] = input[i];
     }
   }
