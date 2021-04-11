@@ -8,6 +8,7 @@ import "../styles/globals/globals.css"
 import "../styles/form/formRegisterLongi.css"
 import "../styles/form/loginRedes.css"
 import "../styles/home/homeLogin.css"
+import "../styles/home/CardPrecios.css"
 
 function MyApp({ Component, pageProps }) {
   return (
