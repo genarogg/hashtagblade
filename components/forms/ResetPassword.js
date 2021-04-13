@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
 import A from "../nano/A";
 import $ from "../nano/$";
 
 const resetPassword = () => {
-  const [data, setData] = useState({ error: null, message: "", done: null });
-
   const voltearIniciar = () => {
     const tarjeta = $("containerRegisterLogin");
 
@@ -50,40 +48,6 @@ const resetPassword = () => {
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const padre = e.target.parentNode;
-
-    const req = await fetch("/api/change_password_req", {
-      method: "POST",
-      headers: new Headers([["Content-type", "application/json"]]),
-      body: JSON.stringify({
-        email: e.target.resetPassword.value,
-        uri: location.origin,
-      }),
-    });
-
-    const res = await req.json();
-
-    if (res.error) {
-      padre.style.border = "red 1px solid";
-      setData({
-        done: false,
-        error: true,
-        message: res.error,
-      });
-      return;
-    }
-
-    padre.style.border = "green 1px solid";
-    setData({
-      done: true,
-      error: false,
-      message: "Email enviado",
-    });
-  };
-
   return (
     <>
       <div
@@ -109,7 +73,7 @@ const resetPassword = () => {
           <p className="col-xs-12">Restablecer la contraseña</p>
           <hr className="titleHr" />
         </div>
-        <form onSubmit={handleSubmit}>
+        <form>
           <div className="row col-xs-12 containerInput">
             <label htmlFor="resetPassword" className="icoBackground col-xs-1">
               <span className="ico icon-mail-envelope-closed"></span>
@@ -132,30 +96,6 @@ const resetPassword = () => {
             Ingrese el correo con el que se registro, Y se Te enviará un enlace
             con el que podrá restablecer su contraseña.
           </p>
-
-          {data.done && (
-            <p
-              style={{
-                color: "green",
-                margin: "auto",
-                textAlign: "center",
-              }}
-            >
-              {data.message}
-            </p>
-          )}
-          {data.error && (
-            <p
-              style={{
-                color: "red",
-                margin: "auto",
-                textAlign: "center",
-              }}
-            >
-              {data.message}
-            </p>
-          )}
-          <br />
         </form>
       </div>
     </>
