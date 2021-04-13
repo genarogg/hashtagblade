@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import A from "../nano/A";
 import Buttons from "./Buttons";
-import Router from "next/router";
 import $ from "../nano/$";
 import RedesLogin from "./RedesLogin";
 
 const Register = () => {
-  const [data, setData] = useState({ error: null, message: "" });
-
   const focus = () => {
     const focusClass = "activefocus";
     const activo = document.activeElement.id;
@@ -19,12 +16,6 @@ const Register = () => {
     const removeClass = (id) => {
       return $(`${id}`).parentNode.classList.remove(`${focusClass}`);
     };
-
-    /*  if (activo === "registerNombre") {
-      addClass("activeFocus");
-    } else {
-      removeClass("registerNombre", "activeFocus");
-    } */
 
     if (activo === "registerUserName") {
       addClass();
@@ -58,46 +49,6 @@ const Register = () => {
       removeClass("registerPasswordConfirm");
     }
   };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const padre = e.target.parentNode;
-    e.target.elements[8].innerHTML = "...";
-
-    if (
-      e.target.registerPassword.value !== e.target.registerPasswordConfirm.value
-    ) {
-      e.target.elements[8].innerHTML = "Crear cuenta";
-      padre.style.border = "red 1px solid";
-      setData({
-        error: true,
-        message: "Las contraseñas no concuerdan",
-      });
-      return;
-    }
-
-    const req = await fetch("/api/register", {
-      method: "POST",
-      headers: new Headers([["Content-type", "application/json"]]),
-      body: JSON.stringify({
-        email: e.target.registerCorreo.value,
-        nickname: e.target.registerUserName.value,
-        password: e.target.registerPassword.value,
-      }),
-    });
-
-    const res = await req.json();
-    if (res.error) {
-      padre.style.border = "red 1px solid";
-      e.target.elements[8].innerHTML = "Crear cuenta";
-      setData({
-        error: true,
-        message: res.error,
-      });
-      return;
-    }
-    localStorage.setItem("token", `Bearer ${res.token}`);
-    Router.reload();
-  };
 
   return (
     <div /*  */
@@ -108,24 +59,7 @@ const Register = () => {
       }}
     >
       <Buttons />
-      <form onSubmit={handleSubmit} className="row">
-        {/* No se nesecita*/}
-        {/* <div className="row col-xs-12 containerInput">
-          <label htmlFor="registerNombre" className="icoBackground col-xs-1">
-            <span className="ico icon-user"></span>
-          </label>
-          <input
-            type="text"
-            placeholder="Nombre Completo"
-            maxLength="24"
-            id="registerNombre"
-            name="registerNombre"
-            className="col-xs-11"
-            onClick={() => {
-              focus();
-            }}
-          />
-        </div> */}
+      <form className="row">
         <br />
         <div className="row col-xs-12 containerInput">
           <label htmlFor="registerUserName" className="icoBackground col-xs-1">
@@ -186,18 +120,6 @@ const Register = () => {
           />
         </div>
 
-        {data.error && (
-          <p
-            style={{
-              color: "red",
-              margin: "auto",
-              textAlign: "center",
-              marginBottom: 5,
-            }}
-          >
-            {data.message}
-          </p>
-        )}
         <RedesLogin />
 
         <div className="containerRegister">
@@ -217,10 +139,9 @@ const Register = () => {
           Al registrarte, estas aceptando los{" "}
           <A href={"/terminos-y-condiciones"}>Términos y condiciones</A>, y la
           <A href="/politica-de-privacidad-y-protección-de-datos">
-            {" "}
             Política de privacidad y protección de datos
-          </A>{" "}
-          de COMFECO.
+          </A>
+          de TagBlade.
         </p>
       </div>
     </div>

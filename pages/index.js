@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-/* import { useQuery, gql } from "@apollo/client"; */
+import React from "react";
 import Layout from "../components/general/home/Layout";
 import Index from "../components/views/home";
 
