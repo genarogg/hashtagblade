@@ -310,7 +310,7 @@ header {
         padding: 20px 0 20px 10px;
 
         a{
-          color: $negro;
+          color: $gris;
           transition: $transicion600ms;
 
           span {
@@ -435,7 +435,6 @@ header {
   .headerTablet {
     align-items: center;
     background: $colorPurpleOscuro;
-    /* border-bottom: $borderHeaderFooter; */
     justify-content: center;
     height: 66px;
     position: fixed;

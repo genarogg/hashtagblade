@@ -17,6 +17,8 @@ $formBackground: $colorPurpleOscuro; */
 /* $colorGray2: #555555;
 $colorGray3: #777879;
 $colorGray1: #2e2e2e; */
+/* $colorYellow1: #d39c00;
+$colorYellow3: #ffc41f; */
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -585,7 +587,6 @@ header .dataUserDisplay {
         -ms-flex-align: center;
             align-items: center;
     background: #390f64;
-    /* border-bottom: $borderHeaderFooter; */
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
