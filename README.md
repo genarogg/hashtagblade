@@ -1,34 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <a href="https://tagblade.netlify.app/" target="_blank"
+        rel="noopener">
+    <img alt="Team react.js" src="https://i.postimg.cc/Dy8KMf4Z/logo1.png" width="120" target="_blank"
+        rel="noopener"/>
+  </a>
+</p>
+<h1 align="center">
+  TagBlade
+</h1>
 
-## Getting Started
+_Link del proyecto_ <a href="https://tagblade.netlify.app/">ver.</a>
 
-First, run the development server:
+----
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<h2>Inicio 🚀❤️</h2>
+  <p>Encontraras todo el contenido publico de tagBlade</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+----
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Components 🧐
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+** NanoComponents **
+  
+  *A.js*: Componente que reemplaza las etiquetas <code>a y Link</code>
+  <br/>
+  *Icono.js*: Componente util para poner iconos y con todas sus propiedades de seguridad 
+  <br/>
+  *$.js*: Para obtener los id con sintaxis comoda y simple
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Tecnologias utilizadas
 
-## Learn More
+  * NextJS.
+  * ReactJS.
+  * JavaScript.
+  * Sass | CSS.
+  * Iconos fuentes (Icomoon).
+  * Hosting: Netlify.
+  * DB: MongoDB
 
-To learn more about Next.js, take a look at the following resources:
+  ### Paquetes utilizadas:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    * @apollo/client: ^3.3.13
+    * apollo-server-micro: ^2.22.2
+    * bcrypt-nodejs: ^0.0.3
+    * graphql: ^15.5.0
+    * jsonwebtoken: ^8.5.1
+    * mongoose: ^5.12.3
+    * next: 10.1.3
+    * next-auth: ^3.13.3
+    * nodemailer: ^6.5.0
+    * react: 17.0.2
+    * react-dom: 17.0.2

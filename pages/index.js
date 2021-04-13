@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 /* import { useQuery, gql } from "@apollo/client"; */
 import Layout from "../components/general/home/Layout";
-import HomeLogin from "../components/views/home/HomeLogin";
+import Index from "../components/views/home";
 
 /* const QUERY = gql`
   query {
@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <Layout>
-      <HomeLogin />
+      <Index />
     </Layout>
   );
 };
