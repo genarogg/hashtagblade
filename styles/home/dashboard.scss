@@ -90,6 +90,17 @@ main {
   }
 } */
 
+.heading-block-home {
+  .title {
+    color: $gris;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 60px 0 15px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
 .heading-block::before,
 .heading-block::after,
 .heading-block-home::after {

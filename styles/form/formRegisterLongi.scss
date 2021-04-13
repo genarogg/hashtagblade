@@ -19,8 +19,8 @@
 
   p {
     text-align: left;
-    color: #333333 !important;
-    text-shadow: 0px 0px 5px #ffffff;
+    color: $gris !important;
+    text-shadow: 0px 0px 5px #fff;
   }
 
   button {
@@ -56,7 +56,6 @@
       border-radius: 4px;
       height: 4px;
       margin: 0px auto 30px;
-
       width: 48px;
     }
   }
@@ -73,7 +72,7 @@
 
     .containerInput {
       align-items: center;
-      background-color: rgba(#fff, 0.3) !important;
+      background-color: $transparenciasInternas !important;
       border: 1px solid transparent;
       border-radius: 4px;
       height: 39px;
@@ -107,7 +106,7 @@
     background-color: transparent !important;
     border: 3px solid transparent;
     border-radius: 4px;
-    color: #333333 !important;
+    color: $gris !important;
     text-shadow: 0px 0px 5px #ffffff;
 
     font-weight: 300;
@@ -119,17 +118,17 @@
       outline: none;
     }
     &::-webkit-input-placeholder {
-      color: #333333 !important;
+      color: $gris !important;
       text-shadow: 0px 0px 5px #ffffff;
     }
 
     &::-moz-placeholder {
-      color: #333333 !important;
+      color: $gris !important;
       text-shadow: 0px 0px 5px #ffffff;
     }
 
     &::-ms-input-placeholder {
-      color: #333333 !important;
+      color: $gris !important;
       text-shadow: 0px 0px 5px #ffffff;
     }
   }
@@ -189,8 +188,6 @@
     button {
       outline: none;
       a {
-        /* color: #333333 !important;
-      text-shadow: 0px 0px 5px #ffffff; */
         text-decoration: none;
         outline: none;
 
@@ -226,7 +223,7 @@
       outline: none;
     }
 
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
 
@@ -371,11 +368,11 @@
     margin-right: 7px;
     margin-left: 10px;
 
-    color: #333333;
+    color: $gris;
     text-shadow: 0px 0px 5px #ffffff;
 
     &.active {
-      color: #4353ff;
+      color: $azul;
     }
   }
 }
@@ -493,8 +490,8 @@
 
 @keyframes tarjetaFocus {
   1% {
-    color: #333333 !important;
-    box-shadow: 0px 0px 5px #333;
+    color: $gris !important;
+    box-shadow: 0px 0px 5px $gris;
   }
   100% {
     border-color: transparent;
@@ -504,6 +501,6 @@
 .formGroupSesion button a,
 .formGroupSesion .forgotPasswordContainer a,
 .formGroupSesion .containerRegister button {
-  color: #4353ff;
+  color: $azul;
   text-shadow: 0px 0px 5px #ffffff;
 }

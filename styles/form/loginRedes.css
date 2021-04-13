@@ -47,30 +47,6 @@ $colorYellow3: #ffc41f; */
           justify-content: center;
   height: 30px;
   width: 30px;
-  /*  &:hover:nth-child(1) {
-     span.googleHover {
-       color: #db4a39 !important;
-       transition: $transicion600ms;
-     }
-   }
-   &:hover:nth-child(2) {
-     span.facebookHover {
-       color: #3b5998 !important;
-       transition: $transicion600ms;
-     }
-   }
-   &:hover:nth-child(3) {
-     span.twitterHover {
-       color: #00acee !important;
-       transition: $transicion600ms;
-     }
-   }
-   &:hover:nth-child(4) {
-     span.githubHover {
-       color: #ee216b !important;
-       transition: $transicion600ms;
-     }
-   } */
 }
 .redesSocialesAnimadas ul li:hover .ico {
   color: #fff !important;

@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Router from "next/router";
+import React, { useEffect } from "react";
 import Link from "next/link";
 
 import Logo from "../../svg/Logo";
@@ -68,7 +67,9 @@ const Header = () => {
         <div className="row containerHeader headerDesktop">
           <div className="col-xs-3  col-sm-2 center-xs">
             <A href="/">
-              <div className="img"><Logo /></div>
+              <div className="img">
+                <Logo />
+              </div>
             </A>
             {<div className="borderRight"></div>}
           </div>
