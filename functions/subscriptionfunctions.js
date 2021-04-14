@@ -1,4 +1,6 @@
 import request from "request";
+import userModel from "../models/user.model";
+import subModel from "../models/subsucription.model";
 
 const getSubscription = (subscriptionId, auth) => {
   return new Promise((resolve, reject) => {
@@ -45,4 +47,18 @@ const generateSubscription = (userObject, planType, auth) => {
   });
 };
 
-export { getSubscription, generateSubscription };
+const checkSubscription = async (userId) => {
+  const myUser = await userModel.findById(userId);
+  if (!myUser) {
+    throw new Error("Unauthorized");
+  }
+
+  const searchSub = await subModel.findOne({ clientId: myUser._id });
+  if (!searchSub) {
+    return null;
+  }
+
+  return searchSub;
+};
+
+export { getSubscription, generateSubscription, checkSubscription };
