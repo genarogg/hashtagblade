@@ -9,7 +9,7 @@ import {
 
 import { verifySocial, registerWithSocial } from "./social.resolvers";
 
-import { createSubscription } from "./payments.resolvers";
+import { createSubscription, updateSubscription } from "./payments.resolvers";
 
 const resolvers = {
   Query: {
@@ -17,6 +17,7 @@ const resolvers = {
     passwordRequest,
     verifySocial,
     createSubscription,
+    updateSubscription,
   },
   Mutation: {
     register,

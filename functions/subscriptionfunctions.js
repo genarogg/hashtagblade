@@ -61,4 +61,32 @@ const checkSubscription = async (userId) => {
   return searchSub;
 };
 
-export { getSubscription, generateSubscription, checkSubscription };
+const getUpdateSubscription = (subscriptionId, planId, auth) => {
+  return new Promise((resolve, reject) => {
+    request.post(
+      `${process.env.PAYPALAPI}/v1/billing/subscriptions/${subscriptionId}/revise`,
+      {
+        auth,
+        json: true,
+        body: {
+          plan_overridden: true,
+          plan_id: planId,
+        },
+      },
+      (err, response, body) => {
+        if (err) {
+          reject(err);
+        }
+
+        resolve(body);
+      }
+    );
+  });
+};
+
+export {
+  getSubscription,
+  generateSubscription,
+  checkSubscription,
+  getUpdateSubscription,
+};

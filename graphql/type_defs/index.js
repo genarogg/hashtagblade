@@ -6,6 +6,7 @@ const typeDefs = gql`
     passwordRequest(input: inputPasswordRequest!): String!
     verifySocial(token: String!): String!
     createSubscription(token: String!, type: String!): String!
+    updateSubscription(token: String!, type: String!): String!
   }
 
   type Mutation {

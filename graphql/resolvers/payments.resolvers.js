@@ -4,6 +4,7 @@ import subsModel from "../../models/subsucription.model";
 import {
   generateSubscription,
   getSubscription,
+  getUpdateSubscription,
 } from "../../functions/subscriptionfunctions";
 
 const auth = {
@@ -33,10 +34,9 @@ const createSubscription = async (_root, { token, type }) => {
 
   if (mySub) {
     const plan = await getSubscription(mySub.paypalId, auth);
-    if (plan.status == "ACTIVE") {
+    if (plan.status === "ACTIVE") {
       throw new Error("subscription active use update plan");
     }
-    console.log(plan);
     if (
       plan.name != "RESOURCE_NOT_FOUND" &&
       ((plan.plan_id === process.env.PLANBASIC &&
@@ -62,6 +62,9 @@ const createSubscription = async (_root, { token, type }) => {
         process.env.PLANBASIC,
         auth
       );
+
+      console.log(plan);
+      console.log("Hola");
 
       if (!mySub) {
         await new subsModel({
@@ -127,7 +130,67 @@ const createSubscription = async (_root, { token, type }) => {
 
       return plan_advanced.links.find((v) => v.rel === "approve").href;
       break;
+
+    default:
+      throw new Error("Invalid types");
   }
 };
 
-export { createSubscription };
+const updateSubscription = async (_root, { token, type }) => {
+  if (token === "" || type === "") {
+    throw new Error("Invalid Values");
+  }
+
+  let decode;
+  try {
+    decode = await jwt.verify(token, process.env.TOKENKEY);
+  } catch {
+    throw new Error("Invalud Token");
+  }
+
+  const myUser = await userModel.findById(decode._id);
+  if (!myUser) {
+    throw new Error("Unauthorized");
+  }
+
+  const mySub = await subsModel.findOne({ clientId: myUser._id });
+  if (!mySub) {
+    throw new Error("Subscription not added to this account");
+  }
+
+  switch (type) {
+    case "basic":
+      const update_basic = await getUpdateSubscription(
+        mySub.paypalId,
+        process.env.PLANBASIC,
+        auth
+      );
+
+      return update_basic.links.find((v) => v.rel === "approve").href;
+      break;
+    case "medio":
+      const update_medio = await getUpdateSubscription(
+        mySub.paypalId,
+        process.env.PLANMEDIO,
+        auth
+      );
+
+      return update_medio.links.find((v) => v.rel === "approve").href;
+      break;
+
+    case "advanced":
+      const update_advanced = await getUpdateSubscription(
+        mySub.paypalId,
+        process.env.PLANADVANCED,
+        auth
+      );
+
+      return update_advanced.links.find((v) => v.rel === "approve").href;
+      break;
+
+    default:
+      throw new Error("Invalid type");
+  }
+};
+
+export { createSubscription, updateSubscription };
