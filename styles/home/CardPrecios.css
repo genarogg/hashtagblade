@@ -53,9 +53,17 @@ $colorYellow3: #ffc41f; */
 .cardSpace .card .textImg {
   height: 220px;
   width: 330px;
-  font-size: 96px;
+  font-size: 84px;
   font-weight: 700;
   color: #fff;
+  /* .tiempo {
+    position: absolute;
+    right: 60px;
+    top: 120px;
+    
+    font-size: 18px;
+    color: $azul;
+  } */
 }
 .cardSpace .card:hover {
   -webkit-transform: translateY(-10px);

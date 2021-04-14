@@ -200,3 +200,180 @@ main {
     min-height: calc(100% - 50px - 90px);
   }
 }
+.caractSpace {
+  width: 100%;
+  min-height: 600px;
+}
+.caractSpace .caract {
+  width: 80%;
+  background-color: #fff;
+  min-height: 30px;
+}
+
+/* Paleta de colores */
+/* colores de los team */
+/* 
+$formBackground: $colorPurpleOscuro; */
+/* fonts */
+/* transicion */
+/* bordes */
+/* Eliminados */
+/* $colorFuchia1: #69156a; */
+/* $colorFuchia2: #8a178c; */
+/* $colorFuchia3: #b824bb; */
+/* $colorFuchia5: #e480e5; */
+/* $colorFuchia6: #ecadf6; */
+/* $colorPurple4: #9349dd;*/
+/* $colorPurple6: #d7b7ff; */
+/* */
+/* $colorGray2: #555555;
+$colorGray3: #777879;
+$colorGray1: #2e2e2e; */
+/* $colorYellow1: #d39c00;
+$colorYellow3: #ffc41f; */
+.CardPrecios,
+.caracteristicas,
+.contacto {
+  padding: 60px 0 0 0;
+  width: 100%;
+}
+
+.cardSpace {
+  margin: auto;
+  width: 80%;
+}
+.cardSpace.col-xs-12 {
+  max-width: 1625px;
+}
+.cardSpace .card {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: 400;
+  min-width: 330px;
+  max-width: 330px;
+  max-height: 475px;
+  margin: 20px;
+  margin-bottom: 45px;
+  text-align: left;
+  -webkit-transition: all ease 0.6s;
+  transition: all ease 0.6s;
+  overflow: hidden;
+  width: 330px;
+  position: relative;
+}
+.cardSpace .card .textImg {
+  height: 220px;
+  width: 330px;
+  font-size: 84px;
+  font-weight: 700;
+  color: #fff;
+  /* .tiempo {
+    position: absolute;
+    right: 60px;
+    top: 120px;
+    
+    font-size: 18px;
+    color: $azul;
+  } */
+}
+.cardSpace .card:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  background-color: #fff;
+  border-radius: 5px;
+  border-collapse: collapse;
+  border: 1px solid #4353ff;
+}
+.cardSpace .card:hover,
+.cardSpace .card:hover * {
+  -webkit-transition: all ease 0.6s;
+  transition: all ease 0.6s;
+}
+.cardSpace .card:hover .seeMore a {
+  border: 1px solid #4353ff;
+  /* background-color: $colorText; */
+  /* color: #; */
+  color: #333;
+}
+.cardSpace .card:hover h4 {
+  border: 1px solid #4353ff;
+  border-left: none;
+  border-right: none;
+}
+.cardSpace .card:hover p {
+  color: #333;
+}
+.cardSpace .card .seeMore {
+  margin: 16px 0;
+  text-shadow: none;
+}
+.cardSpace .card .seeMore a {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #fff;
+  color: #4353ff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 16px;
+  font-weight: 500;
+  height: 35px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  text-decoration: none;
+  -webkit-transition: all ease 0.6s;
+  transition: all ease 0.6s;
+  width: 120px;
+  background-color: transparent;
+  border-radius: 5px;
+  color: #fff;
+}
+.cardSpace .card h4 {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  text-shadow: none;
+  color: #4353ff;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding: 6px 10px 10px 10px;
+  text-align: center;
+  letter-spacing: normal;
+  text-transform: none;
+  text-transform: capitalize;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: none;
+  border-right: none;
+}
+.cardSpace .card p {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.7;
+  text-align: left;
+  padding: 0 30px;
+}
+
+@media screen and (max-width: 1388px) {
+  .cardSpace {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 540px) {
+  .CardPrecios,
+  .caracteristicas,
+  .contacto {
+    padding: 30px 0 0;
+  }
+}
+@media screen and (max-width: 350px) {
+  .cardSpace .card {
+    min-width: 95%;
+    max-width: 96%;
+    max-height: -webkit-max-content;
+    max-height: -moz-max-content;
+    max-height: max-content;
+  }
+}

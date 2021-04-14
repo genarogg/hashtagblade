@@ -8,8 +8,6 @@ import "../styles/lib/icons/style.css";
 import "../styles/globals/globals.css";
 import "../styles/form/formRegisterLongi.css";
 import "../styles/form/loginRedes.css";
-import "../styles/home/CardPrecios.css";
-import "../styles/home/caracteristicas.css";
 
 import "../styles/home/home.css";
 
