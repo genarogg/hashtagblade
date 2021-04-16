@@ -10,6 +10,8 @@ const userModel = new mongoose.Schema(
     country: { type: String },
     gender: { type: String },
     birthdate: { type: String },
+    plan: { type: String },
+    subscriptionId: { type: String },
 
     //default
     password: { type: String },
@@ -25,6 +27,9 @@ const userModel = new mongoose.Schema(
 
     //google
     googleId: { type: String },
+
+    //github
+    githubId: { type: String },
   },
   {
     timestamps: true,

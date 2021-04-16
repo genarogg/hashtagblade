@@ -4,10 +4,6 @@ import jwt from "jsonwebtoken";
 
 const config = {
   providers: [
-    Providers.GitHub({
-      clientId: process.env.GITHUBID,
-      clientSecret: process.env.GITHUBSECRET,
-    }),
     Providers.Twitter({
       clientId: process.env.TWITTERKEY,
       clientSecret: process.env.TWITTERSECRET,
@@ -20,16 +16,19 @@ const config = {
       clientId: process.env.GOOGLEID,
       clientSecret: process.env.GOOGLESECRET,
     }),
+    Providers.GitHub({
+      clientId: process.env.GITHUBID,
+      clientSecret: process.env.GITHUBSECRET,
+    }),
   ],
   callbacks: {
     async signIn(user, account, profile) {
       /* console.log({ user, account, profile }); */
-      console.log(profile.entities.description);
       const token = await jwt.sign(
         { ...user, type: account.provider },
-        process.env.KEY
+        process.env.TOKENKEY
       );
-      return "/register-social?token=" + token;
+      return "/social?token=" + token;
     },
   },
 };
