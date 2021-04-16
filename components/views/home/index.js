@@ -1,7 +1,7 @@
 import React from "react";
 
-import Register from "../../forms/Register";
 import Login from "../../forms/Login";
+import Register from "../../forms/Register";
 import ResetPassword from "../../forms/ResetPassword";
 import HomeDashboard from "./HomeDashboard";
 
