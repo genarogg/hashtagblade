@@ -9,7 +9,7 @@ const Precio = () => {
       <div className="col-xs-12 heading-block-home">
         <h2 className="title">Precios</h2>
       </div>
-      <div className="recentsCards" id="recentsCards">
+      <div className="CardPrecios" id="CardPrecios">
         <div className="row col-xs-12 center-xs  around-xs cardSpace">
           <CardPrecios
             id="precio1"

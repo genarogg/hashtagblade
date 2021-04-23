@@ -1,0 +1,18 @@
+.contacto {
+  .datosContato {
+    width: 80%;
+    padding: 40px 0;
+    .contactoSpace {
+      color: #fff;
+      text-align: left;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      font-family: $fontTitle;
+
+      .logo {
+        justify-content: flex-end;
+        display: flex;
+      }
+    }
+  }
+}

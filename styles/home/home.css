@@ -377,3 +377,22 @@ $colorYellow3: #ffc41f; */
     max-height: max-content;
   }
 }
+.contacto .datosContato {
+  width: 80%;
+  padding: 40px 0;
+}
+.contacto .datosContato .contactoSpace {
+  color: #fff;
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  font-family: "Crete Round", "Lato", sans-serif;
+}
+.contacto .datosContato .contactoSpace .logo {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
