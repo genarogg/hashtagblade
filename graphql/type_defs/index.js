@@ -4,6 +4,9 @@ const typeDefs = gql`
   type Query {
     getMyUser(token: String!): User!
     passwordRequest(input: inputPasswordRequest!): String!
+    verifySocial(token: String!): String!
+    createSubscription(token: String!, type: String!): String!
+    updateSubscription(token: String!, type: String!): String!
   }
 
   type Mutation {
@@ -11,6 +14,7 @@ const typeDefs = gql`
     login(input: loginInput!): String!
     updatePassword(input: newPassword!): String!
     updateProfile(input: profile): User!
+    registerWithSocial(input: inputSocial!): String!
   }
 
   type User {
@@ -57,6 +61,15 @@ const typeDefs = gql`
   input loginInput {
     email: String!
     password: String!
+  }
+
+  input inputSocial {
+    token: String!
+    first_name: String!
+    last_name: String!
+    country: String!
+    birthdate: String!
+    gender: String!
   }
 `;
 

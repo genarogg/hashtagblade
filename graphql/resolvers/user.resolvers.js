@@ -93,14 +93,21 @@ const login = async (_root, { input }) => {
     throw new Error("Type a correct email");
   }
 
+  console.log(input);
+
   //Verify if account exist
   const exist = await userModel.findOne({ email: input.email });
   if (!exist) {
     throw new Error("account doesn't exist");
   }
 
+  if (!exist.password) {
+    throw new Error("This accoun not have password");
+  }
+
   //Verify if the password is equal and send token
   const equal = exist.compare(input.password);
+  console.log(equal);
   if (equal) {
     return await jwt.sign({ _id: exist._id }, process.env.TOKENKEY);
   }
@@ -225,12 +232,12 @@ const updateProfile = async (_root, { input }) => {
   let querys = {};
 
   for (let i in input) {
-    if (input[i] && input[i] != "" && i == "password") {
+    if (input[i] && input[i] !== "" && i === "password") {
       if (input[i].length < 8) {
         throw new Error("Type a better password");
       }
       querys[i] = await encryptNewPassword(input[i]);
-    } else if (input[i] && input[i] != "") {
+    } else if (input[i] && input[i] !== "" && i !== "email") {
       querys[i] = input[i];
     }
   }
