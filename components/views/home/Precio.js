@@ -13,6 +13,7 @@ const Precio = () => {
         <div className="row col-xs-12 center-xs  around-xs cardSpace">
           <CardPrecios
             id="precio1"
+            auxiliarClass={""}
             textPrecio={"5"}
             titleR={data().titleR1}
             contenidoR={data().contenidoR1}
@@ -20,15 +21,16 @@ const Precio = () => {
           />
           <CardPrecios
             id="precio2"
-            auxiliarClass={"cardSenuelo"}
-            textPrecio={"10"}
+            auxiliarClass={"cardSenuelo "}
+            textPrecio={"9"}
             titleR={data().titleR2}
             contenidoR={data().contenidoR2}
             enlaceR={"/"}
           />
           <CardPrecios
             id="precio3"
-            textPrecio={"15"}
+            auxiliarClass={"dosCifras"}
+            textPrecio={"21"}
             titleR={data().titleR3}
             contenidoR={data().contenidoR3}
             enlaceR={"/"}

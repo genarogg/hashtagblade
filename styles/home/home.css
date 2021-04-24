@@ -238,14 +238,14 @@ $colorYellow3: #ffc41f; */
   width: 100%;
 }
 
-.cardSpace {
+.CardPrecios {
   margin: auto;
   width: 80%;
 }
-.cardSpace.col-xs-12 {
+.CardPrecios.col-xs-12 {
   max-width: 1625px;
 }
-.cardSpace .card {
+.CardPrecios .card {
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid #fff;
   color: #fff;
@@ -262,7 +262,33 @@ $colorYellow3: #ffc41f; */
   width: 330px;
   position: relative;
 }
-.cardSpace .card .textImg {
+.CardPrecios .card.cardSenuelo {
+  -webkit-box-shadow: 0 0 0px 2px #ffffff, inset 0px 0px 0px 3px #242d8c;
+          box-shadow: 0 0 0px 2px #ffffff, inset 0px 0px 0px 3px #242d8c;
+}
+.CardPrecios .card .dolar,
+.CardPrecios .card .mes {
+  font-size: 16px;
+  color: #fff;
+  position: absolute;
+}
+.CardPrecios .card .dolar {
+  top: 75px;
+  left: 130px;
+}
+.CardPrecios .card .mes {
+  top: 122px;
+  right: 100px;
+}
+.CardPrecios .card.dosCifras .dolar {
+  top: 76px;
+  left: 105px;
+}
+.CardPrecios .card.dosCifras .mes {
+  top: 122px;
+  right: 69px;
+}
+.CardPrecios .card .textImg {
   height: 220px;
   width: 330px;
   font-size: 84px;
@@ -277,7 +303,7 @@ $colorYellow3: #ffc41f; */
     color: $azul;
   } */
 }
-.cardSpace .card:hover {
+.CardPrecios .card:hover {
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
   background-color: #fff;
@@ -285,30 +311,42 @@ $colorYellow3: #ffc41f; */
   border-collapse: collapse;
   border: 1px solid #4353ff;
 }
-.cardSpace .card:hover,
-.cardSpace .card:hover * {
+.CardPrecios .card:hover,
+.CardPrecios .card:hover * {
   -webkit-transition: all ease 0.6s;
   transition: all ease 0.6s;
 }
-.cardSpace .card:hover .seeMore a {
+.CardPrecios .card:hover .seeMore a {
   border: 1px solid #4353ff;
   /* background-color: $colorText; */
   /* color: #; */
   color: #333;
 }
-.cardSpace .card:hover h4 {
+.CardPrecios .card:hover h4 {
   border: 1px solid #4353ff;
   border-left: none;
   border-right: none;
 }
-.cardSpace .card:hover p {
+.CardPrecios .card:hover p {
+  color: #4353ff;
+}
+.CardPrecios .card:hover p.texto {
   color: #333;
 }
-.cardSpace .card .seeMore {
+.CardPrecios .card:hover .dolar,
+.CardPrecios .card:hover .mes {
+  color: #333;
+}
+.CardPrecios .card:hover.cardSenuelo {
+  -webkit-box-shadow: inset 0px 0px 0px 3px #242d8c;
+          box-shadow: inset 0px 0px 0px 3px #242d8c;
+  border: 1px solid #fff;
+}
+.CardPrecios .card .seeMore {
   margin: 16px 0;
   text-shadow: none;
 }
-.cardSpace .card .seeMore a {
+.CardPrecios .card .seeMore a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -332,7 +370,7 @@ $colorYellow3: #ffc41f; */
   border-radius: 5px;
   color: #fff;
 }
-.cardSpace .card h4 {
+.CardPrecios .card h4 {
   background-color: rgba(255, 255, 255, 0.3) !important;
   text-shadow: none;
   color: #4353ff;
@@ -347,7 +385,7 @@ $colorYellow3: #ffc41f; */
   border-left: none;
   border-right: none;
 }
-.cardSpace .card p {
+.CardPrecios .card p {
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.03em;
@@ -357,7 +395,12 @@ $colorYellow3: #ffc41f; */
 }
 
 @media screen and (max-width: 1388px) {
-  .cardSpace {
+  .CardPrecios {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .CardPrecios {
     width: 100%;
   }
 }
@@ -369,7 +412,7 @@ $colorYellow3: #ffc41f; */
   }
 }
 @media screen and (max-width: 350px) {
-  .cardSpace .card {
+  .CardPrecios .card {
     min-width: 95%;
     max-width: 96%;
     max-height: -webkit-max-content;

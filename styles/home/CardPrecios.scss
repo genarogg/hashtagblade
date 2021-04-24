@@ -6,7 +6,7 @@
   padding: 60px 0 0 0;
   width: 100%;
 }
-.cardSpace {
+.CardPrecios {
   margin: auto;
   width: 80%;
 
@@ -33,8 +33,36 @@
     position: relative;
 
     &.cardSenuelo {
+      box-shadow: 0 0 0px 2px #ffffff, inset 0px 0px 0px 3px #242d8c;
     }
 
+    .dolar,
+    .mes {
+      font-size: 16px;
+      color: #fff;
+      position: absolute;
+    }
+
+    .dolar {
+      top: 75px;
+      left: 130px;
+    }
+
+    .mes {
+      top: 122px;
+      right: 100px;
+    }
+
+    &.dosCifras {
+      .dolar {
+        top: 76px;
+        left: 105px;
+      }
+      .mes {
+        top: 122px;
+        right: 69px;
+      }
+    }
     .textImg {
       height: 220px;
       width: 330px;
@@ -76,7 +104,20 @@
         border-right: none;
       }
       p {
+        color: $azul;
+
+        &.texto{
+          color: $gris;
+        }
+      }
+      .dolar,
+      .mes {
         color: $gris;
+      }
+
+      &.cardSenuelo{
+        box-shadow:  inset 0px 0px 0px 3px #242d8c;
+        border: 1px solid #fff;
       }
     }
 
@@ -137,7 +178,13 @@
 }
 
 @media screen and (max-width: 1388px) {
-  .cardSpace {
+  .CardPrecios {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .CardPrecios {
     width: 100%;
   }
 }
@@ -151,7 +198,7 @@
 }
 
 @media screen and (max-width: 350px) {
-  .cardSpace {
+  .CardPrecios {
     .card {
       min-width: 95%;
       max-width: 96%;
