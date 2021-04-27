@@ -203,11 +203,106 @@ main {
 .caractSpace {
   width: 100%;
   min-height: 600px;
+  background-repeat: repeat;
+  background-image: url(/imgTest/2.png);
+  width: 4%;
+  background-position: bottom;
+  background-attachment: fixed;
+  -webkit-box-shadow: inset 0 0 8px 0px #fff;
+          box-shadow: inset 0 0 8px 0px #fff;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  /* .contenido{
+    width: 80%;
+  } */
 }
-.caractSpace .caract {
-  width: 80%;
+.caractSpace .card {
+  background-color: rgba(67, 83, 255, 0.96);
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: 400;
+  min-width: 330px;
+  max-width: 330px;
+  max-height: 475px;
+  min-height: 475px;
+  margin: 20px;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  text-align: left;
+  -webkit-transition: all ease 0.6s;
+  transition: all ease 0.6s;
+  overflow: hidden;
+  width: 330px;
+  position: relative;
+  border-radius: 15px 15px 0 0;
+  padding: 50px 40px 30px 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* justify-content: center; */
+}
+.caractSpace .card ::-moz-selection {
+  color: #4353ff;
   background-color: #fff;
-  min-height: 30px;
+}
+.caractSpace .card ::selection {
+  color: #4353ff;
+  background-color: #fff;
+}
+.caractSpace .card .titulo {
+  position: absolute;
+  top: -30px;
+  width: 100%;
+  left: 0%;
+  height: 69px;
+  color: #fff;
+  background-color: rgba(0, 155, 238, 0.3);
+  border-radius: 10px 10px 150px 150px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+      /* .cacho {
+        clip-path: polygon(50% 100%, 0 0, 100% 0);
+        position: absolute;
+
+        background-color: #fff;
+        width: 15px;
+        height: 10px;
+
+        &.left {
+          left: 0;
+          bottom: -10px;
+        }
+        &.right {
+          right: 0;
+          bottom: -10px;
+        }
+      } */
+}
+.caractSpace .card .titulo h3 {
+  position: relative;
+  top: 12px;
+}
+.caractSpace .card p, .caractSpace .card h4 {
+  width: 100%;
+  padding: 15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.caractSpace .card p b, .caractSpace .card h4 b {
+  margin-right: 10px;
+}
+.caractSpace .card h4 {
+  padding-bottom: 0;
 }
 
 /* Paleta de colores */
@@ -395,12 +490,14 @@ $colorYellow3: #ffc41f; */
 }
 
 @media screen and (max-width: 1388px) {
-  .CardPrecios {
+  .CardPrecios,
+  .caracteristicas {
     width: 90%;
   }
 }
 @media screen and (max-width: 1250px) {
-  .CardPrecios {
+  .CardPrecios,
+  .caracteristicas {
     width: 100%;
   }
 }
@@ -419,6 +516,9 @@ $colorYellow3: #ffc41f; */
     max-height: -moz-max-content;
     max-height: max-content;
   }
+}
+.contacto {
+  padding: 0;
 }
 .contacto .datosContato {
   width: 80%;
