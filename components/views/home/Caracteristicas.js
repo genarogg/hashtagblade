@@ -1,14 +1,8 @@
 import React from "react";
+import CardCaracteristicas from "./Card/CardCaracteristicas";
+import data from "../../../data/caracteristicas";
 
 const Caracteristicas = () => {
-  const caracteristica = () => {
-    return (
-      <div className="col-xs-10 caract ">
-        <p>hola</p>
-      </div>
-    );
-  };
-
   return (
     <>
       <div className="col-xs-12 heading-block-home">
@@ -16,10 +10,27 @@ const Caracteristicas = () => {
       </div>
 
       <div className="row col-xs-12 caractSpace centerXY">
-        {caracteristica()}
-        {caracteristica()}
-        {caracteristica()}
-        {caracteristica()}
+        <CardCaracteristicas
+          nombre={data().basico.title}
+          numeroDeCuentas={data().basico.numeroDeCuentas}
+          seguimientoHashtag={data().basico.seguimientoHashtag}
+          numeroColecciones={data().basico.numeroColecciones}
+          plan={data().basico.plan}
+        />
+        <CardCaracteristicas
+          nombre={data().manager.title}
+          numeroDeCuentas={data().manager.numeroDeCuentas}
+          seguimientoHashtag={data().manager.seguimientoHashtag}
+          numeroColecciones={data().manager.numeroColecciones}
+          plan={data().manager.plan}
+        />
+        <CardCaracteristicas
+          nombre={data().agencia.title}
+          numeroDeCuentas={data().agencia.numeroDeCuentas}
+          seguimientoHashtag={data().agencia.seguimientoHashtag}
+          numeroColecciones={data().agencia.numeroColecciones}
+          plan={data().agencia.plan}
+        />
       </div>
     </>
   );
