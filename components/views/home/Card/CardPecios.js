@@ -1,5 +1,5 @@
 import React from "react";
-import A from "../../nano/A";
+import A from "../../../nano/A";
 
 const CardPrecios = ({
   id = "",
