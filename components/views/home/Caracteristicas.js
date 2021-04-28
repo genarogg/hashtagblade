@@ -1,6 +1,6 @@
 import React from "react";
 import CardCaracteristicas from "./Card/CardCaracteristicas";
-import data from "../../../data/caracteristicas";
+import data from "../../../data/home/caracteristicas";
 import Icono from "../../nano/Icono";
 
 const Caracteristicas = () => {
