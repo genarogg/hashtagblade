@@ -139,7 +139,7 @@ main {
 
 .heading-block-home {
   width: 100%;
-  background-image: url(/imgTest/589303.jpg);
+  background-image: url("/home/background-title.webp");
   background-attachment: local;
   background-position: bottom;
   background-repeat: repeat;
@@ -169,14 +169,15 @@ main {
   -webkit-box-shadow: inset 0 0 10px 0px #ffffff;
           box-shadow: inset 0 0 10px 0px #ffffff;
   padding: 15px 25px;
-  background-image: url(/imgTest/589303.jpg);
+  background-image: url("/home/background-title.webp");
   background-position: inherit;
   min-width: 420px;
   max-width: 420px;
   min-height: 180px;
   max-height: 180px;
 }
-.habilidades .card, .habilidades .card * {
+.habilidades .card,
+.habilidades .card * {
   -webkit-transition: all ease 0.6s;
   transition: all ease 0.6s;
 }
