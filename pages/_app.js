@@ -11,7 +11,7 @@ import "../styles/form/loginRedes.css";
 
 import "../styles/home/home.css";
 
-import data from "../data/home";
+import data from "../data/home/home";
 
 function MyApp({ Component, pageProps }) {
   return (
