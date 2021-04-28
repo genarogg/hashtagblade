@@ -1,6 +1,6 @@
 import React from "react";
 import CardPrecios from "./Card/CardPecios";
-import data from "../../../data/precios"
+import data from "../../../data/home/precios"
 
 const Precio = () => {
   

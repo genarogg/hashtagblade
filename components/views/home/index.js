@@ -5,7 +5,7 @@ import Register from "../../forms/Register";
 import ResetPassword from "../../forms/ResetPassword";
 import HomeDashboard from "./HomeDashboard";
 
-import data from "../../../data/home";
+import data from "../../../data/home/home";
 
 const Home = () => {
   return (
