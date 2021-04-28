@@ -85,62 +85,31 @@ const Header = () => {
                 </li>
                 <li>
                   <A href="/">
-                    <Icono css="icon-group_add" />
+                    <Icono css="icon-extension" />
                     Caracteristicas
                   </A>
                 </li>
                 <li>
                   <A href="/">
-                    <Icono css="icon-trello" />
+                    <Icono css="icon-local_grocery_store" />
                     Precios
                   </A>
                 </li>
                 <li>
                   <A href="/">
-                    <Icono css="icon-article" />
+                    <Icono css="icon-contacts" />
                     contacto
                   </A>
                 </li>
 
                 <li className="login">
                   <A href="/" css="">
-                    <Icono css="icon-account_circle" />
+                    <Icono css="icon-user-circle" />
                     Login
                   </A>
                 </li>
               </ul>
-
-              {/* <div className="usuario">
-                <ul>
-                  <li
-                    className="img"
-                    onClick={() => {
-                      showDataUser();
-                    }}
-                  >
-                    <img src="" alt="user" />
-                  </li>
-                  <li
-                    className="name"
-                    onClick={() => {
-                      showDataUser();
-                    }}
-                  >
-                    <p>genarogg</p>
-                  </li>
-                  <li className="morePerfile">
-                    <Icono css="icon-expand_more" id="expandMore" />
-                  </li>
-                  <li
-                    className="notifications"
-                    onClick={() => {
-                      showNotifications();
-                    }}
-                  >
-                    <Icono css="icon-bell" />
-                  </li>
-                </ul>
-              </div> */}
+              
             </nav>
           </div>
         </div>
@@ -248,7 +217,7 @@ const Header = () => {
                       contX();
                     }}
                   >
-                    <Icono css="icon-group_add" />
+                    <Icono css="icon-extension" />
                     Caracteristicas
                   </a>
                 </Link>
@@ -260,7 +229,7 @@ const Header = () => {
                       contX();
                     }}
                   >
-                    <Icono css="icon-trello" />
+                    <Icono css="icon-local_grocery_store" />
                     Precios
                   </a>
                 </Link>
@@ -272,7 +241,7 @@ const Header = () => {
                       contX();
                     }}
                   >
-                    <Icono css="icon-article" />
+                    <Icono css="icon-contacts" />
                     contacto
                   </a>
                 </Link>
@@ -286,7 +255,7 @@ const Header = () => {
             <ul>
               <li>
                 <A href="/mi-perfil">
-                  <Icono css="icon-account_circle" />
+                  <Icono css="icon-user-circle" />
                   Mi Perfil
                 </A>
               </li>
