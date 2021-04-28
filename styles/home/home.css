@@ -140,20 +140,61 @@ main {
 .heading-block-home {
   width: 100%;
   background-image: url("/home/background-title.jpg");
+  background-image: url(/imgTest/58930.jpg);
+  background-image: url(/imgTest/589303.jpg);
   background-attachment: fixed;
   background-position: bottom;
   background-repeat: repeat;
   background-size: cover;
 }
 
-/* .precios h2.tittle {
-  color: $gris;
-  font-weight: 700;
-  letter-spacing: 1px;
-  padding: 60px 0 15px;
-  text-align: center;
-  text-transform: uppercase;
-} */
+.habilidades {
+  margin-bottom: 60px;
+  overflow: hidden;
+}
+.habilidades .top,
+.habilidades .bottom {
+  position: relative;
+}
+.habilidades .top {
+  right: 10px;
+}
+.habilidades .bottom {
+  right: -15px;
+}
+.habilidades .card {
+  background-color: rgba(255, 255, 255, 0.1);
+  min-height: 180px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+  -webkit-box-shadow: inset 0 0 10px 0px #ffffff;
+          box-shadow: inset 0 0 10px 0px #ffffff;
+  padding: 15px 25px;
+  background-image: url(/imgTest/58930.jpg);
+  background-image: url(/imgTest/589303.jpg);
+  /* background-attachment: fixed; */
+  background-position: inherit;
+  min-width: 420px;
+  max-width: 420px;
+  min-height: 180px;
+  max-height: 180px;
+}
+.habilidades .card h4 {
+  color: #fff;
+  font-size: 16px;
+  text-shadow: 0px 0px 5px #000;
+  font-weight: 600;
+}
+.habilidades .card p {
+  margin-top: 15px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  text-shadow: 0px 0px 5px #000000;
+}
+
 @media screen and (max-width: 640px) {
   .heading-block-home:after {
     margin: 15px auto 35px;
@@ -208,8 +249,7 @@ main {
   width: 4%;
   background-position: bottom;
   background-attachment: fixed;
-  -webkit-box-shadow: inset 0 0 8px 0px #fff;
-          box-shadow: inset 0 0 8px 0px #fff;
+  /* box-shadow: inset 0 0 8px 0px #fff; */
   -ms-flex-pack: distribute;
       justify-content: space-around;
   /* .contenido{
@@ -285,9 +325,10 @@ main {
   position: relative;
   top: 12px;
 }
-.caractSpace .card p, .caractSpace .card h4 {
+.caractSpace .card p,
+.caractSpace .card h4 {
   width: 100%;
-  padding: 15px 0;
+  padding: 20px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -298,11 +339,60 @@ main {
       -ms-flex-align: center;
           align-items: center;
 }
-.caractSpace .card p b, .caractSpace .card h4 b {
+.caractSpace .card p b,
+.caractSpace .card h4 b {
   margin-right: 10px;
 }
 .caractSpace .card h4 {
   padding-bottom: 0;
+}
+.caractSpace .tabla {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 45px;
+}
+.caractSpace .tabla .border {
+  width: 82%;
+  border: 3px solid #4353ff;
+  border-top: 3px solid #fff;
+}
+.caractSpace .tabla .row {
+  background-color: rgba(255, 255, 255, 0.9);
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-bottom: 1px solid rgba(67, 83, 255, 0.3);
+  /* border-radius: 7px 7px 0 0; */
+}
+.caractSpace .tabla .row.titulo {
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  padding: 15px 30px;
+  background-color: rgba(67, 83, 255, 0.96);
+}
+.caractSpace .tabla .row.titulo h5 {
+  color: #fff;
+}
+.caractSpace .tabla .col-xs-4,
+.caractSpace .tabla .col-xs-2 {
+  padding: 15px 30px;
+  /* border-left: 1px solid $azul;
+  border-right: 1px solid $azul; */
+}
+.caractSpace .tabla h5 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+  text-transform: capitalize;
+}
+.caractSpace .tabla .col-xs-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 /* Paleta de colores */
