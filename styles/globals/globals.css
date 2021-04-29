@@ -504,7 +504,7 @@ header .dataUserDisplay {
     top: -13px;
   }
   header.menuFixed .headerDesktop .col-xs-3 a {
-    margin-left: 10px;
+    /* margin-left: 10px; */
   }
   header.menuFixed .headerDesktop a .img svg {
     height: 41px !important;
@@ -534,7 +534,7 @@ header .dataUserDisplay {
     position: relative;
   }
   header .headerDesktop .col-xs-3 a {
-    margin-left: 30px;
+    /* margin-left: 30px; */
   }
   header .headerDesktop a .img svg {
     height: 40px !important;
