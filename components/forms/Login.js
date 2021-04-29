@@ -60,7 +60,7 @@ const Login = () => {
       <form className="row">
         <div className="row col-xs-12 containerInput">
           <label htmlFor="loginCorreo" className="icoBackground col-xs-1">
-            <span className="ico icon-mail-envelope-closed"></span>
+            <span className="ico icon-mail"></span>
           </label>
           <input
             name="loginCorreo"
@@ -78,7 +78,7 @@ const Login = () => {
 
         <div className="row col-xs-12 containerInput">
           <label htmlFor="loginPassword" className="icoBackground col-xs-1">
-            <span className="ico icon-lock"></span>
+            <span className="ico icon-https"></span>
           </label>
           <input
             name="loginPassword"
@@ -101,7 +101,7 @@ const Login = () => {
             remerberme();
           }}
         >
-          <Icono css={"icon-check-circle"} id="checkRemember" />
+          <Icono css="icon-check_circle_outline" id="checkRemember" />
           <label htmlFor="checkRemember" id="checkRememberLabel">
             <p>Mantener sesion</p>
           </label>

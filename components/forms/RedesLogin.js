@@ -33,7 +33,7 @@ const RedesLogin = () => {
         <li>
           <button type="button">
             <A href="#">
-              <Icono css="icon-github1 githubHover" />
+              <Icono css="icon-github githubHover" />
               <span></span>
             </A>
           </button>

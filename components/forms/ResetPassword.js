@@ -2,6 +2,7 @@ import React from "react";
 
 import A from "../nano/A";
 import $ from "../nano/$";
+import Icono from "../nano/Icono";
 
 const resetPassword = () => {
   const voltearIniciar = () => {
@@ -66,7 +67,7 @@ const resetPassword = () => {
               }}
             >
               <A href="#iniciarSesion" css="animationCircle" id="buttonBack">
-                <span className="ico icon-reply"></span>
+                <Icono css="icon-arrow-left" />
               </A>
             </button>
           </div>
@@ -76,7 +77,7 @@ const resetPassword = () => {
         <form>
           <div className="row col-xs-12 containerInput">
             <label htmlFor="resetPassword" className="icoBackground col-xs-1">
-              <span className="ico icon-mail-envelope-closed"></span>
+              <Icono css="icon-mail" />
             </label>
             <input
               name="resetPassword"

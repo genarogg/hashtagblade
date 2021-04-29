@@ -17,7 +17,7 @@ const CardPrecios = ({
       <h4>{titleR}</h4>
       <p className="texto">{contenidoR}</p>
       <div className="seeMore">
-        <A to={enlaceR}>Adquirir</A>
+        <A to={enlaceR} css="btn2">Adquirir</A>
       </div>
     </div>
   );

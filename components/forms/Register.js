@@ -80,7 +80,7 @@ const Register = () => {
         <br />
         <div className="row col-xs-12 containerInput">
           <label htmlFor="registerCorreo" className="icoBackground col-xs-1">
-            <span className="ico icon-mail-envelope-closed"></span>
+            <span className="ico icon-mail"></span>
           </label>
           <input
             type="email"
