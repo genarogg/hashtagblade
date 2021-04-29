@@ -20,42 +20,27 @@ $colorGray1: #2e2e2e; */
 /* $colorYellow1: #d39c00;
 $colorYellow3: #ffc41f; */
 main {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   background-color: transparent;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
   min-height: calc(100% - 50px - 75px);
   margin-top: 100px;
   width: 100%;
 }
 
 .backgroundHome {
-  background: -webkit-gradient(linear, left bottom, left top, from(#4353ff), to(#000));
   background: linear-gradient(to top, #4353ff, #000);
   height: 186%;
   left: -200px;
   position: fixed;
-  -webkit-transform: rotate(-183deg);
-          transform: rotate(-183deg);
+  transform: rotate(-183deg);
   top: -200px;
   width: 235%;
   z-index: -150;
 }
 
-/* .containerNotLogin {
-  display: inherit;
-  flex-wrap: inherit;
-  min-height: inherit;
-  width: 100%;
-} */
 .containerSesion {
   font-family: "Crete Round", "Lato", sans-serif;
 }
@@ -92,8 +77,7 @@ main {
   left: 50%;
   height: 200vh;
   position: absolute;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   top: 0;
   width: 99vw;
   z-index: -1;
@@ -166,8 +150,7 @@ main {
   margin: 10px;
   border-radius: 10px;
   border: 2px solid #ffffff;
-  -webkit-box-shadow: inset 0 0 10px 0px #ffffff;
-          box-shadow: inset 0 0 10px 0px #ffffff;
+  box-shadow: inset 0 0 10px 0px #ffffff;
   padding: 15px 25px;
   background-image: url("/home/background-title.webp");
   background-position: inherit;
@@ -178,30 +161,24 @@ main {
 }
 .habilidades .card,
 .habilidades .card * {
-  -webkit-transition: all ease 0.6s;
   transition: all ease 0.6s;
 }
 .habilidades .card:hover {
   cursor: pointer;
   border: 2px solid #ffffff;
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 .habilidades .card:hover#cardHome1 {
-  -webkit-box-shadow: inset 0px 0px 150px 0px #ecadf6;
-          box-shadow: inset 0px 0px 150px 0px #ecadf6;
+  box-shadow: inset 0px 0px 150px 0px #ecadf6;
 }
 .habilidades .card:hover#cardHome2 {
-  -webkit-box-shadow: inset 0px 0px 150px 0px #ff6d6d8a;
-          box-shadow: inset 0px 0px 150px 0px #ff6d6d8a;
+  box-shadow: inset 0px 0px 150px 0px #ff6d6d8a;
 }
 .habilidades .card:hover#cardHome3 {
-  -webkit-box-shadow: inset 0px 0px 150px 0px #9349dd;
-          box-shadow: inset 0px 0px 150px 0px #9349dd;
+  box-shadow: inset 0px 0px 150px 0px #9349dd;
 }
 .habilidades .card:hover#cardHome4 {
-  -webkit-box-shadow: inset 0px 0px 150px 0px #00acee;
-          box-shadow: inset 0px 0px 150px 0px #00acee;
+  box-shadow: inset 0px 0px 150px 0px #00acee;
 }
 .habilidades .card h4 {
   color: #4353ff;
@@ -268,16 +245,11 @@ main {
   width: 100%;
   min-height: 600px;
   background-repeat: repeat;
-  background-image: url(/imgTest/2.png);
+  background-image: url("/home/wallpaper.webp");
   width: 4%;
   background-position: bottom;
   background-attachment: fixed;
-  /* box-shadow: inset 0 0 8px 0px #fff; */
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  /* .contenido{
-    width: 80%;
-  } */
+  justify-content: space-around;
 }
 .caractSpace .card {
   background-color: rgba(67, 83, 255, 0.96);
@@ -292,25 +264,27 @@ main {
   margin-top: 45px;
   margin-bottom: 45px;
   text-align: left;
-  -webkit-transition: all ease 0.6s;
   transition: all ease 0.6s;
   overflow: hidden;
   width: 330px;
   position: relative;
   border-radius: 15px 15px 0 0;
   padding: 50px 40px 30px 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  /* justify-content: center; */
+  flex-direction: column;
 }
-.caractSpace .card ::-moz-selection {
-  color: #4353ff;
-  background-color: #fff;
+.caractSpace .card,
+.caractSpace .card * {
+  transition: all ease 0.6s;
+}
+.caractSpace .card:hover {
+  transform: translateY(-10px);
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+  box-shadow: inset 0 0 0 2px #ffffff;
+}
+.caractSpace .card:hover .titulo {
+  /* box-shadow:  0 0 0 2px #ffffff; */
 }
 .caractSpace .card ::selection {
   color: #4353ff;
@@ -326,23 +300,6 @@ main {
   background-color: rgba(0, 155, 238, 0.3);
   border-radius: 10px 10px 150px 150px;
   border: 1px solid rgba(255, 255, 255, 0.3);
-      /* .cacho {
-        clip-path: polygon(50% 100%, 0 0, 100% 0);
-        position: absolute;
-
-        background-color: #fff;
-        width: 15px;
-        height: 10px;
-
-        &.left {
-          left: 0;
-          bottom: -10px;
-        }
-        &.right {
-          right: 0;
-          bottom: -10px;
-        }
-      } */
 }
 .caractSpace .card .titulo h3 {
   position: relative;
@@ -352,15 +309,9 @@ main {
 .caractSpace .card h4 {
   width: 100%;
   padding: 20px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 .caractSpace .card p b,
 .caractSpace .card h4 b {
@@ -370,9 +321,7 @@ main {
   padding-bottom: 0;
 }
 .caractSpace .tabla {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin-bottom: 45px;
 }
 .caractSpace .tabla .border {
@@ -383,15 +332,11 @@ main {
 }
 .caractSpace .tabla .row {
   background-color: rgba(255, 255, 255, 0.9);
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   border-bottom: 1px solid rgba(67, 83, 255, 0.3);
-  /* border-radius: 7px 7px 0 0; */
 }
 .caractSpace .tabla .row.titulo {
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
+  justify-content: left;
   padding: 15px 30px;
   background-color: rgba(67, 83, 255, 0.96);
 }
@@ -401,8 +346,6 @@ main {
 .caractSpace .tabla .col-xs-4,
 .caractSpace .tabla .col-xs-2 {
   padding: 15px 30px;
-  /* border-left: 1px solid $azul;
-  border-right: 1px solid $azul; */
 }
 .caractSpace .tabla h5 {
   font-size: 16px;
@@ -411,12 +354,8 @@ main {
   text-transform: capitalize;
 }
 .caractSpace .tabla .col-xs-2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 /* Paleta de colores */
@@ -465,15 +404,47 @@ $colorYellow3: #ffc41f; */
   margin: 20px;
   margin-bottom: 45px;
   text-align: left;
-  -webkit-transition: all ease 0.6s;
   transition: all ease 0.6s;
   overflow: hidden;
   width: 330px;
   position: relative;
 }
+.CardPrecios .card:hover {
+  transform: translateY(-10px);
+  background-color: #fff;
+  border-radius: 5px;
+  border-collapse: collapse;
+  border: 1px solid #4353ff;
+}
+.CardPrecios .card:hover,
+.CardPrecios .card:hover * {
+  transition: all ease 0.6s;
+}
+.CardPrecios .card:hover .seeMore a {
+  border: 1px solid #4353ff;
+  color: #333;
+}
+.CardPrecios .card:hover h4 {
+  border: 1px solid #4353ff;
+  border-left: none;
+  border-right: none;
+}
+.CardPrecios .card:hover p {
+  color: #4353ff;
+}
+.CardPrecios .card:hover p.texto {
+  color: #333;
+}
+.CardPrecios .card:hover .dolar,
+.CardPrecios .card:hover .mes {
+  color: #333;
+}
+.CardPrecios .card:hover.cardSenuelo {
+  box-shadow: inset 0px 0px 0px 3px #242d8c;
+  border: 1px solid #fff;
+}
 .CardPrecios .card.cardSenuelo {
-  -webkit-box-shadow: 0 0 0px 2px #ffffff, inset 0px 0px 0px 3px #242d8c;
-          box-shadow: 0 0 0px 2px #ffffff, inset 0px 0px 0px 3px #242d8c;
+  box-shadow: 0 0 0px 2px #ffffff, inset 0px 0px 0px 3px #242d8c;
 }
 .CardPrecios .card .dolar,
 .CardPrecios .card .mes {
@@ -503,81 +474,38 @@ $colorYellow3: #ffc41f; */
   font-size: 84px;
   font-weight: 700;
   color: #fff;
-  /* .tiempo {
-    position: absolute;
-    right: 60px;
-    top: 120px;
-    
-    font-size: 18px;
-    color: $azul;
-  } */
-}
-.CardPrecios .card:hover {
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
-  background-color: #fff;
-  border-radius: 5px;
-  border-collapse: collapse;
-  border: 1px solid #4353ff;
-}
-.CardPrecios .card:hover,
-.CardPrecios .card:hover * {
-  -webkit-transition: all ease 0.6s;
-  transition: all ease 0.6s;
-}
-.CardPrecios .card:hover .seeMore a {
-  border: 1px solid #4353ff;
-  /* background-color: $colorText; */
-  /* color: #; */
-  color: #333;
-}
-.CardPrecios .card:hover h4 {
-  border: 1px solid #4353ff;
-  border-left: none;
-  border-right: none;
-}
-.CardPrecios .card:hover p {
-  color: #4353ff;
-}
-.CardPrecios .card:hover p.texto {
-  color: #333;
-}
-.CardPrecios .card:hover .dolar,
-.CardPrecios .card:hover .mes {
-  color: #333;
-}
-.CardPrecios .card:hover.cardSenuelo {
-  -webkit-box-shadow: inset 0px 0px 0px 3px #242d8c;
-          box-shadow: inset 0px 0px 0px 3px #242d8c;
-  border: 1px solid #fff;
 }
 .CardPrecios .card .seeMore {
   margin: 16px 0;
   text-shadow: none;
+  overflow: hidden;
 }
 .CardPrecios .card .seeMore a {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   border: 1px solid #fff;
   color: #4353ff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   font-size: 16px;
   font-weight: 500;
   height: 35px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin: 0 auto;
   text-decoration: none;
-  -webkit-transition: all ease 0.6s;
   transition: all ease 0.6s;
   width: 120px;
   background-color: transparent;
   border-radius: 5px;
   color: #fff;
+}
+.CardPrecios .card .seeMore a.btn2:hover:before {
+  border-color: transparent transparent transparent #4353ff;
+}
+.CardPrecios .card .seeMore a.btn2:hover:after {
+  border-color: transparent #4353ff transparent transparent;
+}
+.CardPrecios .card .seeMore a.btn2:hover::before, .CardPrecios .card .seeMore a.btn2:hover::after {
+  border-width: 34px 130px !important;
+  z-index: -1;
 }
 .CardPrecios .card h4 {
   background-color: rgba(255, 255, 255, 0.3) !important;
@@ -626,8 +554,6 @@ $colorYellow3: #ffc41f; */
   .CardPrecios .card {
     min-width: 95%;
     max-width: 96%;
-    max-height: -webkit-max-content;
-    max-height: -moz-max-content;
     max-height: max-content;
   }
 }
@@ -646,10 +572,188 @@ $colorYellow3: #ffc41f; */
   font-family: "Crete Round", "Lato", sans-serif;
 }
 .contacto .datosContato .contactoSpace .logo {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  justify-content: flex-end;
   display: flex;
+}
+
+/* Paleta de colores */
+/* colores de los team */
+/* 
+$formBackground: $colorPurpleOscuro; */
+/* fonts */
+/* transicion */
+/* bordes */
+/* Eliminados */
+/* $colorFuchia1: #69156a; */
+/* $colorFuchia2: #8a178c; */
+/* $colorFuchia3: #b824bb; */
+/* $colorFuchia5: #e480e5; */
+/* $colorFuchia6: #ecadf6; */
+/* $colorPurple4: #9349dd;*/
+/* $colorPurple6: #d7b7ff; */
+/* */
+/* $colorGray2: #555555;
+$colorGray3: #777879;
+$colorGray1: #2e2e2e; */
+/* $colorYellow1: #d39c00;
+$colorYellow3: #ffc41f; */
+.btn2 {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  /* text-transform: uppercase; */
+  transition: all ease 0.6s;
+  overflow: hidden;
+  width: 250px;
+  will-change: transform;
+}
+
+.btn2::before,
+.btn2::after {
+  position: absolute;
+  content: "";
+  border: 0px solid;
+  transition: all ease 0.6s;
+  z-index: 100;
+}
+
+.btn2::before {
+  bottom: 0;
+  left: 0;
+  border-color: transparent transparent transparent #fff;
+}
+
+.btn2::after {
+  top: 0;
+  right: 0;
+  border-color: transparent #fff transparent transparent;
+}
+
+.btn2:hover {
+  color: #fff !important;
+}
+
+.btn2:hover::before,
+.btn2:hover::after {
+  border-width: 80px 260px;
+}
+
+/* Animaciones */
+@keyframes fa-spin-fast {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+/* Paleta de colores */
+/* colores de los team */
+/* 
+$formBackground: $colorPurpleOscuro; */
+/* fonts */
+/* transicion */
+/* bordes */
+/* Eliminados */
+/* $colorFuchia1: #69156a; */
+/* $colorFuchia2: #8a178c; */
+/* $colorFuchia3: #b824bb; */
+/* $colorFuchia5: #e480e5; */
+/* $colorFuchia6: #ecadf6; */
+/* $colorPurple4: #9349dd;*/
+/* $colorPurple6: #d7b7ff; */
+/* */
+/* $colorGray2: #555555;
+$colorGray3: #777879;
+$colorGray1: #2e2e2e; */
+/* $colorYellow1: #d39c00;
+$colorYellow3: #ffc41f; */
+button.cont_x {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cont_x {
+  position: relative;
+  width: 17px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cont_x span {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  background-color: #fff;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+
+.cont_x span:nth-last-of-type(1) {
+  top: 0;
+}
+
+.cont_x span:nth-last-of-type(3) {
+  bottom: 0;
+}
+
+.cont_x.active span:nth-last-of-type(1) {
+  transform: translateY(4px) rotate(-45deg);
+  background-color: #d740da;
+}
+
+.cont_x.active span:nth-last-of-type(3) {
+  transform: translateY(-9px) rotate(45deg);
+  background-color: #d740da;
+}
+
+.cont_x.active span:nth-last-of-type(2) {
+  background-color: #d740da;
+  opacity: 0;
+}
+
+.menu2.active span:nth-last-of-type(2) {
+  left: 80%;
+}
+
+.menu2.active:before {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  content: "";
+  border: 2px solid transparent;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: circulo 0.5s 0.3s forwards;
+  margin: -19px 0 0 -18px;
+}
+
+@keyframes circulo {
+  0% {
+    border-color: transparent;
+    transform: rotate(0deg);
+  }
+  25% {
+    border-color: transparent #fff transparent transparent;
+  }
+  50% {
+    border-color: transparent #fff #fff transparent;
+  }
+  75% {
+    border-color: transparent #fff #fff #fff;
+  }
+  100% {
+    border-color: #fff;
+    transform: rotate(-700deg);
+  }
 }
