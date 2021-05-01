@@ -13,7 +13,7 @@ const Home = () => {
       <main>
         <div className="backgroundHome"></div>
         <div className="backgroundLigth"></div>
-        <div className="containerSesion row between-md center-xs">
+        <div className="containerSesion row between-md center-xs" id="containerSesion">
           <div className="welcome row col-xs-12 col-sm-6  col-lg-4 center-xs">
             <h1>{data().bienvenida}</h1>
             <h3>{data().subBienvenida}</h3>
