@@ -1,0 +1,132 @@
+@import "../variables";
+
+@media screen and (max-width: 1024px) {
+  .containerSesion {
+    margin-top: 5vh;
+  }
+}
+
+@media screen and (max-width: 922px) {
+  .containerSesion {
+    margin-top: 0vh;
+  }
+
+  .containerSesion.active .welcome {
+    margin-top: 0;
+  }
+
+  .containerForm {
+    min-height: 461px;
+    transition: $transicion600ms;
+  }
+  .containerSesion.active {
+    .containerForm {
+      min-height: 810px;
+      transition: $transicion600ms;
+    }
+  }
+  .habilidades .card {
+    min-width: 45vw;
+    max-width: 45vw;
+    min-height: 180px;
+    max-height: fit-content;
+  }
+
+  .caractSpace .tabla .border {
+    width: 98vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .caractSpace .tabla .col-xs-4,
+  .caractSpace .tabla .col-xs-2 {
+    padding: 10px 0px;
+  }
+  .caractSpace .tabla .col-xs-4 {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  .caractSpace .tabla h5 {
+    margin-left: 10px;
+  }
+
+  .contacto .datosContato {
+    width: 100%;
+  }
+  .datosContato {
+    .datos {
+      display: flex;
+      justify-content: center;
+      /* align-items: center; */
+      flex-direction: column;
+    }
+    .logo {
+      > div {
+        overflow: visible !important;
+        width: 100%;
+      }
+      img {
+        object-fit: cover;
+
+        min-width: 90% !important;
+        max-width: 90% !important;
+        min-height: 100% !important;
+        max-height: 100% !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .habilidades .card {
+    min-width: 420px;
+    max-width: 420px;
+    min-height: 180px;
+    max-height: fit-content;
+  }
+
+  .habilidades {
+    .top,
+    .bottom {
+      right: 0;
+      left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .datosContato {
+    .col-xs-4 {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .contacto .datosContato {
+    width: 80%;
+  }
+
+  .datosContato {
+    padding-top: 25px;
+  }
+
+  .datosContato .logo img {
+    object-fit: cover;
+    min-width: 55% !important;
+    max-width: 55% !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .habilidades .card {
+    min-width: 95vw;
+    max-width: 95vw;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .containerSesion .welcome h1 {
+    font-size: 28px;
+  }
+}

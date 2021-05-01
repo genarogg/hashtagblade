@@ -1,0 +1,155 @@
+/* Paleta de colores */
+/* colores de los team */
+/* 
+$formBackground: $colorPurpleOscuro; */
+/* fonts */
+/* transicion */
+/* bordes */
+/* Eliminados */
+/* $colorFuchia1: #69156a; */
+/* $colorFuchia2: #8a178c; */
+/* $colorFuchia3: #b824bb; */
+/* $colorFuchia5: #e480e5; */
+/* $colorFuchia6: #ecadf6; */
+/* $colorPurple4: #9349dd;*/
+/* $colorPurple6: #d7b7ff; */
+/* */
+/* $colorGray2: #555555;
+$colorGray3: #777879;
+$colorGray1: #2e2e2e; */
+/* $colorYellow1: #d39c00;
+$colorYellow3: #ffc41f; */
+@media screen and (max-width: 1024px) {
+  .containerSesion {
+    margin-top: 5vh;
+  }
+}
+@media screen and (max-width: 922px) {
+  .containerSesion {
+    margin-top: 0vh;
+  }
+
+  .containerSesion.active .welcome {
+    margin-top: 0;
+  }
+
+  .containerForm {
+    min-height: 461px;
+    -webkit-transition: all ease 0.6s;
+    transition: all ease 0.6s;
+  }
+
+  .containerSesion.active .containerForm {
+    min-height: 810px;
+    -webkit-transition: all ease 0.6s;
+    transition: all ease 0.6s;
+  }
+
+  .habilidades .card {
+    min-width: 45vw;
+    max-width: 45vw;
+    min-height: 180px;
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+  }
+
+  .caractSpace .tabla .border {
+    width: 98vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .caractSpace .tabla .col-xs-4,
+  .caractSpace .tabla .col-xs-2 {
+    padding: 10px 0px;
+  }
+
+  .caractSpace .tabla .col-xs-4 {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  .caractSpace .tabla h5 {
+    margin-left: 10px;
+  }
+
+  .contacto .datosContato {
+    width: 100%;
+  }
+
+  .datosContato .datos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /* align-items: center; */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .datosContato .logo > div {
+    overflow: visible !important;
+    width: 100%;
+  }
+  .datosContato .logo img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    min-width: 90% !important;
+    max-width: 90% !important;
+    min-height: 100% !important;
+    max-height: 100% !important;
+  }
+}
+@media screen and (max-width: 650px) {
+  .habilidades .card {
+    min-width: 420px;
+    max-width: 420px;
+    min-height: 180px;
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+  }
+
+  .habilidades .top,
+  .habilidades .bottom {
+    right: 0;
+    left: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .datosContato .col-xs-4 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .contacto .datosContato {
+    width: 80%;
+  }
+
+  .datosContato {
+    padding-top: 25px;
+  }
+
+  .datosContato .logo img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    min-width: 55% !important;
+    max-width: 55% !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  .habilidades .card {
+    min-width: 95vw;
+    max-width: 95vw;
+  }
+}
+@media screen and (max-width: 360px) {
+  .containerSesion .welcome h1 {
+    font-size: 28px;
+  }
+}

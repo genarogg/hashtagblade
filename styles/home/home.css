@@ -20,22 +20,31 @@ $colorGray1: #2e2e2e; */
 /* $colorYellow1: #d39c00;
 $colorYellow3: #ffc41f; */
 main {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   min-height: calc(100% - 50px - 75px);
   margin-top: 100px;
   width: 100%;
 }
 
 .backgroundHome {
+  background: -webkit-gradient(linear, left bottom, left top, from(#4353ff), to(#000));
   background: linear-gradient(to top, #4353ff, #000);
   height: 186%;
   left: -200px;
   position: fixed;
-  transform: rotate(-183deg);
+  -webkit-transform: rotate(-183deg);
+          transform: rotate(-183deg);
   top: -200px;
   width: 235%;
   z-index: -150;
@@ -77,7 +86,8 @@ main {
   left: 50%;
   height: 200vh;
   position: absolute;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   top: 0;
   width: 99vw;
   z-index: -1;
@@ -150,7 +160,8 @@ main {
   margin: 10px;
   border-radius: 10px;
   border: 2px solid #ffffff;
-  box-shadow: inset 0 0 10px 0px #ffffff;
+  -webkit-box-shadow: inset 0 0 10px 0px #ffffff;
+          box-shadow: inset 0 0 10px 0px #ffffff;
   padding: 15px 25px;
   background-image: url("/home/background-title.webp");
   background-position: inherit;
@@ -161,24 +172,30 @@ main {
 }
 .habilidades .card,
 .habilidades .card * {
+  -webkit-transition: all ease 0.6s;
   transition: all ease 0.6s;
 }
 .habilidades .card:hover {
   cursor: pointer;
   border: 2px solid #ffffff;
-  transform: translateY(-5px);
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 .habilidades .card:hover#cardHome1 {
-  box-shadow: inset 0px 0px 150px 0px #ecadf6;
+  -webkit-box-shadow: inset 0px 0px 150px 0px #ecadf6;
+          box-shadow: inset 0px 0px 150px 0px #ecadf6;
 }
 .habilidades .card:hover#cardHome2 {
-  box-shadow: inset 0px 0px 150px 0px #ff6d6d8a;
+  -webkit-box-shadow: inset 0px 0px 150px 0px #ff6d6d8a;
+          box-shadow: inset 0px 0px 150px 0px #ff6d6d8a;
 }
 .habilidades .card:hover#cardHome3 {
-  box-shadow: inset 0px 0px 150px 0px #9349dd;
+  -webkit-box-shadow: inset 0px 0px 150px 0px #9349dd;
+          box-shadow: inset 0px 0px 150px 0px #9349dd;
 }
 .habilidades .card:hover#cardHome4 {
-  box-shadow: inset 0px 0px 150px 0px #00acee;
+  -webkit-box-shadow: inset 0px 0px 150px 0px #00acee;
+          box-shadow: inset 0px 0px 150px 0px #00acee;
 }
 .habilidades .card h4 {
   color: #4353ff;
@@ -249,7 +266,8 @@ main {
   width: 4%;
   background-position: bottom;
   background-attachment: fixed;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 .caractSpace .card {
   background-color: rgba(67, 83, 255, 0.96);
@@ -264,27 +282,40 @@ main {
   margin-top: 45px;
   margin-bottom: 45px;
   text-align: left;
+  -webkit-transition: all ease 0.6s;
   transition: all ease 0.6s;
   overflow: hidden;
   width: 330px;
   position: relative;
   border-radius: 15px 15px 0 0;
   padding: 50px 40px 30px 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .caractSpace .card,
 .caractSpace .card * {
+  -webkit-transition: all ease 0.6s;
   transition: all ease 0.6s;
 }
 .caractSpace .card:hover {
-  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
   border-radius: 10px;
   border: 1px solid #ffffff;
-  box-shadow: inset 0 0 0 2px #ffffff;
+  -webkit-box-shadow: inset 0 0 0 2px #ffffff;
+          box-shadow: inset 0 0 0 2px #ffffff;
 }
 .caractSpace .card:hover .titulo {
   /* box-shadow:  0 0 0 2px #ffffff; */
+}
+.caractSpace .card ::-moz-selection {
+  color: #4353ff;
+  background-color: #fff;
 }
 .caractSpace .card ::selection {
   color: #4353ff;
@@ -309,9 +340,15 @@ main {
 .caractSpace .card h4 {
   width: 100%;
   padding: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .caractSpace .card p b,
 .caractSpace .card h4 b {
@@ -321,7 +358,9 @@ main {
   padding-bottom: 0;
 }
 .caractSpace .tabla {
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 45px;
 }
 .caractSpace .tabla .border {
@@ -332,11 +371,14 @@ main {
 }
 .caractSpace .tabla .row {
   background-color: rgba(255, 255, 255, 0.9);
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   border-bottom: 1px solid rgba(67, 83, 255, 0.3);
 }
 .caractSpace .tabla .row.titulo {
-  justify-content: left;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
   padding: 15px 30px;
   background-color: rgba(67, 83, 255, 0.96);
 }
@@ -354,8 +396,12 @@ main {
   text-transform: capitalize;
 }
 .caractSpace .tabla .col-xs-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 /* Paleta de colores */
@@ -404,13 +450,15 @@ $colorYellow3: #ffc41f; */
   margin: 20px;
   margin-bottom: 45px;
   text-align: left;
+  -webkit-transition: all ease 0.6s;
   transition: all ease 0.6s;
   overflow: hidden;
   width: 330px;
   position: relative;
 }
 .CardPrecios .card:hover {
-  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
   background-color: #fff;
   border-radius: 5px;
   border-collapse: collapse;
@@ -418,6 +466,7 @@ $colorYellow3: #ffc41f; */
 }
 .CardPrecios .card:hover,
 .CardPrecios .card:hover * {
+  -webkit-transition: all ease 0.6s;
   transition: all ease 0.6s;
 }
 .CardPrecios .card:hover .seeMore a {
@@ -440,11 +489,13 @@ $colorYellow3: #ffc41f; */
   color: #333;
 }
 .CardPrecios .card:hover.cardSenuelo {
-  box-shadow: inset 0px 0px 0px 3px #242d8c;
+  -webkit-box-shadow: inset 0px 0px 0px 3px #242d8c;
+          box-shadow: inset 0px 0px 0px 3px #242d8c;
   border: 1px solid #fff;
 }
 .CardPrecios .card.cardSenuelo {
-  box-shadow: 0 0 0px 2px #ffffff, inset 0px 0px 0px 3px #242d8c;
+  -webkit-box-shadow: 0 0 0px 2px #ffffff, inset 0px 0px 0px 3px #242d8c;
+          box-shadow: 0 0 0px 2px #ffffff, inset 0px 0px 0px 3px #242d8c;
 }
 .CardPrecios .card .dolar,
 .CardPrecios .card .mes {
@@ -481,16 +532,23 @@ $colorYellow3: #ffc41f; */
   overflow: hidden;
 }
 .CardPrecios .card .seeMore a {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: 1px solid #fff;
   color: #4353ff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-size: 16px;
   font-weight: 500;
   height: 35px;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 0 auto;
   text-decoration: none;
+  -webkit-transition: all ease 0.6s;
   transition: all ease 0.6s;
   width: 120px;
   background-color: transparent;
@@ -554,6 +612,8 @@ $colorYellow3: #ffc41f; */
   .CardPrecios .card {
     min-width: 95%;
     max-width: 96%;
+    max-height: -webkit-max-content;
+    max-height: -moz-max-content;
     max-height: max-content;
   }
 }
@@ -572,7 +632,11 @@ $colorYellow3: #ffc41f; */
   font-family: "Crete Round", "Lato", sans-serif;
 }
 .contacto .datosContato .contactoSpace .logo {
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -598,14 +662,22 @@ $colorGray1: #2e2e2e; */
 /* $colorYellow1: #d39c00;
 $colorYellow3: #ffc41f; */
 .btn2 {
-  align-items: center;
-  box-sizing: border-box;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 80px;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: relative;
   text-decoration: none;
   /* text-transform: uppercase; */
+  -webkit-transition: all ease 0.6s;
   transition: all ease 0.6s;
   overflow: hidden;
   width: 250px;
@@ -617,6 +689,7 @@ $colorYellow3: #ffc41f; */
   position: absolute;
   content: "";
   border: 0px solid;
+  -webkit-transition: all ease 0.6s;
   transition: all ease 0.6s;
   z-index: 100;
 }
@@ -643,12 +716,24 @@ $colorYellow3: #ffc41f; */
 }
 
 /* Animaciones */
-@keyframes fa-spin-fast {
+@-webkit-keyframes fa-spin-fast {
   0% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+@keyframes fa-spin-fast {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
   }
 }
 /* Paleta de colores */
@@ -682,8 +767,12 @@ button.cont_x {
   position: relative;
   width: 17px;
   height: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
 }
 
@@ -692,8 +781,9 @@ button.cont_x {
   width: 100%;
   height: 1px;
   left: 0;
-  background-color: #fff;
+  background-color: #4353ff;
   border-radius: 4px;
+  -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -706,17 +796,19 @@ button.cont_x {
 }
 
 .cont_x.active span:nth-last-of-type(1) {
-  transform: translateY(4px) rotate(-45deg);
-  background-color: #d740da;
+  -webkit-transform: translateY(4px) rotate(-45deg);
+          transform: translateY(4px) rotate(-45deg);
+  background-color: #333;
 }
 
 .cont_x.active span:nth-last-of-type(3) {
-  transform: translateY(-9px) rotate(45deg);
-  background-color: #d740da;
+  -webkit-transform: translateY(-9px) rotate(45deg);
+          transform: translateY(-9px) rotate(45deg);
+  background-color: #333;
 }
 
 .cont_x.active span:nth-last-of-type(2) {
-  background-color: #d740da;
+  background-color: #333;
   opacity: 0;
 }
 
@@ -733,27 +825,53 @@ button.cont_x {
   border-radius: 50%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  animation: circulo 0.5s 0.3s forwards;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: circulo 0.5s 0.3s forwards;
+          animation: circulo 0.5s 0.3s forwards;
   margin: -19px 0 0 -18px;
+}
+
+@-webkit-keyframes circulo {
+  0% {
+    border-color: transparent;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    border-color: transparent #4353ff transparent transparent;
+  }
+  50% {
+    border-color: transparent #4353ff #4353ff transparent;
+  }
+  75% {
+    border-color: transparent #4353ff #4353ff #4353ff;
+  }
+  100% {
+    border-color: #4353ff;
+    -webkit-transform: rotate(-700deg);
+            transform: rotate(-700deg);
+  }
 }
 
 @keyframes circulo {
   0% {
     border-color: transparent;
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   25% {
-    border-color: transparent #fff transparent transparent;
+    border-color: transparent #4353ff transparent transparent;
   }
   50% {
-    border-color: transparent #fff #fff transparent;
+    border-color: transparent #4353ff #4353ff transparent;
   }
   75% {
-    border-color: transparent #fff #fff #fff;
+    border-color: transparent #4353ff #4353ff #4353ff;
   }
   100% {
-    border-color: #fff;
-    transform: rotate(-700deg);
+    border-color: #4353ff;
+    -webkit-transform: rotate(-700deg);
+            transform: rotate(-700deg);
   }
 }
