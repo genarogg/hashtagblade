@@ -26,6 +26,10 @@ $colorYellow3: #ffc41f; */
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 button {
   background-color: transparent;
 }
@@ -189,7 +193,7 @@ header {
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   /* .siderBarNotificaciones {
-    background-color: $colorPurpleOscuro;
+    background-color: #fff;
     border-left: 1px solid #fff;
     height: calc(100vh - 60px);
     max-width: 350px;
@@ -248,9 +252,6 @@ header .usuario ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-header .usuario ul .img {
-  /* border-left: $borderHeaderFooter; */
 }
 header .usuario ul li {
   margin-right: 8px;
@@ -324,7 +325,7 @@ header .dataUser nav ul li a {
   cursor: pointer;
   display: block;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: 1px;
   line-height: 22px;
   margin-right: 9px;
@@ -420,7 +421,7 @@ header .dataUserDisplay {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: 1px;
   line-height: 22px;
   margin-right: 9px;
@@ -444,12 +445,13 @@ header .dataUserDisplay {
   }
 }
 @media screen and (max-width: 1500px) and (min-width: 1024px) {
-  header.menuFixed .headerDesktop a .img svg {
-    width: 116px !important;
-    height: 30px !important;
-  }
   header.menuFixed .headerDesktop .borderRight {
     top: -14px !important;
+  }
+
+  header a .img svg {
+    width: 116px !important;
+    height: 30px !important;
   }
 }
 @media screen and (max-width: 1150px) and (min-width: 1024px) {
@@ -586,7 +588,7 @@ header .dataUserDisplay {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    background: #390f64;
+    background: #fff;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -594,6 +596,7 @@ header .dataUserDisplay {
     position: fixed;
     top: 0;
     width: 100%;
+    border-bottom: 1px solid #00000029;
   }
   .headerTablet .left,
   .headerTablet .imgLogo,
@@ -611,9 +614,12 @@ header .dataUserDisplay {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .headerTablet .imgLogo img {
-    min-width: 120px !important;
-    min-height: 33px !important;
+  .headerTablet .imgLogo .img svg {
+    width: 120px !important;
+    height: 33px !important;
+  }
+  .headerTablet .imgLogo .img svg g {
+    fill: #4353ff;
   }
   .headerTablet .left {
     -webkit-box-pack: start;
@@ -639,7 +645,7 @@ header .dataUserDisplay {
     margin-left: 12px;
   }
   .headerTablet .siderbar {
-    background-color: #390f64;
+    background-color: #fff;
     border-right: 1px solid #fff;
     height: calc(100vh - 60px);
     max-width: 350px;
@@ -660,13 +666,13 @@ header .dataUserDisplay {
     height: 100%;
   }
   .headerTablet .siderbar ul li {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #00000029;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     list-style: none;
     padding: 15px 0;
-    width: 130%;
+    width: 230%;
   }
   .headerTablet .siderbar ul li a {
     font-size: 13px;
@@ -678,6 +684,7 @@ header .dataUserDisplay {
     text-decoration: none;
     text-transform: uppercase;
     padding-left: 50px;
+    color: #333;
   }
   .headerTablet .siderbar ul li a span {
     padding-right: 10px;
@@ -794,7 +801,7 @@ footer .containerFooter {
 }
 @media screen and (max-width: 768px) {
   footer .derechos {
-    background: #000;
+    /* background: #000; */
     height: 30px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;

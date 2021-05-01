@@ -449,13 +449,13 @@ $colorYellow3: #ffc41f; */
   transition: all ease 0.6s;
 }
 
-.checkBoxContainer .icon-check-circle {
+.checkBoxContainer .ico {
   margin-right: 7px;
   margin-left: 10px;
   color: #333;
   text-shadow: 0px 0px 5px #ffffff;
 }
-.checkBoxContainer .icon-check-circle.active {
+.checkBoxContainer .ico.active {
   color: #4353ff;
 }
 
@@ -837,13 +837,6 @@ $colorGray3: #777879;
 $colorGray1: #2e2e2e; */
 /* $colorYellow1: #d39c00;
 $colorYellow3: #ffc41f; */
-*,
-*:after,
-*:before {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 .selected-item {
   margin: 20px 0;
   text-align: center;
@@ -940,6 +933,12 @@ $colorYellow3: #ffc41f; */
   height: 70%;
   line-height: 24px;
   border-left: 1px solid #ddd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .dropdown > span:active {
