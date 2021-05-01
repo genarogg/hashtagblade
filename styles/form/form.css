@@ -878,7 +878,7 @@ $colorYellow3: #ffc41f; */
   -webkit-perspective: 800px;
           perspective: 800px;
   border-radius: 4px;
-  /*  overflow-x: hidden; */
+  overflow: hidden;
   margin-bottom: 30px;
   border-radius: 4px;
 }
@@ -890,6 +890,7 @@ $colorYellow3: #ffc41f; */
   overflow-y: scroll;
   position: relative;
   top: 0px;
+  border-radius: 0 0 4px 4px;
 }
 
 .dropdown.active .selLabel:after {
@@ -915,10 +916,8 @@ $colorYellow3: #ffc41f; */
           transform-style: preserve-3d;
   -webkit-transform-origin: 50% 0%;
           transform-origin: 50% 0%;
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
-  transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
+  -webkit-transition: all ease 0.6s;
+  transition: all ease 0.6s;
   -webkit-backface-visibility: hidden;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -956,6 +955,7 @@ $colorYellow3: #ffc41f; */
   position: absolute;
   top: 0px;
   width: 100%;
+  z-index: -100;
 }
 
 .dropdown-list {
