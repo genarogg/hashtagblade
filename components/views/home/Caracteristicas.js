@@ -32,11 +32,12 @@ const Caracteristicas = () => {
 
   return (
     <>
-      <div className="col-xs-12 heading-block-home">
+
+      <div className="col-xs-12 heading-block-home" id="caractSpace">
         <h2 className="title">Caracteristicas</h2>
       </div>
 
-      <div className="row col-xs-12 caractSpace centerXY">
+      <div className="row col-xs-12 caractSpace centerXY" >
         <CardCaracteristicas
           nombre={data().basico.title}
           numeroDeCuentas={data().basico.numeroDeCuentas}

@@ -5,7 +5,7 @@ import data from "../../../data/home/precios"
 const Precio = () => {
   
   return (
-    <div className="precios row col-xs-12  top-xs center-xs">
+    <div className="precios row col-xs-12  top-xs center-xs" id="precios">
       <div className="col-xs-12 heading-block-home">
         <h2 className="title">Precios</h2>
       </div>

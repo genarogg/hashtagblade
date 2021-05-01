@@ -5,7 +5,7 @@ import $ from "../nano/$";
 import Icono from "../nano/Icono";
 import RedesLogin from "./RedesLogin";
 import SelectCountry from "./SelectCountry";
-import SelectSex from "./SelectSex"
+import SelectSex from "./SelectSex";
 
 const Register = () => {
   const focus = () => {
@@ -87,7 +87,10 @@ const Register = () => {
         {/* Input del Primer apellido */}
 
         <div className="row col-xs-12 containerInput">
-          <label htmlFor="registerUserName" className="icoBackground col-xs-1">
+          <label
+            htmlFor="registerUserSurName"
+            className="icoBackground col-xs-1"
+          >
             <Icono css="icon-person_add_alt_1" />
           </label>
           <input
@@ -104,19 +107,20 @@ const Register = () => {
         </div>
         <br />
         <SelectSex />
-        
+
         <br />
-        {/* Nuevo cambo */}
+        {/* Input de fecha de nacimiento */}
         <div className="row col-xs-12 containerInput">
-          <label htmlFor="registerUserName" className="icoBackground col-xs-1">
-            <span className="ico icon-person_add_alt_1"></span>
+          <label htmlFor="userData" className="icoBackground col-xs-1">
+           
+            <Icono css="icon-calendar"/>
           </label>
           <input
             type="date"
-            placeholder="Nombre"
+            placeholder="data"
             maxLength="15"
-            id="registerUserName"
-            name="registerUserName"
+            id="userData"
+            name="userData"
             className="col-xs-11"
             onClick={() => {
               focus();
@@ -125,7 +129,7 @@ const Register = () => {
         </div>
         <br />
 
-        {/* Nuevo cambo */}
+        {/* Input de country */}
         <SelectCountry />
         <div className="row col-xs-12 containerInput">
           <label htmlFor="registerCorreo" className="icoBackground col-xs-1">
@@ -140,6 +144,7 @@ const Register = () => {
           />
         </div>
         <br />
+        {/* Input de password */}
         <div className="row col-xs-12 containerInput">
           <label htmlFor="registerPassword" className="icoBackground col-xs-1">
             <span className="ico icon-https"></span>
@@ -153,6 +158,7 @@ const Register = () => {
           />
         </div>
         <br />
+        {/* Input de password 2 */}
         <div className="row col-xs-12 containerInput">
           <label
             htmlFor="registerPasswordConfirm"
