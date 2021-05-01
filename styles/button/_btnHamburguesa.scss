@@ -21,7 +21,7 @@ button.cont_x {
   width: 100%;
   height: 1px;
   left: 0;
-  background-color: #fff;
+  background-color: $azul;
   border-radius: 4px;
   transition: all 0.5s;
 }
@@ -36,16 +36,16 @@ button.cont_x {
 
 .cont_x.active span:nth-last-of-type(1) {
   transform: translateY(4px) rotate(-45deg);
-  background-color: $colorFuchiaIntermedio;
+  background-color: $gris;
 }
 
 .cont_x.active span:nth-last-of-type(3) {
   transform: translateY(-9px) rotate(45deg);
-  background-color: $colorFuchiaIntermedio;
+  background-color: $gris;
 }
 
 .cont_x.active span:nth-last-of-type(2) {
-  background-color: $colorFuchiaIntermedio;
+  background-color: $gris;
   opacity: 0;
 }
 
@@ -74,18 +74,18 @@ button.cont_x {
   }
 
   25% {
-    border-color: transparent #fff transparent transparent;
+    border-color: transparent $azul transparent transparent;
   }
 
   50% {
-    border-color: transparent #fff #fff transparent;
+    border-color: transparent $azul $azul transparent;
   }
 
   75% {
-    border-color: transparent #fff #fff #fff;
+    border-color: transparent $azul $azul $azul;
   }
   100% {
-    border-color: #fff;
+    border-color: $azul;
     transform: rotate(-700deg);
   }
 }
