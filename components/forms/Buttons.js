@@ -5,6 +5,7 @@ import $ from "../nano/$";
 const Buttons = () => {
   const voltearIniciar = () => {
     const tarjeta = $("containerRegisterLogin");
+    
     $("traseraDerecha").style.display = "block";
 
     if (
@@ -12,6 +13,9 @@ const Buttons = () => {
       tarjeta.classList.contains("activeLeft")
     ) {
       tarjeta.classList.remove("activeRight");
+      $("containerSesion").classList.remove("active")
+      
+      
       if (tarjeta.classList.contains("activeLeft")) {
       }
       tarjeta.classList.remove("activeLeft");
@@ -28,12 +32,16 @@ const Buttons = () => {
 
   const voltearRegistro = () => {
     const tarjetas = $("containerRegisterLogin");
+    
     if (!tarjetas.classList.contains("activeRight")) {
       tarjetas.classList.add("activeRight");
+
+      $("containerSesion").classList.add("active")
     }
 
     if (tarjetas.classList.contains("activeLeft")) {
       tarjetas.classList.remove("activeLeft");
+      
     }
     $("traseraDerecha").style.display = "block";
 
