@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import A from "../nano/A";
 import Buttons from "./Buttons";
 import $ from "../nano/$";
+import Icono from "../nano/Icono";
 import RedesLogin from "./RedesLogin";
+import SelectCountry from "./SelectCountry";
 
 const Register = () => {
   const focus = () => {
@@ -58,16 +60,19 @@ const Register = () => {
         focus();
       }}
     >
+      {/* Botone de iniciar secion y registrar */}
       <Buttons />
+
       <form className="row">
         <br />
+        {/* Input del Primer nombre */}
         <div className="row col-xs-12 containerInput">
           <label htmlFor="registerUserName" className="icoBackground col-xs-1">
-            <span className="ico icon-person_add_alt_1"></span>
+            <Icono css="icon-person_add_alt_1" />
           </label>
           <input
             type="text"
-            placeholder="Nombre de Usuario"
+            placeholder="Primer Nombre"
             maxLength="15"
             id="registerUserName"
             name="registerUserName"
@@ -78,6 +83,64 @@ const Register = () => {
           />
         </div>
         <br />
+        {/* Input del Primer apellido */}
+
+        <div className="row col-xs-12 containerInput">
+          <label htmlFor="registerUserName" className="icoBackground col-xs-1">
+            <Icono css="icon-person_add_alt_1" />
+          </label>
+          <input
+            type="text"
+            placeholder="Primer Apellido"
+            maxLength="15"
+            id="registerUserSurName"
+            name="registerUserSurName"
+            className="col-xs-11"
+            onClick={() => {
+              focus();
+            }}
+          />
+        </div>
+        <br />
+        {/* Input del sexo */}
+        <div className="row col-xs-12 containerInput">
+          <label htmlFor="registerUserName" className="icoBackground col-xs-1">
+            <Icono css="icon-intersex" />
+          </label>
+          <input
+            type="text"
+            placeholder="Primer Apellido"
+            maxLength="15"
+            id="registerUserName"
+            name="registerUserName"
+            className="col-xs-11"
+            onClick={() => {
+              focus();
+            }}
+          />
+        </div>
+        <br />
+        {/* Nuevo cambo */}
+        <div className="row col-xs-12 containerInput">
+          <label htmlFor="registerUserName" className="icoBackground col-xs-1">
+            <span className="ico icon-person_add_alt_1"></span>
+          </label>
+          <input
+            type="date"
+            placeholder="Nombre"
+            maxLength="15"
+            id="registerUserName"
+            name="registerUserName"
+            className="col-xs-11"
+            onClick={() => {
+              focus();
+            }}
+          />
+        </div>
+        <br />
+
+        {/* Nuevo cambo */}
+        <SelectCountry />
         <div className="row col-xs-12 containerInput">
           <label htmlFor="registerCorreo" className="icoBackground col-xs-1">
             <span className="ico icon-mail"></span>
