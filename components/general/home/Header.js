@@ -84,26 +84,26 @@ const Header = () => {
                   </A>
                 </li>
                 <li>
-                  <A href="/">
+                  <A href="#caractSpace">
                     <Icono css="icon-extension" />
                     Caracteristicas
                   </A>
                 </li>
                 <li>
-                  <A href="/">
+                  <A href="#precios">
                     <Icono css="icon-local_grocery_store" />
                     Precios
                   </A>
                 </li>
                 <li>
-                  <A href="/">
+                  <A href="#contacto">
                     <Icono css="icon-contacts" />
                     contacto
                   </A>
                 </li>
 
                 <li className="login">
-                  <A href="/" css="">
+                  <A href="#containerSesion" css="">
                     <Icono css="icon-user-circle" />
                     Login
                   </A>
@@ -128,15 +128,13 @@ const Header = () => {
           </div>
           <div className="col-xs-6 imgLogo">
             <A href="/">
-              <Image
-                src="/logo1.png"
-                alt="Picture of the author"
-                width={139}
-                height={41}
-              />
+              <div className="img">
+                <Logo />
+              </div>
             </A>
           </div>
-          <div className="col-xs-3 right">
+          <div className="col-xs-3"></div>
+          {/* <div className="col-xs-3 right">
             <div className="usuario">
               <ul>
                 <li
@@ -153,7 +151,7 @@ const Header = () => {
                     showDataUser();
                   }}
                 >
-                  <p>{/* {user.nickname} */}</p>
+                  <p>{user.nickname}</p>
                 </li>
                 <li
                   className="morePerfile"
@@ -193,7 +191,7 @@ const Header = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
 
           <nav className="siderbar" id="siderbarTablet">
             <ul className="link">
@@ -210,19 +208,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/">
-                  <a
-                    onClick={() => {
-                      contX();
-                    }}
-                  >
-                    <Icono css="icon-extension" />
-                    Caracteristicas
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
+                <Link href="#precios">
                   <a
                     onClick={() => {
                       contX();
@@ -234,7 +220,20 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="#caractSpace">
+                  <a
+                    onClick={() => {
+                      contX();
+                    }}
+                  >
+                    <Icono css="icon-extension" />
+                    Caracteristicas
+                  </a>
+                </Link>
+              </li>
+
+              <li>
+                <Link href="#contacto">
                   <a
                     onClick={() => {
                       contX();
@@ -249,7 +248,7 @@ const Header = () => {
           </nav>
         </div>
 
-        <div className="dataUser" id="dataUser">
+        {/* <div className="dataUser" id="dataUser">
           <nav>
             <ul>
               <li>
@@ -268,9 +267,8 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-        </div>
+        </div> */}
       </header>
-      
     </>
   );
 };
