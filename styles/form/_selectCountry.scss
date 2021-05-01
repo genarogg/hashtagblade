@@ -1,9 +1,4 @@
 @import "../variables";
-*,
-*:after,
-*:before {
-  box-sizing: border-box;
-}
 
 .selected-item {
   margin: 20px 0;
@@ -36,10 +31,10 @@
   position: relative;
   perspective: 800px;
   border-radius: 4px;
-   overflow: hidden;
+  overflow: hidden;
   margin-bottom: 30px;
   border-radius: 4px;
-  
+
   &.active {
     ul {
       opacity: 1;
@@ -96,6 +91,8 @@
   height: 70%;
   line-height: 24px;
   border-left: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
 }
 .dropdown > span:active {
   transform: rotateX(45deg);

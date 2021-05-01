@@ -376,13 +376,13 @@
   }
 }
 .checkBoxContainer {
-  .icon-check-circle {
+  .ico {
     margin-right: 7px;
     margin-left: 10px;
 
     color: $gris;
     text-shadow: 0px 0px 5px #ffffff;
-
+    
     &.active {
       color: $azul;
     }

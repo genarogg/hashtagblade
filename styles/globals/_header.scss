@@ -8,7 +8,7 @@ header {
   /* top: -2px; */
   width: 100%;
   z-index: 9999;
-  box-shadow: 0 0 10px rgba(#000,.1);
+  box-shadow: 0 0 10px rgba(#000, 0.1);
 
   .usuario {
     margin-left: 40px;
@@ -17,10 +17,6 @@ header {
       align-items: center;
       display: flex;
       justify-content: center;
-
-      .img {
-        /* border-left: $borderHeaderFooter; */
-      }
 
       li {
         margin-right: 8px;
@@ -92,7 +88,7 @@ header {
 
             display: block;
             font-size: 12px;
-            font-weight: 500;
+            font-weight: 600;
 
             letter-spacing: 1px;
             line-height: 22px;
@@ -105,7 +101,6 @@ header {
             span {
               padding-right: 10px;
               font-size: 16px;
-             
             }
           }
         }
@@ -123,7 +118,7 @@ header {
   }
 
   /* .siderBarNotificaciones {
-    background-color: $colorPurpleOscuro;
+    background-color: #fff;
     border-left: 1px solid #fff;
     height: calc(100vh - 60px);
     max-width: 350px;
@@ -173,12 +168,11 @@ header {
 .containerHeader {
   align-items: center;
   /* border-bottom: $borderHeaderFooter; */
-  box-shadow: 0 0 10px rgba(#000,0);
+  box-shadow: 0 0 10px rgba(#000, 0);
   display: flex;
   justify-content: center;
   width: 90%;
   transition: $transicion600ms;
-
 
   .navegation {
     display: inline-flex;
@@ -222,7 +216,7 @@ header {
             justify-content: center;
 
             font-size: 13px;
-            font-weight: 500;
+            font-weight: 600;
 
             letter-spacing: 1px;
             line-height: 22px;
@@ -256,14 +250,17 @@ header {
 @media screen and (max-width: 1500px) and (min-width: 1024px) {
   header.menuFixed {
     .headerDesktop {
-      a {
-        .img svg{
-          width: 116px !important ;
-          height: 30px !important;
-        }
-      }
       .borderRight {
         top: -14px !important;
+      }
+    }
+  }
+
+  header {
+    a {
+      .img svg {
+        width: 116px !important ;
+        height: 30px !important;
       }
     }
   }
@@ -300,7 +297,7 @@ header {
     .containerHeader {
       background-color: #fff;
       width: 100%;
-      box-shadow: 0 0 10px rgba(#000,.3);
+      box-shadow: 0 0 10px rgba(#000, 0.3);
       transition: $transicion600ms;
 
       .navegation nav ul li {
@@ -309,12 +306,11 @@ header {
         } */
         padding: 20px 0 20px 10px;
 
-        a{
+        a {
           color: $gris;
           transition: $transicion600ms;
 
           span {
-           
             color: $azul;
             transition: $transicion600ms;
           }
@@ -339,11 +335,11 @@ header {
         }
       }
 
-      a .img svg{
+      a .img svg {
         height: 41px !important;
         width: 139px !important;
 
-        g{
+        g {
           fill: $azul;
         }
       }
@@ -376,13 +372,12 @@ header {
         }
       }
 
-      a .img svg{
+      a .img svg {
         height: 40px !important;
         width: 154px !important;
 
-        g{
+        g {
           fill: #fff;
-          
         }
       }
 
@@ -434,13 +429,14 @@ header {
 
   .headerTablet {
     align-items: center;
-    background: $colorPurpleOscuro;
+    background: #fff;
     justify-content: center;
     height: 66px;
     position: fixed;
     top: 0;
     width: 100%;
-
+    border-bottom: 1px solid #00000029;
+    
     .left,
     .imgLogo,
     .right {
@@ -452,9 +448,12 @@ header {
     .imgLogo {
       justify-content: center;
 
-      img {
-        min-width: 120px !important;
-        min-height: 33px !important;
+      .img  svg{
+        width: 120px !important;
+        height: 33px !important;
+        g{
+          fill: $azul
+        }
       }
     }
 
@@ -484,7 +483,7 @@ header {
     }
 
     .siderbar {
-      background-color: $colorPurpleOscuro;
+      background-color: #fff;
       border-right: 1px solid #fff;
       height: calc(100vh - 60px);
       max-width: 350px;
@@ -502,11 +501,11 @@ header {
       ul {
         height: 100%;
         li {
-          border-bottom: 1px solid #fff;
+          border-bottom: 1px solid #00000029;
           display: flex;
           list-style: none;
           padding: 15px 0;
-          width: 130%;
+          width: 230%;
           a {
             font-size: 13px;
             font-weight: bold;
@@ -519,7 +518,7 @@ header {
             text-decoration: none;
             text-transform: uppercase;
             padding-left: 50px;
-
+            color: $gris;
             span {
               padding-right: 10px;
               font-size: 16px;
