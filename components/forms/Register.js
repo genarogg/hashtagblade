@@ -5,6 +5,7 @@ import $ from "../nano/$";
 import Icono from "../nano/Icono";
 import RedesLogin from "./RedesLogin";
 import SelectCountry from "./SelectCountry";
+import SelectSex from "./SelectSex"
 
 const Register = () => {
   const focus = () => {
@@ -102,23 +103,8 @@ const Register = () => {
           />
         </div>
         <br />
-        {/* Input del sexo */}
-        <div className="row col-xs-12 containerInput">
-          <label htmlFor="registerUserName" className="icoBackground col-xs-1">
-            <Icono css="icon-intersex" />
-          </label>
-          <input
-            type="text"
-            placeholder="Primer Apellido"
-            maxLength="15"
-            id="registerUserName"
-            name="registerUserName"
-            className="col-xs-11"
-            onClick={() => {
-              focus();
-            }}
-          />
-        </div>
+        <SelectSex />
+        
         <br />
         {/* Nuevo cambo */}
         <div className="row col-xs-12 containerInput">

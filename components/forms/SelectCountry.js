@@ -5,17 +5,8 @@ import Icono from "../nano/Icono";
 import { v4 as uuidv4 } from "uuid";
 
 const SelectCountry = () => {
-  /* $(document).ready(function () {
-    $(".dropdown-list li").click(function () {
-      $(".selLabel").text($(this).text());
-      $(".dropdown").removeClass("active");
-      $(".selected-item p span").text($(".selLabel").text());
-    });
-  }); */
-
   const dropdown = () => {
     $("dropdown").classList.toggle("active");
-    
   };
 
   const replaceText = (id2) => {
