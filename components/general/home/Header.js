@@ -109,7 +109,6 @@ const Header = () => {
                   </A>
                 </li>
               </ul>
-              
             </nav>
           </div>
         </div>
@@ -271,6 +270,7 @@ const Header = () => {
           </nav>
         </div>
       </header>
+      
     </>
   );
 };
