@@ -243,14 +243,16 @@
   color: #fff;
   cursor: default;
   max-width: 550px;
-  max-height: 530px;
-  min-height: 530px;
+  max-height: 810px;
+  min-height: 810px;
 
   position: relative;
   transition: $transicion600ms;
   transform: rotateY(0deg);
   transform-style: preserve-3d;
   z-index: 2;
+
+ 
 
   .front,
   .newPassword {
@@ -327,8 +329,8 @@
   &.activeRight {
     transform: rotateY(180deg);
     .backRight {
-      max-height: 530px;
-      min-height: 530px;
+      max-height: 810px;
+      min-height: 810px;
       transition: $transicion600ms;
     }
     .backLeft {
@@ -362,6 +364,16 @@
   margin: 15vh 0vh 5vh 0vh;
   min-height: calc(70vh + 22px);
   width: 85%;
+  transition: $transicion600ms;
+  &.active{
+    margin-top: 4vh;
+    transition: $transicion600ms;
+
+    .welcome{
+      margin-top: 5vh;
+      transition: $transicion600ms;
+    }
+  }
 }
 .checkBoxContainer {
   .icon-check-circle {
@@ -491,7 +503,7 @@
 @keyframes tarjetaFocus {
   1% {
     color: $gris !important;
-    box-shadow: 0px 0px 5px $gris;
+    box-shadow: 0px 0px 5px $colorFuchiaIntermedio;
   }
   100% {
     border-color: transparent;
