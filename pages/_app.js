@@ -6,8 +6,7 @@ import Head from "next/head";
 import "../styles/lib/librerias.css";
 import "../styles/lib/icons/style.css";
 import "../styles/globals/globals.css";
-import "../styles/form/formRegisterLongi.css";
-import "../styles/form/loginRedes.css";
+import "../styles/form/form.css";
 
 import "../styles/home/home.css";
 

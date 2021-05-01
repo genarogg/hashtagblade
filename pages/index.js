@@ -16,9 +16,11 @@ const Home = () => {
   } */
 
   return (
-    <Layout>
-      <Index />
-    </Layout>
+    <>
+      <Layout>
+        <Index />
+      </Layout>
+    </>
   );
 };
 
