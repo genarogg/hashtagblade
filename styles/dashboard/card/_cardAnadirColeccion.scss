@@ -1,0 +1,14 @@
+.cardCollections {
+  margin-left: 0;
+
+  .estadistica.new {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    span {
+      font-size: 50px;
+      color: #fff;
+    }
+  }
+}
