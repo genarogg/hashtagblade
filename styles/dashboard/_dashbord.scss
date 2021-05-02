@@ -1,0 +1,49 @@
+main.dashboarMain {
+  align-items: flex-start;
+  margin-top: 0;
+}
+
+.dashboard {
+  /* display: flex;
+    justify-content: center;
+    align-items: center; */
+  /* margin-left: $tamanoDelToolbard; */
+  /* background-color: #101010; */
+  width: 100%;
+}
+
+.headerSearch {
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+position: relative;
+
+margin-left: $tamanoDelToolbard;
+width: 90%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(#fff,0.05);
+
+*{
+  transition: $transicion600ms;
+}
+  .dropdown {
+    margin-bottom: 0;
+    width: 250px;
+    margin-top: 10px;
+    height: 45px;
+    position: absolute;
+    left: 268px;
+
+    &.active{
+      height: 300px;
+      & > span {
+        height: 300px;
+      }
+    }
+
+    & > span {
+      height: 45px;
+    }
+  }
+}
