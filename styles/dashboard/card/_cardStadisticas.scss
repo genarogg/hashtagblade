@@ -1,0 +1,74 @@
+.anadirCollection,
+.estadistica {
+  $width: 340px;
+  $height: 180px;
+  background-color: $transparenciasInternas;
+  min-width: $width;
+  max-width: $width;
+  min-height: $height;
+  max-height: $height;
+
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: 1px solid $formBackground;
+
+  display: flex;
+  align-content: flex-start;
+}
+
+
+
+.estadistica {
+  .titulo {
+    /* align-items: sta; */
+    display: flex;
+    h4 {
+      font-weight: 600;
+      color: $gris;
+      text-transform: capitalize;
+    }
+  }
+
+  .icono {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
+  }
+
+  .titulo,
+  .icono {
+    height: 30px;
+  }
+
+  .content {
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      line-height: 1.7;
+      text-align: left;
+      /* padding: 0 30px; */
+      color: $colorText;
+    }
+  }
+}
+
+.cardStadisticas,.cardCollections {
+  width: 1100px;
+  margin-left: $tamanoDelToolbard;
+  min-height: 250px;
+  border-bottom: 1px solid rgba(#fff, 0.05);
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+
+  *{
+    cursor: pointer;
+
+    
+  }
+
+  p{
+    cursor: text !important;
+  }
+}
