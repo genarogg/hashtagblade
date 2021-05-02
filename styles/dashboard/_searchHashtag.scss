@@ -1,0 +1,43 @@
+.searchHashtag {
+  background-color: $transparenciasInternas;
+  width: 250px;
+  border-radius: 4px;
+  margin-top: 10px;
+
+  input {
+    background-color: transparent !important;
+    border: 3px solid transparent;
+    border-radius: 4px;
+    color: #fff !important;
+    text-shadow: 0px 0px 5px $azul;
+
+    font-weight: 300;
+    height: 100%;
+    padding: 10px 0px 10px 10px;
+
+    width: 90%;
+
+    &:focus {
+      background-color: $azul;
+      outline: none;
+    }
+    &::-webkit-input-placeholder {
+      color:#fff !important;
+      text-shadow: 0px 0px 5px $azul;
+    }
+
+    &::-moz-placeholder {
+      color:#fff !important;
+      text-shadow: 0px 0px 5px $azul;
+    }
+
+    &::-ms-input-placeholder {
+      color: #fff !important;
+      text-shadow: 0px 0px 5px $azul;
+    }
+  }
+
+  .ico {
+      color: #fff
+  }
+}
