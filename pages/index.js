@@ -1,6 +1,8 @@
 import React from "react";
 import Layout from "../components/general/home/Layout";
 import Index from "../components/views/home";
+import IndexDashboard from "../components/views/dashboard/IndexDashboard";
+
 
 /* const QUERY = gql`
   query {
@@ -17,9 +19,10 @@ const Home = () => {
 
   return (
     <>
-      <Layout>
+      {/* <Layout>
         <Index />
-      </Layout>
+      </Layout> */}
+      <IndexDashboard />
     </>
   );
 };
