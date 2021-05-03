@@ -9,7 +9,10 @@ import "../styles/globals/globals.css";
 import "../styles/form/form.css";
 
 import "../styles/home/home.css";
-import "../styles/response/index.css"
+import "../styles/response/index.css";
+
+import "../styles/loading_screen.css";
+
 import data from "../data/home/home";
 
 function MyApp({ Component, pageProps }) {

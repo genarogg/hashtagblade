@@ -2,12 +2,11 @@ import React from "react";
 import $ from "../nano/$";
 import Icono from "../nano/Icono";
 
-const SelectCountry = () => {
+const SelectSex = (props) => {
   const dropdown = () => {
-    $("dropdown-list2").style.height = "74px"
-    $("dropdown-list2").style.overflow = "hidden"
+    $("dropdown-list2").style.height = "74px";
+    $("dropdown-list2").style.overflow = "hidden";
     $("dropdown2").classList.toggle("active");
-
   };
 
   const replaceText = (id2) => {
@@ -37,6 +36,7 @@ const SelectCountry = () => {
         <li
           id="man"
           onClick={() => {
+            props.setSex("male");
             replaceText("man");
           }}
           value="man"
@@ -47,6 +47,7 @@ const SelectCountry = () => {
         <li
           id="woman"
           onClick={() => {
+            props.setSex("female");
             replaceText("woman");
           }}
           value="woman"
@@ -59,4 +60,4 @@ const SelectCountry = () => {
   );
 };
 
-export default SelectCountry;
+export default SelectSex;

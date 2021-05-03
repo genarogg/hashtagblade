@@ -5,6 +5,8 @@ import encryptNewPassword from "../../functions/encryptNewPassword";
 
 //Register User
 const register = async (_root, { input }) => {
+  console.log(input);
+
   for (let i in input) {
     if (input[i] === "" || input[i].length < 3) {
       throw new Error("Complete all values");
@@ -26,42 +28,42 @@ const register = async (_root, { input }) => {
   //Birthdate Validation
 
   if (input.birthdate.match(/-/gi).length !== 2) {
-    throw new Error("Invalid birthdate");
+    throw new Error("Año de nacimiento invalido");
   }
 
   //convert birthdate to array to verify
   const birthdate_array = input.birthdate.split("-");
   birthdate_array.forEach((v) => {
     if (isNaN(v)) {
-      throw new Error("Invalid birthdate");
+      throw new Error("Año de nacimiento invalido");
     }
   });
 
   //verify Year
   if (Number(birthdate_array[0]) > new Date().getFullYear()) {
-    throw new Error("Invalid birthdate");
+    throw new Error("Año de nacimiento invalido");
   }
 
   //verify if the birthdate have the 3 numbers
   if (birthdate_array.length < 3) {
-    throw new Error("Invalid birthdate");
+    throw new Error("Año de nacimiento invalido");
   }
 
   //verify february day 29
   if (Number(birthdate_array[1]) === 2) {
     if (Number(birthdate_array[2]) > 29) {
-      throw new Error("Invalid birthdate");
+      throw new Error("Año de nacimiento invalido");
     }
   }
 
   //verify months days
   if (Number(birthdate_array[2]) > 31) {
-    throw new Error("Invalid birthdate");
+    throw new Error("Año de nacimiento invalido");
   }
 
   //verify months
   if (Number(birthdate_array[1]) > 12) {
-    throw new Error("Invalid birthdate");
+    throw new Error("Año de nacimiento invalido");
   }
 
   //Verify Email in other account
@@ -93,8 +95,6 @@ const login = async (_root, { input }) => {
     throw new Error("Type a correct email");
   }
 
-  console.log(input);
-
   //Verify if account exist
   const exist = await userModel.findOne({ email: input.email });
   if (!exist) {
@@ -107,7 +107,6 @@ const login = async (_root, { input }) => {
 
   //Verify if the password is equal and send token
   const equal = exist.compare(input.password);
-  console.log(equal);
   if (equal) {
     return await jwt.sign({ _id: exist._id }, process.env.TOKENKEY);
   }
@@ -140,7 +139,7 @@ const passwordRequest = async (_root, { input }, ctx) => {
   //Check if email exist
   const emailExist = await userModel.findOne({ email });
   if (!emailExist) {
-    throw new Error("Email Doesn't Exist");
+    throw new Error("Email no existe");
   }
 
   //Create token whit 1h of expiration
@@ -168,9 +167,9 @@ const passwordRequest = async (_root, { input }, ctx) => {
 
   //Check if mail is send
   if (send) {
-    return "Mail send";
+    return "Mail enviado";
   } else {
-    return "Mail not send";
+    return "Mail no enviado";
   }
 };
 

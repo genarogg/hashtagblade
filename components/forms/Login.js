@@ -3,8 +3,13 @@ import Buttons from "./Buttons";
 import Icono from "../nano/Icono";
 import RedesLogin from "./RedesLogin";
 import $ from "../nano/$";
+import { useRouter } from "next/router";
 
 const Login = () => {
+  const [check, setCheck] = useState(false);
+  const [error, setError] = useState({ exist: false, message: "" });
+  const router = useRouter();
+
   const voltearRecuperar = () => {
     const tarjetas = $("containerRegisterLogin");
 
@@ -48,6 +53,74 @@ const Login = () => {
     $("checkRemember").classList.toggle("active");
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { loginCorreo, loginPassword } = e.currentTarget;
+
+    if (loginCorreo.value === "" || loginPassword.value === "") {
+      setError({
+        exist: true,
+        message: "Completa todos los campos",
+      });
+      return;
+    }
+
+    if (
+      !loginCorreo.value.includes("@") ||
+      !loginCorreo.value.includes(".com")
+    ) {
+      setError({
+        exist: true,
+        message: "Ingresa un correo valido",
+      });
+      return;
+    }
+
+    if (loginPassword.value.length < 4) {
+      setError({
+        exist: true,
+        message: "Ingresa una contraseña valida",
+      });
+      return;
+    }
+
+    fetch("/api/graphql", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `
+          mutation {
+            login(input: {
+              email: "${loginCorreo.value}"
+              password: "${loginPassword.value}"
+            })
+          }
+        `,
+      }),
+    })
+      .then((data) => data.json())
+      .then(({ data, errors }) => {
+        if (errors) {
+          setError({
+            exist: true,
+            message: errors[0].message,
+          });
+          return;
+        }
+
+        if (!check) {
+          sessionStorage.setItem("token", `Bearer ${data.login}`);
+          router.reload();
+          return;
+        }
+
+        localStorage.setItem("token", `Bearer ${data.login}`);
+        router.reload();
+      });
+  };
+
   return (
     <div
       className="front formGroupSesion col-xs-5"
@@ -57,7 +130,7 @@ const Login = () => {
       }}
     >
       <Buttons />
-      <form className="row">
+      <form className="row" onSubmit={handleSubmit}>
         <div className="row col-xs-12 containerInput">
           <label htmlFor="loginCorreo" className="icoBackground col-xs-1">
             <span className="ico icon-mail"></span>
@@ -98,6 +171,7 @@ const Login = () => {
         <div
           className="row col-xs-12 checkBoxContainer"
           onClick={() => {
+            setCheck(!check);
             remerberme();
           }}
         >
@@ -107,6 +181,20 @@ const Login = () => {
           </label>
         </div>
         <br />
+
+        {error.exist && (
+          <p
+            style={{
+              width: "100%",
+              background: "red",
+              borderRadius: 10,
+              marginBottom: 10,
+              textAlign: "center",
+            }}
+          >
+            {error.message}
+          </p>
+        )}
 
         <br />
         <div className="buttonContainer col-xs-12">

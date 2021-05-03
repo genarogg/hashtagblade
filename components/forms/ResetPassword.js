@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 import A from "../nano/A";
 import $ from "../nano/$";
 import Icono from "../nano/Icono";
 
 const resetPassword = () => {
+  const [success, setSuccess] = useState({ exist: false, message: "" });
+  const [error, setError] = useState({ exist: false, message: "" });
   const voltearIniciar = () => {
     const tarjeta = $("containerRegisterLogin");
 
@@ -49,6 +51,57 @@ const resetPassword = () => {
     }
   };
 
+  const passwordRequest = (e) => {
+    e.preventDefault();
+
+    if (
+      e.currentTarget.resetPassword.value === "" ||
+      !e.currentTarget.resetPassword.value.includes("@") ||
+      !e.currentTarget.resetPassword.value.includes(".com")
+    ) {
+      setError({
+        exist: true,
+        message: "Ingresa un correo valido",
+      });
+      return;
+    }
+
+    fetch("/api/graphql", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `
+          query {
+            passwordRequest(input: {
+              email: "${e.currentTarget.resetPassword.value}"
+              uri: "${window.location.origin}"
+            })
+          } 
+        `,
+      }),
+    })
+      .then((data) => data.json())
+      .then(({ data, errors }) => {
+        if (errors) {
+          setError({
+            exist: true,
+            message: errors[0].message,
+          });
+
+          return;
+        }
+
+        setError({ exist: false, message: "" });
+
+        setSuccess({
+          exist: true,
+          message: data.passwordRequest,
+        });
+      });
+  };
+
   return (
     <>
       <div
@@ -74,7 +127,7 @@ const resetPassword = () => {
           <p className="col-xs-12">Restablecer la contraseña</p>
           <hr className="titleHr" />
         </div>
-        <form>
+        <form onSubmit={passwordRequest}>
           <div className="row col-xs-12 containerInput">
             <label htmlFor="resetPassword" className="icoBackground col-xs-1">
               <Icono css="icon-mail" />
@@ -89,6 +142,7 @@ const resetPassword = () => {
                 focus();
               }}
             />
+
             <button type="submit" className="col-xs-2 submitEmail">
               <span className="ico icon-send"></span>
             </button>
@@ -98,6 +152,34 @@ const resetPassword = () => {
             con el que podrá restablecer su contraseña.
           </p>
         </form>
+
+        {success.exist && (
+          <p
+            style={{
+              width: "100%",
+              background: "green",
+              borderRadius: 10,
+              marginBottom: 10,
+              textAlign: "center",
+            }}
+          >
+            {success.message}
+          </p>
+        )}
+
+        {error.exist && (
+          <p
+            style={{
+              width: "100%",
+              background: "red",
+              borderRadius: 10,
+              marginBottom: 10,
+              textAlign: "center",
+            }}
+          >
+            {error.message}
+          </p>
+        )}
       </div>
     </>
   );

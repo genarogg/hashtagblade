@@ -1,0 +1,23 @@
+.loading_screen {
+  width: 510px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background: inherit;
+}
+
+@keyframes load {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading_screen img {
+  width: 100px;
+  height: 100px;
+  animation: infinite load 1s linear;
+}
