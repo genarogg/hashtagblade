@@ -164,42 +164,42 @@ const registerWithSocial = async (_root, { input }) => {
   //Birthdate Validation
 
   if (input.birthdate.match(/-/gi).length !== 2) {
-    throw new Error("Invalid birthdate");
+    throw new Error("Año de nacimiento invalido");
   }
 
   //convert birthdate to array to verify
   const birthdate_array = input.birthdate.split("-");
   birthdate_array.forEach((v) => {
     if (isNaN(v)) {
-      throw new Error("Invalid birthdate");
+      throw new Error("Año de nacimiento invalido");
     }
   });
 
   //verify Year
   if (Number(birthdate_array[0]) > new Date().getFullYear()) {
-    throw new Error("Invalid birthdate");
+    throw new Error("Año de nacimiento invalido");
   }
 
   //verify if the birthdate have the 3 numbers
   if (birthdate_array.length < 3) {
-    throw new Error("Invalid birthdate");
+    throw new Error("Año de nacimiento invalido");
   }
 
   //verify february day 29
   if (Number(birthdate_array[1]) === 2) {
     if (Number(birthdate_array[2]) > 29) {
-      throw new Error("Invalid birthdate");
+      throw new Error("Año de nacimiento invalido");
     }
   }
 
   //verify months days
   if (Number(birthdate_array[2]) > 31) {
-    throw new Error("Invalid birthdate");
+    throw new Error("Año de nacimiento invalido");
   }
 
   //verify months
   if (Number(birthdate_array[1]) > 12) {
-    throw new Error("Invalid birthdate");
+    throw new Error("Año de nacimiento invalido");
   }
 
   let decode;

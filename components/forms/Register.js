@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import A from "../nano/A";
 import Buttons from "./Buttons";
 import $ from "../nano/$";
@@ -8,6 +9,11 @@ import SelectCountry from "./SelectCountry";
 import SelectSex from "./SelectSex";
 
 const Register = () => {
+  const [sex, setSex] = useState(null);
+  const [country, setCountry] = useState(null);
+  const [error, setError] = useState({ exist: false, message: "" });
+  const router = useRouter();
+
   const focus = () => {
     const focusClass = "activefocus";
     const activo = document.activeElement.id;
@@ -53,6 +59,102 @@ const Register = () => {
     }
   };
 
+  const changeSex = (sex) => {
+    setSex(sex);
+  };
+
+  const changeCountry = (country) => {
+    setCountry(country);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const {
+      registerUserName,
+      registerUserSurName,
+      userData,
+      registerCorreo,
+      registerPassword,
+      registerPasswordConfirm,
+    } = e.currentTarget;
+
+    if (
+      registerUserName.value === "" ||
+      registerUserSurName.value === "" ||
+      userData.value === "" ||
+      registerCorreo.value === "" ||
+      registerPassword.value === "" ||
+      !sex ||
+      !country
+    ) {
+      setError({
+        exist: true,
+        message: "Completa todos los campos",
+      });
+      return;
+    }
+
+    if (
+      !registerCorreo.value.includes("@") ||
+      !registerCorreo.value.includes(".com")
+    ) {
+      setError({
+        exist: true,
+        message: "Ingresa un correo valido",
+      });
+      return;
+    }
+
+    if (registerPassword.value.length < 8) {
+      setError({
+        exist: true,
+        message: "La contreaseña tiene que tener al menos 8 caracteres",
+      });
+      return;
+    }
+
+    if (registerPassword.value !== registerPasswordConfirm.value) {
+      setError({
+        exist: true,
+        message: "Contraseñas desiguales",
+      });
+      return;
+    }
+
+    fetch("/api/graphql", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `mutation {
+          register(input: {
+            email: "${registerCorreo.value}"
+            password: "${registerPassword.value}"
+            first_name: "${registerUserName.value}"
+            last_name: "${registerUserSurName.value}"
+            country: "${country}"
+            gender: "${sex}"
+            birthdate: "${userData.value}"
+          })
+        }`,
+      }),
+    })
+      .then((data) => data.json())
+      .then(({ data, errors }) => {
+        if (errors) {
+          setError({
+            exist: true,
+            message: errors[0].message,
+          });
+          return;
+        }
+
+        localStorage.setItem(token, `Bearer ${data.register}`);
+        router.reload();
+      });
+  };
+
   return (
     <div /*  */
       className="backRight formGroupSesion col-xs-5 "
@@ -64,7 +166,7 @@ const Register = () => {
       {/* Botone de iniciar secion y registrar */}
       <Buttons />
 
-      <form className="row">
+      <form className="row" onSubmit={handleSubmit}>
         <br />
         {/* Input del Primer nombre */}
         <div className="row col-xs-12 containerInput">
@@ -106,14 +208,13 @@ const Register = () => {
           />
         </div>
         <br />
-        <SelectSex />
+        <SelectSex setSex={changeSex} />
 
         <br />
         {/* Input de fecha de nacimiento */}
         <div className="row col-xs-12 containerInput">
           <label htmlFor="userData" className="icoBackground col-xs-1">
-           
-            <Icono css="icon-calendar"/>
+            <Icono css="icon-calendar" />
           </label>
           <input
             type="date"
@@ -130,7 +231,7 @@ const Register = () => {
         <br />
 
         {/* Input de country */}
-        <SelectCountry />
+        <SelectCountry setCountry={changeCountry} />
         <div className="row col-xs-12 containerInput">
           <label htmlFor="registerCorreo" className="icoBackground col-xs-1">
             <span className="ico icon-mail"></span>
@@ -177,6 +278,19 @@ const Register = () => {
 
         <RedesLogin />
 
+        {error.exist && (
+          <p
+            style={{
+              width: "100%",
+              background: "red",
+              borderRadius: 10,
+              marginBottom: 10,
+              textAlign: "center",
+            }}
+          >
+            {error.message}
+          </p>
+        )}
         <div className="containerRegister">
           <button
             className="registerButtom submit"

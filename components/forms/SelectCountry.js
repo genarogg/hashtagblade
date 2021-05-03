@@ -4,7 +4,7 @@ import data from "../../data/home/country";
 import Icono from "../nano/Icono";
 import { v4 as uuidv4 } from "uuid";
 
-const SelectCountry = () => {
+const SelectCountry = (props) => {
   const dropdown = () => {
     $("dropdown").classList.toggle("active");
   };
@@ -37,6 +37,7 @@ const SelectCountry = () => {
           return (
             <li
               onClick={() => {
+                props.setCountry(e.name);
                 replaceText(e.iso2);
               }}
               key={uuidv4()}
