@@ -2,10 +2,16 @@
 
 $tamanoDelToolbard: 60px;
 
-@import "dashbord";
-@import "toolbord";
-@import "searchHashtag";
-@import "./card/cardStadisticas";
-@import "./card/cardAnadirColeccion";
-@import "./card/cardCollection";
-@import "collectiones";
+/* Dashboard Inicial */
+
+@import "./home/dashbord";
+@import "./home/toolbord";
+@import "./home/searchHashtag";
+@import "./home/card/cardStadisticas";
+@import "./home/card/cardAnadirColeccion";
+@import "./home/card/cardCollection";
+@import "./home/collectiones";
+
+/* Dashboard Search */
+
+@import "./table/table"

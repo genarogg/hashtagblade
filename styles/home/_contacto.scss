@@ -1,5 +1,9 @@
 .contacto {
   padding: 0;
+
+  p > span{
+    margin-right: 10px;
+  }
   .datosContato {
     width: 80%;
     padding: 40px 0;
