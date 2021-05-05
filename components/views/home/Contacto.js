@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-
+import Icono from "../../nano/Icono";
 import data from "../../../data/home/contacto";
 
 const Contacto = () => {
@@ -12,11 +12,20 @@ const Contacto = () => {
       <div className="datosContato" id="datosContato">
         <div className="row col-xs-12 center-xs  around-xs contactoSpace">
           <div className="col-xs-4 datos">
-            <p>Lugar: {data().lugar}</p>
+            <p>
+              <Icono css="icon-sphere" />
+              Lugar: {data().lugar}
+            </p>
             <br />
-            <p>Telefono: {data().telefono}</p>
+            <p>
+              <Icono css="icon-enhanced_encryption" />
+              Telefono: {data().telefono}
+            </p>
             <br />
-            <p>Correo: {data().correo}</p>
+            <p>
+              <Icono css="icon-mail" />
+              Correo: {data().correo}
+            </p>
           </div>
           <div className="col-xs-4  logo">
             <Image

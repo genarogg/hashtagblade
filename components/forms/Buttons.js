@@ -66,7 +66,7 @@ const Buttons = () => {
         >
           <A href="#iniciarSesion">Iniciar sesión</A>
         </button>
-        <span>|</span>
+        <span className="spanSesion">|</span>
         <button
           className="registrarse"
           onClick={() => {

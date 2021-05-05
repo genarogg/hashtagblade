@@ -1,0 +1,208 @@
+/* Paleta de colores */
+/* colores de los team */
+/* 
+$formBackground: $colorPurpleOscuro; */
+/* fonts */
+/* transicion */
+/* bordes */
+/* Eliminados */
+/* $colorFuchia1: #69156a; */
+/* $colorFuchia2: #8a178c; */
+/* $colorFuchia3: #b824bb; */
+/* $colorFuchia5: #e480e5; */
+/* $colorFuchia6: #ecadf6; */
+/* $colorPurple4: #9349dd;*/
+/* $colorPurple6: #d7b7ff; */
+/* */
+/* $colorGray2: #555555;
+$colorGray3: #777879;
+$colorGray1: #2e2e2e; */
+/* $colorYellow1: #d39c00;
+$colorYellow3: #ffc41f; */
+body {
+  background-color: #f3f4f9;
+}
+
+.backgroundHome {
+  background: transparent;
+}
+
+.backgroundLigth {
+  background-image: none;
+}
+
+.formGroupSesion {
+  background-color: #ffffff;
+}
+
+.containerForm .backRight,
+.containerForm .backLeft,
+.containerForm .front,
+.containerForm .newPassword {
+  border: 1px solid #4353ff;
+}
+
+.formGroupSesion form .containerInput,
+.dropdown > span,
+.dropdown-list li {
+  background-color: #eee !important;
+}
+
+.redesSocialesAnimadas ul li a {
+  background-color: #eee;
+}
+
+.redesSocialesAnimadas ul li a:before {
+  border: 1px solid #333;
+}
+
+.containerSesion .welcome h1,
+.containerSesion .welcome h3,
+.containerSesion .welcome .text p {
+  color: #333;
+}
+
+.formGroupSesion .buttonContainer button.login,
+.formGroupSesion .containerRegister button {
+  border: 1px solid #3336;
+  color: #333;
+}
+.formGroupSesion .buttonContainer button.login:hover,
+.formGroupSesion .containerRegister button:hover {
+  border: 1px solid #4353ff;
+  background-color: #eee !important;
+}
+
+.spanSesion {
+  color: #333;
+}
+
+.animationCircle .ico {
+  color: #3338;
+}
+
+.formGroupSesion hr.titleHr {
+  border-left: 9px solid #3338 !important;
+  border-right: 9px solid #3338 !important;
+}
+
+@media screen and (min-width: 1024px) {
+  header .headerDesktop a .img svg g {
+    fill: #4353ff;
+  }
+}
+.containerHeader .navegation nav ul li a {
+  color: #333;
+}
+
+.containerHeader .navegation nav ul li a span {
+  color: #4353ff;
+}
+
+.heading-block-home {
+  background-image: none;
+  background-color: #3331;
+}
+
+.habilidades .card {
+  background-image: none;
+  background-color: #fff;
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0px 1px 3px 0px #000, inset 0px 0px 0px 0px transparent;
+          box-shadow: 0px 1px 3px 0px #000, inset 0px 0px 0px 0px transparent;
+  -webkit-transition: all ease 0.6s;
+  transition: all ease 0.6s;
+}
+.habilidades .card:hover {
+  border: 1px solid transparent;
+}
+.habilidades .card:hover#cardHome1 {
+  -webkit-box-shadow: 0px 1px 3px 0px #000, inset 0px 0px 150px 0px #ecadf6;
+          box-shadow: 0px 1px 3px 0px #000, inset 0px 0px 150px 0px #ecadf6;
+}
+.habilidades .card:hover#cardHome2 {
+  -webkit-box-shadow: 0px 1px 3px 0px #000, inset 0px 0px 150px 0px #ff6d6d8a;
+          box-shadow: 0px 1px 3px 0px #000, inset 0px 0px 150px 0px #ff6d6d8a;
+}
+.habilidades .card:hover#cardHome3 {
+  -webkit-box-shadow: 0px 1px 3px 0px #000, inset 0px 0px 150px 0px #9349dd;
+          box-shadow: 0px 1px 3px 0px #000, inset 0px 0px 150px 0px #9349dd;
+}
+.habilidades .card:hover#cardHome4 {
+  -webkit-box-shadow: 0px 1px 3px 0px #000, inset 0px 0px 150px 0px #00acee;
+          box-shadow: 0px 1px 3px 0px #000, inset 0px 0px 150px 0px #00acee;
+}
+
+.habilidades .card p {
+  color: #333;
+  text-shadow: none;
+}
+
+.CardPrecios .card p {
+  color: #333;
+}
+
+.CardPrecios .card .textImg {
+  color: #4353ff;
+}
+
+.CardPrecios .card .dolar,
+.CardPrecios .card .mes {
+  color: #333;
+}
+
+.CardPrecios .card {
+  border: 1px solid #ddd;
+}
+
+.CardPrecios .card h4 {
+  background-color: #eee !important;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+}
+
+.CardPrecios .card.cardSenuelo {
+  -webkit-box-shadow: 0 0 0px 2px #ffffff, inset 0px 0px 0px 2px rgba(67, 83, 255, 0.8);
+          box-shadow: 0 0 0px 2px #ffffff, inset 0px 0px 0px 2px rgba(67, 83, 255, 0.8);
+}
+
+.CardPrecios .card:hover.cardSenuelo {
+  -webkit-box-shadow: 0 0 0px 2px #ffffff, inset 0px 0px 0px 2px #4353ff;
+          box-shadow: 0 0 0px 2px #ffffff, inset 0px 0px 0px 2px #4353ff;
+  border: 1px solid #fff;
+}
+.CardPrecios .card:hover.cardSenuelo h4 {
+  border-right: 2px solid #4353ff;
+  border-left: 2px solid #4353ff;
+}
+
+.CardPrecios .card .seeMore a {
+  border: 1px solid #4353ff;
+  color: #333;
+}
+
+.caractSpace .card {
+  background-color: white;
+  border: 1px solid #ddd;
+  color: #333;
+  -webkit-box-shadow: 0 1px 2px 0px #000;
+          box-shadow: 0 1px 2px 0px #000;
+}
+
+.caractSpace .card:hover {
+  -webkit-box-shadow: 0 1px 2px 0px #000;
+          box-shadow: 0 1px 2px 0px #000;
+}
+
+.caractSpace .card .titulo {
+  background-color: #4353ff;
+}
+
+.caractSpace {
+  background-image: none;
+}
+
+.contacto .datosContato .contactoSpace {
+  color: #333;
+}

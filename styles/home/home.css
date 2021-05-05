@@ -620,6 +620,9 @@ $colorYellow3: #ffc41f; */
 .contacto {
   padding: 0;
 }
+.contacto p > span {
+  margin-right: 10px;
+}
 .contacto .datosContato {
   width: 80%;
   padding: 40px 0;

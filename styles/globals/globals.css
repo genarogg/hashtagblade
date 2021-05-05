@@ -42,7 +42,7 @@ body {
   font-family: Lato, sans-serif;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  min-height: 100.1vh;
+  min-height: 100vh;
 }
 
 #__next,

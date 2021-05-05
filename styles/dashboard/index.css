@@ -19,6 +19,7 @@ $colorGray3: #777879;
 $colorGray1: #2e2e2e; */
 /* $colorYellow1: #d39c00;
 $colorYellow3: #ffc41f; */
+/* Dashboard Inicial */
 main.dashboarMain {
   -webkit-box-align: start;
       -ms-flex-align: start;
@@ -319,4 +320,212 @@ main.dashboarMain {
   text-transform: capitalize;
   color: #fff;
   border-bottom: 2px solid transparent;
+}
+
+/* Dashboard Search */
+.tablaHash,
+.continerFiltro {
+  margin-left: 60px;
+  width: 1100px;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+.tablaHash::-webkit-scrollbar,
+.continerFiltro::-webkit-scrollbar {
+  background: #0000;
+}
+.tablaHash::-webkit-scrollbar-thumb,
+.continerFiltro::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+}
+
+.tablaHash {
+  height: 70vh;
+  max-height: 700px;
+  margin-top: 15px;
+}
+
+.containerDatos {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: inherit;
+  height: inherit;
+}
+
+.tituloDato.border {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.tituloDato .name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.tituloDato .checkExterno {
+  height: 15px;
+  border: 1px solid #fff;
+  width: 15px;
+  margin-right: 10px;
+  border-radius: 2px;
+  outline: none;
+}
+.tituloDato .checkExterno .checkInterno {
+  /* display: none; */
+  width: 9px;
+  height: 9px;
+  border-radius: 1px;
+  background: #fff;
+  display: none;
+}
+.tituloDato .checkExterno .checkInterno.display {
+  display: block;
+}
+.tituloDato p {
+  color: #fff;
+}
+
+.datoTabla {
+  margin-bottom: 10px;
+}
+.datoTabla .dato-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.datoTabla .dato-name span.ico {
+  color: #fff;
+  margin-left: 10px;
+}
+.datoTabla .canvas {
+  width: 90%;
+  height: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.datoTabla .canvas .porcentajeCanvas {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  left: -50%;
+}
+
+.continerFiltro {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 30px;
+}
+.continerFiltro .centerElement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.continerFiltro .centerElement .element {
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding-left: 10px;
+  background: #fff5;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.continerFiltro .centerElement .element.col-xs-3 {
+  -ms-flex-preferred-size: 27%;
+      flex-basis: 27%;
+  max-width: 27%;
+}
+.continerFiltro .select {
+  /* position: relative; */
+ /* .select::after {
+   content: "\e907";
+   position: absolute;
+   top: 0;
+   right: 0;
+   padding: 0 1em;
+   background: #34495e;
+   cursor: pointer;
+   pointer-events: none;
+   -webkit-transition: 0.25s all ease;
+   -o-transition: 0.25s all ease;
+   transition: 0.25s all ease;
+ }
+
+ .select:hover::after {
+   color: #f39c12;
+ } */
+}
+.continerFiltro .select select {
+  border: 1px solid #fff;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 250px;
+  padding: 0 10px;
+  height: 30px;
+  color: #fff;
+  /* appearance: none; */
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.continerFiltro .select select option {
+  border: 1px solid transparent;
+  background: #fff;
+  color: #333;
+}
+.continerFiltro .select select option:hover {
+  color: #fff;
+  background-color: #000;
+  /* border: 1px solid #fff; */
+  /* background-color: rgba($azul, 1); */
+}
+
+.hashtagFiltro.display {
+  display: none !important;
+}
+.hashtagFiltro .tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.hashtagFiltro .tag p {
+  color: #fff;
+  text-shadow: 0px 0px 5px #4353ff;
+}
+.hashtagFiltro .button {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 30px;
+  height: 24px;
+  background: #fff;
+  right: -5px;
+}
+.hashtagFiltro .button button {
+  position: relative;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+.hashtagFiltro .button button:hover {
+  cursor: pointer;
 }

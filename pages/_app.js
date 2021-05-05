@@ -14,6 +14,8 @@ import "../styles/response/index.css";
 import "../styles/loading_screen.css";
 
 import "../styles/dashboard/index.css"
+import "../styles/colorChange/index.css"
+
 import data from "../data/home/home";
 
 function MyApp({ Component, pageProps }) {
