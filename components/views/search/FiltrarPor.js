@@ -1,27 +1,28 @@
 import React from "react";
 import Icono from "../../nano/Icono";
 import $ from "../../nano/$";
-const FiltrarPor = () => {
+const FiltrarPor = ({id}) => {
   const display = () => {
-    $("hashtagFiltro").classList.add("display");
+    $(id).classList.add("display");
   };
   return (
     <>
-      <div className="hashtagFiltro row around-xs" id="hashtagFiltro">
-        <div className="col-xs-9 tag">
-          {" "}
-          <p>Hola</p>
-        </div>
-        <div className="col-xs-2 button">
-          {" "}
-          <button
-            onClick={() => {
-              display();
-            }}
-          >
-            <Icono css="icon-bolt" />
-          </button>
-          
+      <div className="element col-xs-3" id={id}>
+        <div className="hashtagFiltro row around-xs" >
+          <div className="col-xs-9 tag">
+            {" "}
+            <p>Hola</p>
+          </div>
+          <div className="col-xs-2 button">
+            {" "}
+            <button
+              onClick={() => {
+                display();
+              }}
+            >
+              <Icono css="icon-bolt" />
+            </button>
+          </div>
         </div>
       </div>
     </>
