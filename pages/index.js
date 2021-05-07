@@ -2,8 +2,8 @@ import React from "react";
 import Layout from "../components/general/home/Layout";
 import Index from "../components/views/home";
 import IndexDashboard from "../components/views/dashboard/IndexDashboard";
-import IndexSearch from "../components/views/search/IndexSearch"; 
-
+import IndexSearch from "../components/views/search/IndexSearch";
+import IndexCollection from "../components/views/collectiones/IndexCollection";
 
 /* const QUERY = gql`
   query {
@@ -25,6 +25,7 @@ const Home = () => {
       </Layout>
       {/* <IndexDashboard /> */}
       {/* <IndexSearch /> */}
+      {/* <IndexCollection /> */}
     </>
   );
 };
