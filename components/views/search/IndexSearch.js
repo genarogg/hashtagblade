@@ -25,21 +25,21 @@ const IndexSearch = () => {
               <Filtro />
             </div>
             <div className="col-xs-9 row centerElement around-xs">
-              <div className="element col-xs-3">
-                <FiltrarPor />
-              </div>
-              <div className="element col-xs-3">
-                <FiltrarPor />
-              </div>
-              <div className="element col-xs-3">
-                <FiltrarPor />
-              </div>
-              <div className="element col-xs-3">
-                <FiltrarPor />
-              </div>
-              <div className="element col-xs-3">
-                <FiltrarPor />
-              </div>
+              <FiltrarPor id="d5" />
+
+              <FiltrarPor id="d2" />
+
+              <FiltrarPor id="d3" />
+
+              <FiltrarPor id="d4" />
+
+              <FiltrarPor id="d1" />
+
+              {/* Estos contenedores son para
+                  centrar el contenido visible */}
+              <div className="col-xs-3"></div>
+              <div className="col-xs-3"></div>
+              <div className="col-xs-3"></div>
             </div>
           </div>
 
