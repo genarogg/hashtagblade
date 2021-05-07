@@ -1,0 +1,73 @@
+.coleccion {
+  .headerSearch {
+    h3.numero {
+      color: #fff;
+      font-family: Lato;
+      font-weight: 500;
+      font-size: 22px;
+    }
+  }
+
+  .continerFiltro {
+    h3.nombre {
+      color: #fff;
+      font-family: Lato;
+      font-weight: 500;
+      font-size: 18px;
+
+      span {
+        margin-right: 10px;
+        color: #fff;
+      }
+    }
+  }
+
+  .centerElement {
+    display: flex;
+    justify-content: flex-end;
+
+    .sugeridos,
+    .copiarColeccion,
+    .menu {
+      padding: 2px 10px;
+      border: 1px solid #fff4;
+      border-radius: 4px;
+      background: #fff3;
+      
+      margin-right: 10px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+
+      &:hover{
+        cursor: pointer;
+      }
+
+      button{
+        position: relative;
+        top: -1px;
+        border:none;
+        outline: none;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      span {
+        margin-right: 5px;
+        position: relative;
+        top: 2px;
+        color: #fff;
+      }
+    }
+
+    .menu{
+      margin-right: 0px;
+
+      button{
+        position: relative;
+        top: -4px;
+
+      }
+    }
+  }
+}
