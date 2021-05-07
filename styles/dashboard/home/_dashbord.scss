@@ -10,6 +10,10 @@ main.dashboarMain {
   /* margin-left: $tamanoDelToolbard; */
   /* background-color: #101010; */
   width: 100%;
+
+  .ico{
+    font-size: 14px;
+  }
 }
 
 .headerSearch {
@@ -17,16 +21,19 @@ main.dashboarMain {
   display: flex;
   /* justify-content: center; */
   align-items: center;
-position: relative;
+  position: relative;
 
-margin-left: $tamanoDelToolbard;
-width: 90%;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(#fff,0.05);
+  margin-left: $tamanoDelToolbard;
+  width: 90%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(#fff, 0.05);
 
-*{
-  transition: $transicion600ms;
-}
+  min-height: 66px;
+  max-height: 66px;
+
+  * {
+    transition: $transicion600ms;
+  }
   .dropdown {
     margin-bottom: 0;
     width: 250px;
@@ -35,7 +42,7 @@ width: 90%;
     position: absolute;
     left: 268px;
 
-    &.active{
+    &.active {
       height: 300px;
       & > span {
         height: 300px;
