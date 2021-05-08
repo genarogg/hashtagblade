@@ -28,9 +28,32 @@ body {
   transition: none;
 }
 
-.formGroupSesion form .containerInput:hover{
+.formGroupSesion form .containerInput:hover {
   border: 1px solid transparent;
-    
+}
+
+
+.containerSesion {
+  margin: 8vh 0vh 0vh 0vh;
+  min-height: calc(55vh + 22px);
+  transition: 600ms all ease;
+
+  &.active {
+    min-height: calc(70vh + 22px);
+    transition: 600ms all ease;
+
+    .containerForm {
+      max-height: 810px;
+      min-height: 810px;
+      transition: 600ms all ease;
+    }
+  }
+  .containerForm {
+  
+    max-height: 510px;
+    min-height: 510px;
+    transition: 600ms all ease;
+  }
 }
 
 .formGroupSesion form .containerInput,
@@ -94,7 +117,8 @@ body {
   background-image: none;
   background-color: #fff;
 }
-.habilidades .top, .habilidades .bottom {
+.habilidades .top,
+.habilidades .bottom {
   position: initial;
 }
 .habilidades .card {
@@ -105,22 +129,23 @@ body {
   transition: $transicion600ms;
   &:hover {
     border: 1px solid transparent;
-    &#cardHome1{
-        box-shadow: 0px 1px 3px 0px #000, inset 0px 0px 150px 0px #ecadf6
+    &#cardHome1 {
+      box-shadow: 0px 1px 3px 0px #000, inset 0px 0px 150px 0px #ecadf6;
     }
-    &#cardHome2{
-        box-shadow: 0px 1px 3px 0px #000, inset 0px 0px 150px 0px #ff6d6d8a
+    &#cardHome2 {
+      box-shadow: 0px 1px 3px 0px #000, inset 0px 0px 150px 0px #ff6d6d8a;
     }
-    &#cardHome3{
-        box-shadow: 0px 1px 3px 0px #000, inset 0px 0px 150px 0px #9349dd
+    &#cardHome3 {
+      box-shadow: 0px 1px 3px 0px #000, inset 0px 0px 150px 0px #9349dd;
     }
 
-    &#cardHome4{
-        box-shadow: 0px 1px 3px 0px #000, inset 0px 0px 150px 0px #00acee
+    &#cardHome4 {
+      box-shadow: 0px 1px 3px 0px #000, inset 0px 0px 150px 0px #00acee;
     }
   }
 
-  &#cardHome2,&#cardHome3{
+  &#cardHome2,
+  &#cardHome3 {
     background-color: #f2f2f2;
   }
 }
@@ -195,5 +220,3 @@ body {
 .contacto .datosContato .contactoSpace {
   color: $gris;
 }
-
-

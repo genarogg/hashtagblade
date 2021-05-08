@@ -52,6 +52,30 @@ body {
   border: 1px solid transparent;
 }
 
+.containerSesion {
+  margin: 8vh 0vh 0vh 0vh;
+  min-height: calc(55vh + 22px);
+  -webkit-transition: 600ms all ease;
+  transition: 600ms all ease;
+}
+.containerSesion.active {
+  min-height: calc(70vh + 22px);
+  -webkit-transition: 600ms all ease;
+  transition: 600ms all ease;
+}
+.containerSesion.active .containerForm {
+  max-height: 810px;
+  min-height: 810px;
+  -webkit-transition: 600ms all ease;
+  transition: 600ms all ease;
+}
+.containerSesion .containerForm {
+  max-height: 510px;
+  min-height: 510px;
+  -webkit-transition: 600ms all ease;
+  transition: 600ms all ease;
+}
+
 .formGroupSesion form .containerInput,
 .dropdown > span,
 .dropdown-list li {
@@ -114,7 +138,8 @@ body {
   background-color: #fff;
 }
 
-.habilidades .top, .habilidades .bottom {
+.habilidades .top,
+.habilidades .bottom {
   position: initial;
 }
 
