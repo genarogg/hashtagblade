@@ -18,7 +18,7 @@ const Contacto = () => {
             </p>
             <br />
             <p>
-              <Icono css="icon-enhanced_encryption" />
+              <Icono css="icon-phone_enabled" />
               Telefono: {data().telefono}
             </p>
             <br />
