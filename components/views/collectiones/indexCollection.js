@@ -45,56 +45,15 @@ const IndexCollection = () => {
           <div className="row tablaHash">
             <TableHashtag />
             <div className="containerDatos row">
-              <DatoTabla idCheck={"hola2"} />
-              <DatoTabla idCheck={"hola3"} />
-              <DatoTabla idCheck={"hola4"} />
-              <DatoTabla idCheck={"hola1"} />
-              <DatoTabla idCheck={"hola5"} />
-              <DatoTabla idCheck={"hola6"} />
-              <DatoTabla idCheck={"hola7"} />
-              <DatoTabla idCheck={"hola8"} />
-              <DatoTabla idCheck={"hola867"} />
-              <DatoTabla idCheck={"hola56"} />
-              <DatoTabla idCheck={"hola45"} />
-              <DatoTabla idCheck={"hola3434"} />
-              <DatoTabla idCheck={"hola65"} />
-              <DatoTabla idCheck={"hola343"} />
-              <DatoTabla idCheck={"hola67"} />
-              <DatoTabla idCheck={"hol67a"} />
-              <DatoTabla idCheck={"hola8"} />
-              <DatoTabla idCheck={"hola09"} />
-              <DatoTabla idCheck={"hola0"} />
-              <DatoTabla idCheck={"holahj"} />
-              <DatoTabla idCheck={"holadf"} />
-              <DatoTabla idCheck={"holafd"} />
-              <DatoTabla idCheck={"holafd"} />
-              <DatoTabla idCheck={"holadf"} />
-              <DatoTabla idCheck={"holadf"} />
+              <DatoTabla idCheck={"holsdafa2"} />
+              <DatoTabla idCheck={"holafsda3"} />
+              <DatoTabla idCheck={"holsadfa4"} />
+              <DatoTabla idCheck={"holasdfa1"} />
+              <DatoTabla idCheck={"holadsfa5"} />
+              <DatoTabla idCheck={"holasdfa6"} />
+              <DatoTabla idCheck={"holadsfa7"} />
+              
 
-              <DatoTabla idCheck={"hola3"} />
-              <DatoTabla idCheck={"hola4"} />
-              <DatoTabla idCheck={"hola1"} />
-              <DatoTabla idCheck={"hola5"} />
-              <DatoTabla idCheck={"hola6"} />
-              <DatoTabla idCheck={"hola7"} />
-              <DatoTabla idCheck={"hola8"} />
-              <DatoTabla idCheck={"hola867"} />
-              <DatoTabla idCheck={"hola56"} />
-              <DatoTabla idCheck={"hola45"} />
-              <DatoTabla idCheck={"hola3434"} />
-              <DatoTabla idCheck={"hola65"} />
-              <DatoTabla idCheck={"hola343"} />
-              <DatoTabla idCheck={"hola67"} />
-              <DatoTabla idCheck={"hol67a"} />
-              <DatoTabla idCheck={"hola8"} />
-              <DatoTabla idCheck={"hola09"} />
-              <DatoTabla idCheck={"hola0"} />
-              <DatoTabla idCheck={"holahj"} />
-              <DatoTabla idCheck={"holadf"} />
-              <DatoTabla idCheck={"holafd"} />
-              <DatoTabla idCheck={"holafd"} />
-              <DatoTabla idCheck={"holadf"} />
-              <DatoTabla idCheck={"holadf"} />
             </div>
           </div>
         </div>
