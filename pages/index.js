@@ -3,7 +3,7 @@ import Layout from "../components/general/home/Layout";
 import Index from "../components/views/home";
 import IndexDashboard from "../components/views/dashboard/IndexDashboard";
 import IndexSearch from "../components/views/search/IndexSearch";
-import IndexCollection from "../components/views/collectiones/IndexCollection";
+import IndexCollection from "../components/views/collectiones/indexCollection";
 
 /* const QUERY = gql`
   query {
@@ -20,12 +20,12 @@ const Home = () => {
 
   return (
     <>
-      <Layout>
+      {/* <Layout>
         <Index />
-      </Layout>
+      </Layout> */}
       {/* <IndexDashboard /> */}
       {/* <IndexSearch /> */}
-      {/* <IndexCollection /> */}
+      <IndexCollection />
     </>
   );
 };

@@ -10,12 +10,12 @@ const notFount = () => {
       </Head>
 
       <div className="body404">
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="main" id="id404">
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="main" id="id404">
           <h1>404</h1>
           <p>
             It looks like you're lost...
