@@ -20,12 +20,12 @@ const Home = () => {
 
   return (
     <>
-      {/* <Layout>
+      <Layout>
         <Index />
-      </Layout> */}
+      </Layout>
       {/* <IndexDashboard /> */}
       {/* <IndexSearch /> */}
-      <IndexCollection />
+      {/* <IndexCollection /> */}
     </>
   );
 };
