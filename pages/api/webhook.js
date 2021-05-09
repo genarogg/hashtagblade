@@ -1,5 +1,5 @@
 import userModel from "../../models/user.model";
-import subsModel from "../../models/subsucription.model";
+import subsModel from "../../models/subscription.model";
 import { connectDB } from "../../database/db";
 
 const handler = async (req, res) => {

@@ -1,6 +1,6 @@
 import request from "request";
 import userModel from "../models/user.model";
-import subModel from "../models/subsucription.model";
+import subModel from "../models/subscription.model";
 
 const getSubscription = (subscriptionId, auth) => {
   return new Promise((resolve, reject) => {

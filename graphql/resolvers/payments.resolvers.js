@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import userModel from "../../models/user.model";
-import subsModel from "../../models/subsucription.model";
+import subsModel from "../../models/subscription.model";
 import {
   generateSubscription,
   getSubscription,
@@ -39,6 +39,7 @@ const createSubscription = async (_root, { token, type }) => {
     }
     if (
       plan.name != "RESOURCE_NOT_FOUND" &&
+      plan.status != "CANCELLED" &&
       ((plan.plan_id === process.env.PLANBASIC &&
         type === "basic" &&
         !myUser.plan) ||
