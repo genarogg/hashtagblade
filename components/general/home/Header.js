@@ -16,13 +16,15 @@ const Header = () => {
   }, []);
 
   const scrollHeader = () => {
-    let altura = $("headerDesktop").offsetTop + 2;
+    try {
+      let altura = $("headerDesktop").offsetTop + 2;
 
-    if (window.pageYOffset > altura) {
-      $("headerDesktop").classList.add("menuFixed");
-    } else {
-      $("headerDesktop").classList.remove("menuFixed");
-    }
+      if (window.pageYOffset > altura) {
+        $("headerDesktop").classList.add("menuFixed");
+      } else {
+        $("headerDesktop").classList.remove("menuFixed");
+      }
+    } catch (error) {}
   };
 
   const contX = () => {

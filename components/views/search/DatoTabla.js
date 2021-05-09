@@ -53,10 +53,14 @@ const DatoTabla = ({ idCheck = "" }) => {
             </div>
             <div className="col-xs-3 row">
               <div className="col-xs-6">
-                <Icono css="icon-search" />
+                <button>
+                  <Icono css="icon-search" />
+                </button>
               </div>
               <div className="col-xs-6">
-                <Icono css="icon-search" />
+                <button>
+                  <span className="puntos">...</span>
+                </button>
               </div>
             </div>
           </div>
