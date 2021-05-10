@@ -10,8 +10,6 @@ const userModel = new mongoose.Schema(
     country: { type: String },
     gender: { type: String },
     birthdate: { type: String },
-    plan: { type: String },
-    subscriptionId: { type: String },
 
     //default
     password: { type: String },
@@ -60,8 +58,14 @@ userModel.pre("save", function (next) {
 });
 
 //compare the password
-userModel.methods.compare = function (pass) {
-  return bcrypt.compareSync(pass, this.password);
+userModel.methods.compare = function (pass, cb) {
+  return bcrypt.compare(pass, this.password, (err, equal) => {
+    if (err) {
+      return cb(err);
+    }
+
+    cb(null, equal);
+  });
 };
 
 export default mongoose.models.users || mongoose.model("users", userModel);

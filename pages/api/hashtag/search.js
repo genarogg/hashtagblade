@@ -17,7 +17,7 @@ export default async function (req, res) {
       return res.status(401).json({ error: "Unauthorized" });
     }
 
-    const plan = await subscriptionModel.findOne({ client: User._id });
+    const plan = await subscriptionModel.findOne({ clientId: User._id });
     if (!plan || plan.status !== "ACTIVE") {
       return res.status(401).json({ error: "Usuario sin plan" });
     }
