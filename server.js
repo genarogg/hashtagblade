@@ -2,6 +2,7 @@ const express = require("express");
 const next = require("next");
 const path = require("path");
 const paypal = require("paypal-rest-sdk");
+const { connectDB } = require("./database/customConnect");
 
 require("dotenv").config();
 
@@ -15,5 +16,9 @@ app.prepare().then(() => {
   /* server.use(express.urlencoded({ extended: true }));
   server.use(express.json()); */
   server.use(handle);
-  server.listen(3000, () => {});
+  server.listen(3000, () => {
+    connectDB(() => {
+      console.log("[db] connected");
+    });
+  });
 });
