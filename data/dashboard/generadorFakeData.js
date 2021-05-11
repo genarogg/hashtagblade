@@ -120,7 +120,7 @@ const data = () => {
       /* hashtag */ tags,
       /* likes */ random2 * 2,
       /* views */ random2 * 3,
-      /* img */ "/postFake/" + aleatorio(1, 30) + ".jpg",
+      /* img */ "/postFake/" + aleatorio(1, 3) + ".jpg",
       /* dapc */ random2 * 4,
       /* postsMade */ "postsMade",
       /* comments */ "comments",
