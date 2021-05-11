@@ -71,9 +71,8 @@
     display: flex;
     align-items: center;
 
-
-    button{
-      border:1px solid #fff5;
+    button {
+      border: 1px solid #fff5;
       background-color: #fff3;
       min-width: 20px;
       min-height: 20px;
@@ -81,7 +80,7 @@
       max-height: 20px;
       border-radius: 4px;
 
-      &:hover{
+      &:hover {
         cursor: pointer;
       }
 
@@ -89,13 +88,36 @@
         color: #fff;
         padding: 2px;
       }
-      .puntos{
+      .puntos {
         position: relative;
         top: -5px;
       }
     }
+  }
+  .containerImgModal {
+    position: relative;
+    button {
+    }
+    .modalImg {
+      position: absolute;
 
-    
+      max-width: 300px;
+      min-width: 300px;
+      border: 1px solid #fff;
+      border-radius: 4px;
+      padding: 5px 0px;
+      top: 30px;
+      display: none;
+
+      &.display{
+        display: flex;
+      }
+      .img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
   }
 
   .canvas {

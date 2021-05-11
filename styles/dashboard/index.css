@@ -426,6 +426,35 @@ main.dashboarMain {
   position: relative;
   top: -5px;
 }
+.datoTabla .containerImgModal {
+  position: relative;
+}
+.datoTabla .containerImgModal .modalImg {
+  position: absolute;
+  max-width: 300px;
+  min-width: 300px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 5px 0px;
+  top: 30px;
+  display: none;
+}
+.datoTabla .containerImgModal .modalImg.display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.datoTabla .containerImgModal .modalImg .img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 .datoTabla .canvas {
   width: 90%;
   height: 16px;
