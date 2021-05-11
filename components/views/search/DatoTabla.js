@@ -1,10 +1,23 @@
 import React from "react";
 import $ from "../../nano/$";
 import Icono from "../../nano/Icono";
+import Image from "next/image";
 
-const DatoTabla = ({ idCheck = "" }) => {
+const DatoTabla = ({
+  name,
+  id,
+  hashtag,
+  likes,
+  views,
+  img,
+  dapc,
+  postsMade,
+  comments,
+  isVideo,
+  ownerId,
+}) => {
   const check = () => {
-    $(idCheck).classList.toggle("display");
+    $(id).classList.toggle("display");
 
     /*  */
 
@@ -32,6 +45,10 @@ const DatoTabla = ({ idCheck = "" }) => {
     }
   };
 
+  const displayImg = () => {
+    $(id + "2").classList.toggle("display");
+  };
+
   return (
     <>
       <div className="row datoTabla col-xs-12">
@@ -45,11 +62,11 @@ const DatoTabla = ({ idCheck = "" }) => {
                 }}
                 id="checkExterno"
               >
-                <div className="checkInterno" id={idCheck}></div>
+                <div className="checkInterno" id={id}></div>
               </buttom>
             </div>
             <div className="col-xs-7">
-              <p>#Hashtag</p>
+              {/* <p>{hashtag}</p> */}
             </div>
             <div className="col-xs-3 row">
               <div className="col-xs-6">
@@ -57,10 +74,26 @@ const DatoTabla = ({ idCheck = "" }) => {
                   <Icono css="icon-search" />
                 </button>
               </div>
-              <div className="col-xs-6">
-                <button>
+              <div className="col-xs-6 containerImgModal">
+                <button
+                  onClick={() => {
+                    displayImg();
+                  }}
+                >
                   <span className="puntos">...</span>
                 </button>
+                <div className="modalImg row" id={id + "2"}>
+                  <div className="img col-xs-4">
+                    <Image src={img} width={80} height={80} />
+                  </div> 
+                  <div className="img col-xs-4">
+                    <Image src={img} width={80} height={80} />
+                  </div> 
+                  <div className="img col-xs-4">
+                    <Image src={img} width={80} height={80} />
+                  </div> 
+                  
+                </div>
               </div>
             </div>
           </div>
@@ -75,16 +108,16 @@ const DatoTabla = ({ idCheck = "" }) => {
             </div>
           </div>
           <div className="col-xs-1 dato-dapc">
-            <p>328</p>
+            <p>{dapc}</p>
           </div>
           <div className="col-xs-1 dato-likes">
-            <p>3.9k</p>
+            <p>{likes}</p>
           </div>
           <div className="col-xs-1 dato-posts">
-            <p>228k</p>
+            <p>{postsMade}</p>
           </div>
           <div className="col-xs-2 dato-Comments">
-            <p>52</p>
+            <p>{comments}</p>
           </div>
         </div>
       </div>
