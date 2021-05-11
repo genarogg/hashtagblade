@@ -3,9 +3,9 @@ import React from "react";
 const Filtro = () => {
   return (
     <>
-      <div class="select">
+      <div className="select">
         <select name="slct" id="slct">
-          <option selected disabled>
+          <option defaultValue="null">
             Choose an option
           </option>
           <option value="1">#Hola</option>
