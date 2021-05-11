@@ -4,6 +4,7 @@ import Index from "../components/views/home";
 import IndexDashboard from "../components/views/dashboard/IndexDashboard";
 import IndexSearch from "../components/views/search/IndexSearch";
 import IndexCollection from "../components/views/collectiones/indexCollection";
+import data from "../data/dashboard/generadorFakeData"
 
 /* const QUERY = gql`
   query {
@@ -17,14 +18,14 @@ const Home = () => {
   /*  if (data) {
     console.log(data);
   } */
-
+console.log(data())
   return (
     <>
-      <Layout>
+     {/*  <Layout>
         <Index />
-      </Layout>
+      </Layout> */}
       {/* <IndexDashboard /> */}
-      {/* <IndexSearch /> */}
+      <IndexSearch />
       {/* <IndexCollection /> */}
     </>
   );

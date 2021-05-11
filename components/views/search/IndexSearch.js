@@ -6,8 +6,10 @@ import TableHashtag from "./TableHashtag";
 import DatoTabla from "./DatoTabla";
 import Filtro from "./Filtro";
 import FiltrarPor from "./FiltrarPor";
-
+import data from "../../../data/dashboard/fakeData";
 const IndexSearch = () => {
+  const datos = data();
+
   return (
     <>
       <main className="dashboarMain">
@@ -46,56 +48,19 @@ const IndexSearch = () => {
           <div className="row tablaHash">
             <TableHashtag />
             <div className="containerDatos row">
-              <DatoTabla idCheck={"hola2"} />
-              <DatoTabla idCheck={"hola3"} />
-              <DatoTabla idCheck={"hola4"} />
-              <DatoTabla idCheck={"hola1"} />
-              <DatoTabla idCheck={"hola5"} />
-              <DatoTabla idCheck={"hola6"} />
-              <DatoTabla idCheck={"hola7"} />
-              <DatoTabla idCheck={"hola8"} />
-              <DatoTabla idCheck={"hola867"} />
-              <DatoTabla idCheck={"hola56"} />
-              <DatoTabla idCheck={"hola45"} />
-              <DatoTabla idCheck={"hola3434"} />
-              <DatoTabla idCheck={"hola65"} />
-              <DatoTabla idCheck={"hola343"} />
-              <DatoTabla idCheck={"hola67"} />
-              <DatoTabla idCheck={"hol67a"} />
-              <DatoTabla idCheck={"hola8"} />
-              <DatoTabla idCheck={"hola09"} />
-              <DatoTabla idCheck={"hola0"} />
-              <DatoTabla idCheck={"holahj"} />
-              <DatoTabla idCheck={"holadf"} />
-              <DatoTabla idCheck={"holafd"} />
-              <DatoTabla idCheck={"holafd"} />
-              <DatoTabla idCheck={"holadf"} />
-              <DatoTabla idCheck={"holadf"} />
+            
+              {<DatoTabla
+                id={datos[1].id}
+                tagBoss={datos[1].tagBoss}
+                dapc={datos[1].dapc}
+                postsMade={datos[1].postsMade}
+                hashtag={datos[1].hashtag}
+                img={datos[1].img}
+                likes={datos[1].likes}
+                comments={datos[1].comments} 
 
-              <DatoTabla idCheck={"hola3"} />
-              <DatoTabla idCheck={"hola4"} />
-              <DatoTabla idCheck={"hola1"} />
-              <DatoTabla idCheck={"hola5"} />
-              <DatoTabla idCheck={"hola6"} />
-              <DatoTabla idCheck={"hola7"} />
-              <DatoTabla idCheck={"hola8"} />
-              <DatoTabla idCheck={"hola867"} />
-              <DatoTabla idCheck={"hola56"} />
-              <DatoTabla idCheck={"hola45"} />
-              <DatoTabla idCheck={"hola3434"} />
-              <DatoTabla idCheck={"hola65"} />
-              <DatoTabla idCheck={"hola343"} />
-              <DatoTabla idCheck={"hola67"} />
-              <DatoTabla idCheck={"hol67a"} />
-              <DatoTabla idCheck={"hola8"} />
-              <DatoTabla idCheck={"hola09"} />
-              <DatoTabla idCheck={"hola0"} />
-              <DatoTabla idCheck={"holahj"} />
-              <DatoTabla idCheck={"holadf"} />
-              <DatoTabla idCheck={"holafd"} />
-              <DatoTabla idCheck={"holafd"} />
-              <DatoTabla idCheck={"holadf"} />
-              <DatoTabla idCheck={"holadf"} />
+              />}
+              {console.log("hola") }{console.log(datos[1].img)}
             </div>
           </div>
         </div>
