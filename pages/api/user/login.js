@@ -43,7 +43,7 @@ export default async function handler(req, res) {
         }
 
         if (equal) {
-          const token = jwt.sign({ _id: input._id }, process.env.TOKENKEY);
+          const token = jwt.sign({ _id: user._id }, process.env.TOKENKEY);
           res.status(200).json({ token });
         } else {
           res.status(400).json({ error: "Contrasena Invalidada" });

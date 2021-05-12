@@ -10,6 +10,10 @@ const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+process.on("uncaughtException", (e) => {
+  console.log(e);
+});
+
 app.prepare().then(() => {
   const server = express();
   server.use(express.static(path.join(__dirname, "public")));
