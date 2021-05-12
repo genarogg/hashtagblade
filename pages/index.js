@@ -21,11 +21,11 @@ const Home = () => {
   console.log(data());
   return (
     <>
-      <Layout>
+      {/*  <Layout>
         <Index />
-      </Layout>
+      </Layout> */}
       {/* <IndexDashboard /> */}
-      {/* <IndexSearch /> */}
+      <IndexSearch />
       {/* <IndexCollection /> */}
     </>
   );
