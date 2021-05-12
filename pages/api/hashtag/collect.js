@@ -4,8 +4,6 @@ import Intsa from "scraper-instagram";
 import subscriptionModel from "../../../models/subscription.model";
 import hashtagsModel from "../../../models/hashtags.model";
 
-const InstaClient = new Intsa();
-
 export default async function handler(req, res) {
   /* IF METHOD IS POST CREATES THE COLLECTION*/
   if (req.method === "POST") {
@@ -228,6 +226,8 @@ export default async function handler(req, res) {
         console.log(e);
         res.status(401).json({ error: "Unauthorized" });
       });
+
+    /* METHOD DELETE TO DELETE A COLLECTION */
   } else if (req.method === "DELETE") {
     const token = await extractToken(req);
     if (!token) {

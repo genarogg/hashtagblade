@@ -121,36 +121,32 @@ const Register = () => {
       return;
     }
 
-    fetch("/api/graphql", {
+    fetch("/api/user/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        query: `mutation {
-          register(input: {
-            email: "${registerCorreo.value}"
-            password: "${registerPassword.value}"
-            first_name: "${registerUserName.value}"
-            last_name: "${registerUserSurName.value}"
-            country: "${country}"
-            gender: "${sex}"
-            birthdate: "${userData.value}"
-          })
-        }`,
+        email: registerCorreo.value,
+        password: registerPassword.value,
+        first_name: registerUserName.value,
+        last_name: registerUserSurName.value,
+        country: country,
+        gender: sex,
+        birthdate: userData.value,
       }),
     })
       .then((data) => data.json())
-      .then(({ data, errors }) => {
-        if (errors) {
+      .then(({ token, error }) => {
+        if (error) {
           setError({
             exist: true,
-            message: errors[0].message,
+            message: error,
           });
           return;
         }
 
-        localStorage.setItem(token, `Bearer ${data.register}`);
+        localStorage.setItem("token", `Bearer ${token}`);
         router.reload();
       });
   };

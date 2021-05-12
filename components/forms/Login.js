@@ -84,39 +84,33 @@ const Login = () => {
       return;
     }
 
-    fetch("/api/graphql", {
+    fetch("/api/user/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        query: `
-          mutation {
-            login(input: {
-              email: "${loginCorreo.value}"
-              password: "${loginPassword.value}"
-            })
-          }
-        `,
+        email: loginCorreo.value,
+        password: loginPassword.value,
       }),
     })
       .then((data) => data.json())
-      .then(({ data, errors }) => {
-        if (errors) {
+      .then(({ token, error }) => {
+        if (error) {
           setError({
             exist: true,
-            message: errors[0].message,
+            message: error,
           });
           return;
         }
 
         if (!check) {
-          sessionStorage.setItem("token", `Bearer ${data.login}`);
+          sessionStorage.setItem("token", `Bearer ${token}`);
           router.reload();
           return;
         }
 
-        localStorage.setItem("token", `Bearer ${data.login}`);
+        localStorage.setItem("token", `Bearer ${token}`);
         router.reload();
       });
   };
