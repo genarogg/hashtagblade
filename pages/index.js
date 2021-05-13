@@ -18,7 +18,7 @@ const Home = () => {
   /*  if (data) {
     console.log(data);
   } */
-  console.log(data());
+ /*  console.log(data()); */
   return (
     <>
       {/*  <Layout>

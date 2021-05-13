@@ -1,0 +1,36 @@
+const data = () => {
+  return [
+    "Tecnologia",
+    "amor",
+    "sol",
+    "mouse",
+    "matematicas",
+    "niño",
+    "tecnologia",
+    "java",
+    "serpanas",
+    "novia",
+    "button",
+    "espacio",
+    "carro",
+    "domino",
+    "indenpendencia",
+    "sexo",
+    "fisica",
+    "espacio",
+    "extenciones",
+    "programacion",
+    "visualstudio",
+    "novio",
+    "fisica",
+    "vacio",
+    "auto",
+    "novia",
+    "luna",
+    "pantalla",
+    "colores",
+    "amigos",
+  ];
+};
+
+export default data;
