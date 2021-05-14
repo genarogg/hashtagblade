@@ -7,6 +7,7 @@ const SearchHashtag = () => {
   const datos = data();
 
   const filter = () => {
+    $("backgroundInput").style.display = "block"
     let filtrado;
     let texto = $("inputTagFilter").value.toLowerCase();
     let arregloNew = [];
@@ -56,6 +57,7 @@ const SearchHashtag = () => {
         guardarEnlocalStorage($(arregloli[i].id).textContent);
 
         limpiarInput();
+
       });
     }
 
@@ -127,6 +129,7 @@ const SearchHashtag = () => {
     $("containerList").style.top = "-500%";
     $("filterUl").innerHTML = "";
     $("inputTagFilter").value = "";
+    $("backgroundInput").style.display = "none"
     /* $("filterLocal").innerHTML = ""; */
   };
 
@@ -170,6 +173,7 @@ const SearchHashtag = () => {
           <ul className="filterUl" id="filterUl"></ul>
           <ul className="filterLocal" id="filterLocal"></ul>
         </ul>
+        <div className="backgroundInput" id="backgroundInput" onClick={() => {limpiarInput()}}></div>
       </div>
     </>
   );
