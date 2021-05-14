@@ -1,13 +1,12 @@
-import React from "react";
-import Icono from "../../nano/Icono"; /* 
-import handler from "../../../pages/api/hashtag/test" */
+import React, { useEffect } from "react";
+import Icono from "../../nano/Icono";
 import data from "../../../data/dashboard/fakeDataTAG";
 import $ from "../../nano/$";
 
 const SearchHashtag = () => {
   const datos = data();
 
-  const filter = async () => {
+  const filter = () => {
     let filtrado;
     let texto = $("inputTagFilter").value.toLowerCase();
     let arregloNew = [];
@@ -23,46 +22,154 @@ const SearchHashtag = () => {
       }
     }
 
-    console.log("Respuestas");
-    console.log(filtrado);
-    console.log(arregloNew);
+    if (texto === "") {
+      limpiarInput();
+      return;
+    }
+    if (texto !== "") {
+      $("containerList").style.opacity = "1";
+      $("containerList").style.top = "120%";
+    }
 
     if (true) {
-      $("filterUl").innerHTML = arregloNew.map((e) => {
-        return `<li>${e}</li>`;
+      for (let i = 0; i < arregloNew.length; i++) {
+        if (i === 0) {
+          $("filterUl").innerHTML = "";
+        }
+        $("filterUl").innerHTML += `<li id=${"search" + i}><p>${
+          arregloNew[i]
+        }</p></li>`;
+      }
+    }
+    listenerSearch();
+  };
+
+  const listenerSearch = () => {
+    const arregloli = document.querySelectorAll("#filterUl li");
+
+    let leng = arregloli.length;
+
+    for (let i = 0; i < leng; i++) {
+      $(arregloli[i].id).addEventListener("click", () => {
+        $("inputTagFilter").value = "";
+        /* introduce el valor en el localstarage */
+        guardarEnlocalStorage($(arregloli[i].id).textContent);
+
+        limpiarInput();
       });
     }
 
-    const hola2 = fetch("/api/hashtag/test", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        hashtags: ["hola", "adios", "love", "tag", "json"],
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data));
+    /* cerrar el panel de li */
+  };
 
-    console.log(hola2);
+  const listLocalStore = () => {
+    if (localStorage.getItem("recentSerch") === null) {
+      localStorage.setItem("recentSerch", [
+        "emprendimiento",
+        "marketing",
+        "negocio",
+        "online",
+        "empresa",
+      ]);
+    }
+
+    try {
+      let localStor = localStorage.getItem("recentSerch").split(",").reverse();
+      /*  localStorage.setItem("recentSerch",) */
+      $("filterLocal").innerHTML = "";
+      for (let i = 0; i <= 4; i++) {
+        $("filterLocal").innerHTML += `<li id=${"local" + i}><p>${
+          localStor[i]
+        }</p></li>`;
+      }
+
+      const arregloli = document.querySelectorAll("#filterLocal li");
+      let leng = arregloli.length;
+
+      for (let i = 0; i < leng; i++) {
+        $(arregloli[i].id).addEventListener("click", () => {
+          limpiarInput();
+        });
+      }
+    } catch (error) {}
+  };
+  /* Guarda los valores del input en el local storage
+   *     resive como argumento el valor que este en el input
+   */
+  const guardarEnlocalStorage = (valor) => {
+    let arregloLocalStorage = [];
+    arregloLocalStorage = localStorage.getItem("recentSerch").split(",");
+    arregloLocalStorage.push(valor);
+    localStorage.setItem("recentSerch", arregloLocalStorage);
+    valorABuscar();
+  };
+
+  const AceptarYMandarALocalStorage = (tecla) => {
+    if (tecla.key === "Enter") {
+      guardarEnlocalStorage($("inputTagFilter").value);
+      limpiarInput();
+    }
+  };
+
+  const focusInput = () => {
+    if ($("inputTagFilter").value !== "") {
+      guardarEnlocalStorage($("inputTagFilter").value);
+
+      limpiarInput();
+      return;
+    }
+
+    $("inputTagFilter").focus();
+  };
+
+  const limpiarInput = () => {
+    $("containerList").style.opacity = "0";
+    $("containerList").style.top = "-500%";
+    $("filterUl").innerHTML = "";
+    $("inputTagFilter").value = "";
+    /* $("filterLocal").innerHTML = ""; */
+  };
+
+  /* Este sera el valor que se buscara (El hashtag que se quire buscar) */
+  const valorABuscar = () => {
+    let arregloLocalStorage = localStorage
+      .getItem("recentSerch")
+      .split(",")
+      .reverse();
+    localStorage.setItem("hashtagABuscar", arregloLocalStorage[0]);
   };
 
   return (
     <>
-      <div className="searchHashtag">
+      <div className="searchHashtag row between-xs">
         <input
           type="text"
           id="inputTagFilter"
+          className="col-xs-10"
           placeholder="buscar hashtag"
           onChange={() => {
             filter();
           }}
+          onClick={() => {
+            listLocalStore();
+          }}
+          onKeyDown={(tecla) => {
+            AceptarYMandarALocalStorage(tecla);
+          }}
         />
-        <label htmlFor="">
+        <label
+          className="col-xs-2 centerXY"
+          htmlFor="#"
+          onClick={() => {
+            focusInput();
+          }}
+        >
           <Icono css="icon-search" />
         </label>
-        <ul className="filterUl" id="filterUl"></ul>
+        <ul className="containerList" id="containerList">
+          <ul className="filterUl" id="filterUl"></ul>
+          <ul className="filterLocal" id="filterLocal"></ul>
+        </ul>
       </div>
     </>
   );

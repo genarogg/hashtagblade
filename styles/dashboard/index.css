@@ -141,9 +141,11 @@ main.dashboarMain {
 
 .searchHashtag {
   background-color: rgba(255, 255, 255, 0.3);
-  width: 250px;
+  width: 320px;
   border-radius: 4px;
   margin-top: 10px;
+  position: relative;
+  /* overflow: hidden; */
 }
 .searchHashtag input {
   background-color: transparent !important;
@@ -155,6 +157,7 @@ main.dashboarMain {
   height: 100%;
   padding: 10px 0px 10px 10px;
   width: 90%;
+  z-index: 1000;
 }
 .searchHashtag input:focus {
   background-color: #4353ff;
@@ -172,8 +175,57 @@ main.dashboarMain {
   color: #fff !important;
   text-shadow: 0px 0px 5px #4353ff;
 }
-.searchHashtag .ico {
+.searchHashtag label {
+  cursor: pointer;
+}
+.searchHashtag label .ico {
   color: #fff;
+}
+.searchHashtag .containerList {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  max-height: 340px;
+  opacity: 0;
+  -webkit-transition: all ease 0.6s;
+  transition: all ease 0.6s;
+  overflow: hidden;
+  top: -500%;
+  border-radius: 4px;
+}
+.searchHashtag .filterUl,
+.searchHashtag .filterLocal {
+  background-color: #8791f1;
+  padding: 10px 0;
+  max-height: 160px;
+  -webkit-transform: all ease 0.6s;
+          transform: all ease 0.6s;
+  border-radius: 4px;
+}
+.searchHashtag .filterUl li,
+.searchHashtag .filterLocal li {
+  list-style: none;
+  padding: 10px 0;
+}
+.searchHashtag .filterUl li p,
+.searchHashtag .filterLocal li p {
+  color: #fff;
+  padding: 0 10px;
+}
+.searchHashtag .filterUl li:hover,
+.searchHashtag .filterLocal li:hover {
+  background-color: #fff3;
+  cursor: pointer;
+  -webkit-transform: all ease 0.6s;
+          transform: all ease 0.6s;
+}
+.searchHashtag .filterUl {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.searchHashtag .filterLocal {
+  overflow: hidden;
+  margin-top: 10px;
 }
 
 .anadirCollection,
@@ -331,7 +383,7 @@ main.dashboarMain {
 .tablaHash,
 .continerFiltro {
   margin-left: 60px;
-  width: 1100px;
+  max-width: 1100px;
   -ms-flex-line-pack: start;
       align-content: flex-start;
 }
@@ -353,7 +405,7 @@ main.dashboarMain {
 .containerDatos {
   overflow-y: auto;
   overflow-x: hidden;
-  width: inherit;
+  width: 100%;
   height: inherit;
   -ms-flex-line-pack: start;
       align-content: flex-start;

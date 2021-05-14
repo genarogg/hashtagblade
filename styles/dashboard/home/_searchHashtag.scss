@@ -1,8 +1,10 @@
 .searchHashtag {
   background-color: $transparenciasInternas;
-  width: 250px;
+  width: 320px;
   border-radius: 4px;
   margin-top: 10px;
+  position: relative;
+  /* overflow: hidden; */
 
   input {
     background-color: transparent !important;
@@ -16,18 +18,19 @@
     padding: 10px 0px 10px 10px;
 
     width: 90%;
+    z-index: 1000;
 
     &:focus {
       background-color: $azul;
       outline: none;
     }
     &::-webkit-input-placeholder {
-      color:#fff !important;
+      color: #fff !important;
       text-shadow: 0px 0px 5px $azul;
     }
 
     &::-moz-placeholder {
-      color:#fff !important;
+      color: #fff !important;
       text-shadow: 0px 0px 5px $azul;
     }
 
@@ -37,7 +40,59 @@
     }
   }
 
-  .ico {
-      color: #fff
+  label{
+
+    cursor: pointer;
+    .ico {
+      color: #fff;
+    }
+  }
+  .containerList {
+    position: absolute;
+
+    z-index: 100;
+    width: 100%;
+
+    max-height: 340px;
+
+    opacity: 0;
+    transition: $transicion600ms;
+    overflow: hidden;
+    top: -500%;
+    border-radius: 4px;
+  }
+  .filterUl,
+  .filterLocal {
+    background-color: #8791f1;
+    padding: 10px 0;
+    max-height: 160px;
+    transform: $transicion600ms;
+    border-radius: 4px;
+    li {
+      list-style: none;
+      padding: 10px 0;
+      p {
+        color: #fff;
+        padding: 0 10px;
+      }
+
+      &:hover{
+        background-color: #fff3;
+        cursor: pointer;
+        transform: $transicion600ms;
+      }
+    }
+
+
+  }
+  .filterUl {
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+  }
+
+  .filterLocal {
+    overflow: hidden;
+    margin-top: 10px;
   }
 }

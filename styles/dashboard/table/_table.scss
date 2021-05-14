@@ -1,7 +1,7 @@
 .tablaHash,
 .continerFiltro {
   margin-left: $tamanoDelToolbard;
-  width: 1100px;
+  max-width: 1100px;
 
   align-content: flex-start;
 
@@ -23,7 +23,7 @@
 .containerDatos {
   overflow-y: auto;
   overflow-x: hidden;
-  width: inherit;
+  width: 100%;
   height: inherit;
   align-content: flex-start;
 }

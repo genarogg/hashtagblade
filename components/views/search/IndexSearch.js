@@ -60,7 +60,7 @@ const IndexSearch = () => {
                 comments={datos[1].comments} 
 
               />}
-              {console.log("hola") }{console.log(datos[1].img)}
+             
             </div>
           </div>
         </div>
