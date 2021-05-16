@@ -5,6 +5,7 @@ import IndexDashboard from "../components/views/dashboard/IndexDashboard";
 import IndexSearch from "../components/views/search/IndexSearch";
 import IndexCollection from "../components/views/collectiones/indexCollection";
 import data from "../data/dashboard/generadorFakeData";
+import $, { $alternalClass } from "../components/nano/$";
 
 /* const QUERY = gql`
   query {
@@ -18,13 +19,21 @@ const Home = () => {
   /*  if (data) {
     console.log(data);
   } */
- /*  console.log(data()); */
+  /*  console.log(data()); */
   return (
     <>
       {/*  <Layout>
         <Index />
       </Layout> */}
       {/* <IndexDashboard /> */}
+
+      <button
+        onClick={() => {
+          $alternalClass("likes", "holad2", "hodla");
+        }}
+      >
+        Mostrar/ocultar
+      </button>
       <IndexSearch />
       {/* <IndexCollection /> */}
     </>
