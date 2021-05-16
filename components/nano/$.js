@@ -80,6 +80,41 @@ const $toogleFade = (id, display = "block") => {
   }
 };
 
+/* devuelve un numero rando | el primer valor que resive es en numero minimo al que puede devolver y el segundo sera el maximo valor que podra regresar*/
+
+const $random = (iniciaEn, terminaEn) => {
+  return Math.floor(Math.random() * (iniciaEn - terminaEn) + terminaEn);
+};
+
+/* organizar un arreglo numerico de nenor a mayor */
+const $sortNumbers = (numbers) => {
+  return numbers.sort((a, b) => {
+    return a - b;
+  });
+};
+
+/* Simplemente envia un console.log */
+const log = (
+  mensaje = "Ya llegamos aqui!!!",
+  style = `background-color: #fff; color: #101010; font-size: 16px;font-weight: bold; font-family: Lato; padding:5px 10px;border-radius: 4px`
+) => {
+  return console.log(`%c${mensaje}`, style);
+};
+
+/**
+ * Obtenr los parametros de la url
+ * @param String name
+ * @return String
+ */
+const $getParameterByName = (name) => {
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+  return results === null
+    ? ""
+    : decodeURIComponent(results[1].replace(/\+/g, " "));
+};
+
 export {
   $alternalClass,
   $fadeOut,
@@ -89,4 +124,8 @@ export {
   $classList,
   $style,
   $styleText,
+  $random,
+  $sortNumbers,
+  $getParameterByName,
+  log,
 };

@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
 import Icono from "../../nano/Icono";
-import data from "../../../data/dashboard/fakeDataTAG";
+/* import data from "../../../data/dashboard/fakeDataTAG"; */
+import getData from "../../../data/dashboard/ejemplo";
 import $ from "../../nano/$";
-import {$fadeOut} from "../../nano/$";
+import {log} from "../../nano/$";
 
 
 const SearchHashtag = () => {
-  const datos = data();
-  
+  /* const datos = data(); */
+  log("Aqui vamos!!!")
+  log(getData())
 
   const filter = () => {
     

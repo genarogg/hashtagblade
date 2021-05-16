@@ -8,9 +8,7 @@ import Cardestadisticas from "../../general/dashboard/card/Cardestadisticas";
 
 import Collectiones from "./Collectiones";
 
-
 const IndexDashboard = () => {
-
   return (
     <>
       <main className="dashboarMain">
