@@ -5,6 +5,11 @@
 
   align-content: flex-start;
 
+  .filter {
+    position: relative;
+    min-height: 40px;
+  }
+
   &::-webkit-scrollbar {
     background: #0000;
   }
@@ -109,7 +114,7 @@
       top: 30px;
       display: none;
 
-      &.display{
+      &.display {
         display: flex;
       }
       .img {
@@ -151,11 +156,22 @@
       border-radius: 4px;
       padding-left: 10px;
       background: #fff5;
-      overflow: hidden;
+      /* overflow-x: hidden; */
       margin-bottom: 10px;
+      position: relative;
 
       &.display {
         display: none !important;
+      }
+
+      .tooltipFilter{
+        position: absolute;
+        top: 40px;
+        background: #fff;
+        width: 110%;
+        left: -5%;
+        border-radius: 4px;
+        padding: 10px 7px;
       }
     }
 
@@ -209,6 +225,28 @@
     .select:hover::after {
       color: #f39c12;
     } */
+  }
+}
+
+.dropdown.filter {
+  position: absolute;
+
+  .dropdown-list {
+    height: 114px;
+    overflow: hidden;
+
+    li {
+      padding: 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #0004;
+      }
+      button {
+        border: none;
+        cursor: pointer;
+      }
+    }
   }
 }
 

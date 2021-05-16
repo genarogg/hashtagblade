@@ -397,6 +397,11 @@ main.dashboarMain {
   -ms-flex-line-pack: start;
       align-content: flex-start;
 }
+.tablaHash .filter,
+.continerFiltro .filter {
+  position: relative;
+  min-height: 40px;
+}
 .tablaHash::-webkit-scrollbar,
 .continerFiltro::-webkit-scrollbar {
   background: #0000;
@@ -552,11 +557,21 @@ main.dashboarMain {
   border-radius: 4px;
   padding-left: 10px;
   background: #fff5;
-  overflow: hidden;
+  /* overflow-x: hidden; */
   margin-bottom: 10px;
+  position: relative;
 }
 .continerFiltro .centerElement .element.display {
   display: none !important;
+}
+.continerFiltro .centerElement .element .tooltipFilter {
+  position: absolute;
+  top: 40px;
+  background: #fff;
+  width: 110%;
+  left: -5%;
+  border-radius: 4px;
+  padding: 10px 7px;
 }
 .continerFiltro .centerElement > .col-xs-3 {
   -ms-flex-preferred-size: 27%;
@@ -605,6 +620,25 @@ main.dashboarMain {
   background-color: #000;
   /* border: 1px solid #fff; */
   /* background-color: rgba($azul, 1); */
+}
+
+.dropdown.filter {
+  position: absolute;
+}
+.dropdown.filter .dropdown-list {
+  height: 114px;
+  overflow: hidden;
+}
+.dropdown.filter .dropdown-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+.dropdown.filter .dropdown-list li:hover {
+  background-color: #0004;
+}
+.dropdown.filter .dropdown-list li button {
+  border: none;
+  cursor: pointer;
 }
 
 .hashtagFiltro .tag {
