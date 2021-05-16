@@ -2,12 +2,18 @@ import React, { useEffect } from "react";
 import Icono from "../../nano/Icono";
 import data from "../../../data/dashboard/fakeDataTAG";
 import $ from "../../nano/$";
+import {$fadeOut} from "../../nano/$";
+
 
 const SearchHashtag = () => {
   const datos = data();
+  
 
   const filter = () => {
-    $("backgroundInput").style.display = "block"
+    
+    
+    
+    $("backgroundInput").style.display = "block";
     let filtrado;
     let texto = $("inputTagFilter").value.toLowerCase();
     let arregloNew = [];
@@ -57,7 +63,6 @@ const SearchHashtag = () => {
         guardarEnlocalStorage($(arregloli[i].id).textContent);
 
         limpiarInput();
-
       });
     }
 
@@ -65,16 +70,7 @@ const SearchHashtag = () => {
   };
 
   const listLocalStore = () => {
-    if (localStorage.getItem("recentSerch") === null) {
-      localStorage.setItem("recentSerch", [
-        "emprendimiento",
-        "marketing",
-        "negocio",
-        "online",
-        "empresa",
-      ]);
-    }
-
+    crearArregloRecentSerchSiNoExiste();
     try {
       let localStor = localStorage.getItem("recentSerch").split(",").reverse();
       /*  localStorage.setItem("recentSerch",) */
@@ -129,8 +125,7 @@ const SearchHashtag = () => {
     $("containerList").style.top = "-500%";
     $("filterUl").innerHTML = "";
     $("inputTagFilter").value = "";
-    $("backgroundInput").style.display = "none"
-    /* $("filterLocal").innerHTML = ""; */
+    $("backgroundInput").style.display = "none";
   };
 
   /* Este sera el valor que se buscara (El hashtag que se quire buscar) */
@@ -139,7 +134,20 @@ const SearchHashtag = () => {
       .getItem("recentSerch")
       .split(",")
       .reverse();
-    localStorage.setItem("hashtagABuscar", arregloLocalStorage[0]);
+      sessionStorage.setItem("hashtagABuscar", arregloLocalStorage[0]);
+    
+  };
+
+  const crearArregloRecentSerchSiNoExiste = () => {
+    if (localStorage.getItem("recentSerch") === null) {
+      localStorage.setItem("recentSerch", [
+        "emprendimiento",
+        "marketing",
+        "negocio",
+        "online",
+        "empresa",
+      ]);
+    }
   };
 
   return (
@@ -173,7 +181,13 @@ const SearchHashtag = () => {
           <ul className="filterUl" id="filterUl"></ul>
           <ul className="filterLocal" id="filterLocal"></ul>
         </ul>
-        <div className="backgroundInput" id="backgroundInput" onClick={() => {limpiarInput()}}></div>
+        <div
+          className="backgroundInput"
+          id="backgroundInput"
+          onClick={() => {
+            limpiarInput();
+          }}
+        ></div>
       </div>
     </>
   );
