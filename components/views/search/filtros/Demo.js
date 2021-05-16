@@ -1,7 +1,7 @@
 import React from "react";
-import Icono from "../../nano/Icono";
-import $ from "../../nano/$";
-const FiltrarPor = ({id}) => {
+import Icono from "../../../nano/Icono";
+import $ from "../../../nano/$";
+const Demo = ({id}) => {
   const display = () => {
     $(id).classList.add("display");
   };
@@ -29,4 +29,4 @@ const FiltrarPor = ({id}) => {
   );
 };
 
-export default FiltrarPor;
+export default Demo;
