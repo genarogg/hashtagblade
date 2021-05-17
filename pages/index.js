@@ -24,7 +24,7 @@ const Home = () => {
     <>
       <button
         onClick={() => {
-          log(getData());
+          log(getData("hola"));
         }}
       >
         Mostrar/ocultar
