@@ -5,7 +5,8 @@ import IndexDashboard from "../components/views/dashboard/IndexDashboard";
 import IndexSearch from "../components/views/search/IndexSearch";
 import IndexCollection from "../components/views/collectiones/indexCollection";
 import data from "../data/dashboard/generadorFakeData";
-import $, { log, $getParameterByName } from "../components/nano/$";
+import getData from "../data/dashboard/ejemplo";
+import { log } from "../components/nano/$";
 /* const QUERY = gql`
   query {
     hello
@@ -23,7 +24,7 @@ const Home = () => {
     <>
       <button
         onClick={() => {
-          log($getParameterByName("registrarse"));
+          log(getData());
         }}
       >
         Mostrar/ocultar
@@ -31,9 +32,9 @@ const Home = () => {
       {/* <Layout>
         <Index />
       </Layout> */}
-      <IndexDashboard />
+      {/* <IndexDashboard /> */}
 
-      {/*  <IndexSearch /> */}
+      {/* <IndexSearch /> */}
       {/* <IndexCollection /> */}
     </>
   );

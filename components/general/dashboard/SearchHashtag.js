@@ -8,9 +8,9 @@ import {log} from "../../nano/$";
 
 const SearchHashtag = () => {
   /* const datos = data(); */
-  log("Aqui vamos!!!")
+  /* log("Aqui vamos!!!")
   log(getData())
-
+ */
   const filter = () => {
     
     
