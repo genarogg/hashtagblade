@@ -66,28 +66,22 @@ const resetPassword = () => {
       return;
     }
 
-    fetch("/api/graphql", {
+    fetch("/api/user/request_password", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        query: `
-          query {
-            passwordRequest(input: {
-              email: "${e.currentTarget.resetPassword.value}"
-              uri: "${window.location.origin}"
-            })
-          } 
-        `,
+        email: e.currentTarget.resetPassword.value,
+        uri: window.location.origin,
       }),
     })
       .then((data) => data.json())
-      .then(({ data, errors }) => {
-        if (errors) {
+      .then(({ message, error }) => {
+        if (error) {
           setError({
             exist: true,
-            message: errors[0].message,
+            message: error,
           });
 
           return;
@@ -97,7 +91,7 @@ const resetPassword = () => {
 
         setSuccess({
           exist: true,
-          message: data.passwordRequest,
+          message: message,
         });
       });
   };

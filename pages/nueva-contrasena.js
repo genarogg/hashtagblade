@@ -87,31 +87,25 @@ const Social = () => {
       return;
     }
 
-    fetch("/api/graphql", {
+    fetch("/api/user/update_password", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        query: `
-          mutation{
-            updatePassword(input: {
-              token: "${router.query.token}"
-              password: "${newPassword.value}"
-            })
-          }
-        `,
+        token: router.query.token,
+        password: newPassword.value,
       }),
     })
       .then((data) => data.json())
       .then((data) => {
-        if (!data.errors) {
+        if (!data.error) {
           setSuccess(true);
           ref.current.style.display = "none";
         } else {
           setError({
             exist: true,
-            message: data.errors[0].message,
+            message: data.error,
           });
         }
       });

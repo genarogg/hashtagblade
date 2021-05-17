@@ -1,4 +1,4 @@
-const getData = (tag) => {
+const getData = (tag, cb) => {
   fetch("/api/hashtag/test2", {
     method: "POST",
     headers: {
@@ -10,7 +10,7 @@ const getData = (tag) => {
   })
     .then((data) => data.json())
     .then((data) => {
-      return data;
+      cb(data);
     });
 };
 
