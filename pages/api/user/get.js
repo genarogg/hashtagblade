@@ -2,7 +2,7 @@ import extractToken from "../../../functions/extractToken";
 import userModel from "../../../models/user.model";
 
 export default async function handler(req, res) {
-  if (req.method === "POST") {
+  if (req.method === "GET") {
     const token = await extractToken(req);
     if (!token) {
       return res.status(401).json({ error: "Unauthorized" });
